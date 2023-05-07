@@ -6,7 +6,7 @@
 #### Grupo 7
 * Israel Felipe da Silva nUSP: 11796531
 * Gabriel Fernando Machado Fachini - 11953481
-* Mateus Israel Silva
+* Mateus Israel Silva - 11735042
 
 ## Requisitos
 Ocularis é uma ótica online que vende óculos e produtos relacionados. A plataforma tem todas funcionalidades para o cliente ver, selecionar e comprar os produtos. A plataforma também oferece uma funcionalidade extra integrada com o chatGPT para que o cliente selecione algumas especificações de óculos e obtenha uma recomendação de modelo de óculos baseadas nestas especificações.
