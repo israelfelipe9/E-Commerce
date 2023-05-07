@@ -30,15 +30,14 @@ Além dos requisitos definidos na especificação do projeto, o sistema possui o
 * O Admin consegue editar ou adicionar: usuários, pedidos, itens e categorias
 
 ### Diagrama de Navegação
-<img src='diagrama1.png' />
 <img src='diagrama2.png' />
 
 ### Conexão com o Servidor
 O sistema terá conexão com um servidor para operar com os dados que serão utilizados na plataforma. As informações que serão salvas no servidor, são relacionadas a itens que a plataforma oferta, dados de contas e pedidos realizados.
 
 * Itens: Nome, Id, Foto, Descrição, preço, quantidade em estoque, quantidades vendidas
-* Conta Admin: Nome, Id, Telefone, Email
-* Conta Cliente: Nome, Id, Telefone, Email, Endereço
+* Conta Admin: Nome, Id, Telefone, Email, Senha, Endereço, RG, CPF, Data de Nascimento
+* Conta Cliente: Nome, Id, Telefone, Email, Senha, Endereço, RG, CPF, Data de Nascimento
 * Pedidos: Id_Cliente, Id_Item, quantidade, Endereço, Data, Forma de Pagamento
 
 Todas as requisições com o servidor seguirão as operações do tipo CRUD, utilizando o protocolo HTTP para conexão com a API.
