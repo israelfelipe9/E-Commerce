@@ -1,0 +1,314 @@
+.paginainicial-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+.paginainicial-paginainicial {
+  width: 100%;
+  height: 1024px;
+  display: flex;
+  overflow: hidden;
+  align-items: flex-start;
+  flex-shrink: 0;
+  background-color: rgba(248, 247, 255, 1);
+}
+.paginainicial-frame22 {
+  gap: 229px;
+  top: 7px;
+  width: 1440px;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: space-between;
+}
+.paginainicial-text {
+  left: 80px;
+  color: rgb(0, 0, 0);
+  bottom: -34px;
+  height: auto;
+  position: absolute;
+  font-size: 18px;
+  font-style: Medium;
+  text-align: left;
+  font-family: DM Sans;
+  font-weight: 500;
+  line-height: 100%;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.paginainicial-logo {
+  top: 0px;
+  left: 720px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.paginainicial-camada2 {
+  top: 0px;
+  left: 0px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.paginainicial-vector {
+  top: 0px;
+  left: 0px;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+}
+.paginainicial-vector1 {
+  top: -3.2585043641120137e-7px;
+  left: 21.000713348388672px;
+  width: 8px;
+  height: 28px;
+  position: absolute;
+}
+.paginainicial-camada2cpia {
+  top: 0px;
+  left: 20.942562103271484px;
+  width: 7.997856140136719px;
+  height: 28.141429901123047px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.paginainicial-vector2 {
+  top: 0px;
+  left: 0px;
+  width: 8px;
+  height: 28px;
+  position: absolute;
+}
+.paginainicial-camada2cpiacpia {
+  top: 0px;
+  left: 9.54344654083252px;
+  width: 30.82357406616211px;
+  height: 38.632144927978516px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.paginainicial-vector3 {
+  top: -3.2585043641120137e-7px;
+  left: 11.412858009338379px;
+  width: 8px;
+  height: 28px;
+  position: absolute;
+}
+.paginainicial-vector4 {
+  top: 1.7007137537002563px;
+  left: 0px;
+  width: 31px;
+  height: 37px;
+  position: absolute;
+}
+.paginainicial-camada2cpiacpiacpia {
+  top: 0.31857115030288696px;
+  left: 4.904271125793457px;
+  width: 40.15357208251953px;
+  height: 43.5435676574707px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.paginainicial-vector5 {
+  top: 4.172325134277344e-7px;
+  left: 10.996428489685059px;
+  width: 18px;
+  height: 33px;
+  position: absolute;
+}
+.paginainicial-vector6 {
+  top: 9.781429290771484px;
+  left: 0px;
+  width: 40px;
+  height: 34px;
+  position: absolute;
+}
+.paginainicial-text01 {
+  right: 350px;
+  bottom: -34px;
+  height: auto;
+  position: absolute;
+  font-size: 18px;
+  align-self: center;
+  font-style: Medium;
+  font-family: DM Sans;
+  font-weight: 500;
+  line-height: 100%;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.paginainicial-text02 {
+  left: 350px;
+  bottom: -34px;
+  height: auto;
+  position: absolute;
+  font-size: 18px;
+  align-self: center;
+  font-style: Medium;
+  font-family: DM Sans;
+  font-weight: 500;
+  line-height: 100%;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.paginainicial-text03 {
+  color: rgb(0, 0, 0);
+  right: 80px;
+  bottom: -34px;
+  height: auto;
+  position: absolute;
+  font-size: 18px;
+  font-style: Medium;
+  text-align: left;
+  font-family: DM Sans;
+  font-weight: 500;
+  line-height: 100%;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.paginainicial-background {
+  top: 63px;
+  left: 0px;
+  width: 1440px;
+  height: 588px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.paginainicial-background1 {
+  top: 0px;
+  left: 0px;
+  width: 1440px;
+  height: 588px;
+  position: absolute;
+}
+.paginainicial-text04 {
+  top: 235.74444580078125px;
+  left: 149.25px;
+  color: rgba(255, 255, 255, 1);
+  width: 339px;
+  height: auto;
+  position: absolute;
+  font-size: 96px;
+  font-style: Regular;
+  text-align: left;
+  font-family: DM Sans;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.paginainicial-text06 {
+  top: 290.73333740234375px;
+  left: 149.25px;
+  color: rgba(239, 68, 222, 1);
+  width: 669px;
+  height: auto;
+  position: absolute;
+  font-size: 96px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Engravers MT;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.paginainicial-vector7 {
+  top: 0px;
+  left: 0px;
+  width: 643px;
+  height: 195px;
+  position: absolute;
+}
+.paginainicial-frame23 {
+  gap: 628px;
+  top: 651px;
+  left: 100px;
+  width: 1278px;
+  height: 373px;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: space-between;
+}
+.paginainicial-text08 {
+  color: rgb(0, 0, 0);
+  width: var(--dl-size-size-xxlarge);
+  height: auto;
+  font-size: 48px;
+  max-width: var(--dl-size-size-xxlarge);
+  font-style: normal;
+  text-align: center;
+  font-family: DM Sans;
+  font-weight: 400;
+  line-height: 100%;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.paginainicial-card1 {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 1;
+  background-color: rgba(14, 144, 254, 1);
+}
+.paginainicial-glass1blue1 {
+  left: -398px;
+  width: 227px;
+  bottom: 3px;
+  height: 227px;
+  position: absolute;
+}
+.paginainicial-card2 {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 1;
+  background-color: rgba(238, 170, 0, 1);
+}
+.paginainicial-glass1blue11 {
+  left: -727px;
+  width: 227px;
+  bottom: 3px;
+  height: 227px;
+  position: absolute;
+}
+.paginainicial-card3 {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 1;
+  background-color: rgba(217, 128, 26, 1);
+}
+.paginainicial-glass1blue12 {
+  left: -1059px;
+  width: 227px;
+  bottom: 3px;
+  height: 227px;
+  position: absolute;
+}

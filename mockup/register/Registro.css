@@ -1,0 +1,70 @@
+body {
+    background-color: #F8F7FF; /* Cor de fundo */
+  }
+  
+  button.back-button {
+    margin: 4.444% 5.2% 0; /* Margem do botão "Voltar" */
+    background-color: transparent;
+    border: none;
+    color: #000000;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  div.logo {
+    text-align: center;
+    margin-top: -2%; /* Adicionar margem superior para centralizar o logo */
+    margin-bottom: 7%;
+  }
+  
+  div.registration-box {
+    background-color: #FFFFFF; /* Cor de fundo da caixa de registro */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    margin: 0 auto 20px; /* Adicionar margem inferior */
+    padding: 20px;
+  }
+  
+  h2 {
+    text-align: left; /* Alinhar o título à esquerda */
+    font-size: 42px;  /* Tamanho da fonte do título */
+    margin-top: 0;    /* Remover margem padrão */
+  }
+  
+  .input-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .input-row > div {
+    flex: 1;
+    margin-right: 5.2%; /* Adicionar margem entre os campos */
+  }
+  
+  .input-row label {
+    display: block;
+  }
+  
+  .input-row input {
+    width: 100%;
+    padding: 4px;
+    background-color: #F5F5F5; /* Cor de fundo dos campos de entrada */
+    border-radius: 8px;
+  }
+  
+  .input-row > div:last-child {
+    margin-right: 15px; /* Remover margem à direita do terceiro campo */
+  }
+  
+  button.register-button {
+    margin-top: 10px;
+    background-color: #9381FF; /* Cor do botão de registro */
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
