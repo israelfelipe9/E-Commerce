@@ -1,4 +1,7 @@
 # Ocularis
+
+## [Link para o Figma](https://www.figma.com/file/JscsXqK1cnMdkIQfJeisMQ/Web-dev-online-store?type=design&node-id=2%3A5&t=45La1o0rPl0CuJ8D-1) com as mockups.
+
 ## Autores
 #### Grupo 7
 * Israel Felipe da Silva nUSP: 11796531
