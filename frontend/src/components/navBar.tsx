@@ -5,7 +5,14 @@ const NavBar = ({ user }: any) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Link className="navbar-brand" to="/">
-        Ocularis
+        <img
+          src="../../public/logo.svg"
+          width="70"
+          height="70"
+          className="d-inline-block align-top"
+          alt=""
+        />
+        {/* Ocularis */}
       </Link>
       <button
         className="navbar-toggler"
