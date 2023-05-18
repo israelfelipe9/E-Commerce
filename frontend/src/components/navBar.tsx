@@ -6,7 +6,7 @@ const NavBar = ({ user }: any) => {
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Link className="navbar-brand" to="/">
         <img
-          src="../../public/logo.svg"
+          src="../../logo.svg"
           width="70"
           height="70"
           className="d-inline-block align-top"
