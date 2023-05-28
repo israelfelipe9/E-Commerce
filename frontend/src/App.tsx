@@ -1,26 +1,24 @@
-import LoginForm from "./components/loginForm";
-import RegisterForm from "./components/registerForm";
-import NavBar from "./components/navBar";
+import { LoginForm } from "./Containers/LoginForm";
+import { RegisterForm } from "./Containers/RegisterForm";
+import { Sale } from "./pages/Sale";
 import NotFound from "./components/notFound";
-import Home from "./components/home";
+import { Home } from "./pages/Home";
+import { Navbar } from "./components/Navbar"
 import { Route, Routes, Navigate } from "react-router-dom";
 import "./App.css";
 
 function App() {
   return (
-    <>
-      <NavBar user={"Israel"} />
-      <main className="container">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/login" element={<LoginForm />} />
-          <Route path="/register" element={<RegisterForm />} />
-          <Route path="/not-found" element={<NotFound />} />
-          <Route path="*" element={<Navigate to="/not-found" />} />
-        </Routes>
-      </main>
-    </>
+    <Routes>
+      <Route element={<Navbar />}>
+      <Route path="/" element={<Home />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/register" element={<RegisterForm />} />
+        <Route path="/sale" element={<Sale />} />
+        <Route path="/not-found" element={<NotFound />} />
+        <Route path="*" element={<Navigate to="/not-found" />} />
+      </Route>
+    </Routes>
   );
 }
 
