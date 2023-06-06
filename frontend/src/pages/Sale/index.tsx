@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import { useEffect, useState } from "react";
+import { ProductCard } from "./productCard";
 
 import * as services from "../../data/fakeProductService";
-import { useEffect, useState } from "react";
 
 export const Sale = () => {
   const [products, setProducts] = useState<services.IProducts[]>([]);
@@ -11,15 +11,12 @@ export const Sale = () => {
   }, []);
 
   return (
-    <div>
-      {products.map((product) => (
-        <div key={product._id}>
-          <p>{product.name}</p>
-          <p>{product.description}</p>
-          <p>{product.price}</p>
-          <img src={product.photo} alt={product.name} />
-        </div>
-      ))}
+    <div className="container d-flex justify-content-center mt-50 mb-50">
+      <div className="row">
+        {products.map((product) => (
+          <ProductCard product={product} key={product._id} />
+        ))}
+      </div>
     </div>
   );
 };

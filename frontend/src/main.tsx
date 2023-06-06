@@ -4,7 +4,7 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.css";
-import { ThemeProvider } from "styled-components"
+import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./GlobalStyles";
 import { Default } from "./themes/default";
 
