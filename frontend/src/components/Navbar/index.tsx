@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import logo from '../../assets/logo.svg'
 import { useNavigate, Outlet } from 'react-router-dom'
+import cart from '../../assets/carrinho.png'
+import { Cart } from '../Navbar/Cart'
 
 const Nav = styled.nav`
   background-color: #fff;
@@ -8,9 +10,10 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px 300px;
+  padding: 10px 300px;
   width: 100%;
   height: auto;
+  box-shadow: inset 0px -1px 0px #EFEFEF;
 `
 
 const ItemsContainer = styled.ul`
@@ -38,6 +41,8 @@ const LogoImg = styled.img`
   height: 2rem;
 `
 
+
+
 export const Navbar = () => {
   const navigate = useNavigate()
 
@@ -45,11 +50,12 @@ export const Navbar = () => {
     <>
       <Nav>
         <ItemsContainer>
+          <LogoImg src={logo} />
           <Item onClick={() => navigate('/')}>Home</Item>
           <Item onClick={() => navigate('/sale')}>Sale</Item>
-          <LogoImg src={logo} />
           <Item onClick={() => navigate('/login')}>Login</Item>
           <Item onClick={() => navigate('/register')}>Register</Item>
+          <Cart />
         </ItemsContainer>
       </Nav>
       <Outlet />
