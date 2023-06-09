@@ -23,13 +23,13 @@ const products: IProducts[] = [
         url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://static3.tcdn.com.br/img/img_prod/813275/oculos_de_sol_dourado_ray_ban_round_metal_rb3447l_7841_1_8a6b385eaf38d1636c3074ce287c9698.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://dazy28phnegyt.cloudfront.net/Custom/Content/Products/66/81/66816_oculos-de-sol-redondo-ray-ban-rb3546l-187-71-com-lentes-degrade-pr-12546-rb3546l-187-71_m2_637679924420629998.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://cdn.awsli.com.br/800x800/596/596553/produto/144686200/b5b59dca83.jpg",
       },
     ],
     description:
@@ -47,13 +47,13 @@ const products: IProducts[] = [
         url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://static3.tcdn.com.br/img/img_prod/813275/oculos_de_sol_dourado_ray_ban_round_metal_rb3447l_7841_1_8a6b385eaf38d1636c3074ce287c9698.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://dazy28phnegyt.cloudfront.net/Custom/Content/Products/66/81/66816_oculos-de-sol-redondo-ray-ban-rb3546l-187-71-com-lentes-degrade-pr-12546-rb3546l-187-71_m2_637679924420629998.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://cdn.awsli.com.br/800x800/596/596553/produto/144686200/b5b59dca83.jpg",
       },
     ],
     description:
@@ -71,13 +71,13 @@ const products: IProducts[] = [
         url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://static3.tcdn.com.br/img/img_prod/813275/oculos_de_sol_dourado_ray_ban_round_metal_rb3447l_7841_1_8a6b385eaf38d1636c3074ce287c9698.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://dazy28phnegyt.cloudfront.net/Custom/Content/Products/66/81/66816_oculos-de-sol-redondo-ray-ban-rb3546l-187-71-com-lentes-degrade-pr-12546-rb3546l-187-71_m2_637679924420629998.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://cdn.awsli.com.br/800x800/596/596553/produto/144686200/b5b59dca83.jpg",
       },
     ],
     description:
@@ -95,13 +95,13 @@ const products: IProducts[] = [
         url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://static3.tcdn.com.br/img/img_prod/813275/oculos_de_sol_dourado_ray_ban_round_metal_rb3447l_7841_1_8a6b385eaf38d1636c3074ce287c9698.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://dazy28phnegyt.cloudfront.net/Custom/Content/Products/66/81/66816_oculos-de-sol-redondo-ray-ban-rb3546l-187-71-com-lentes-degrade-pr-12546-rb3546l-187-71_m2_637679924420629998.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://cdn.awsli.com.br/800x800/596/596553/produto/144686200/b5b59dca83.jpg",
       },
     ],
     description:
@@ -119,13 +119,13 @@ const products: IProducts[] = [
         url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://static3.tcdn.com.br/img/img_prod/813275/oculos_de_sol_dourado_ray_ban_round_metal_rb3447l_7841_1_8a6b385eaf38d1636c3074ce287c9698.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://dazy28phnegyt.cloudfront.net/Custom/Content/Products/66/81/66816_oculos-de-sol-redondo-ray-ban-rb3546l-187-71-com-lentes-degrade-pr-12546-rb3546l-187-71_m2_637679924420629998.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://cdn.awsli.com.br/800x800/596/596553/produto/144686200/b5b59dca83.jpg",
       },
     ],
     description:
@@ -143,13 +143,13 @@ const products: IProducts[] = [
         url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://static3.tcdn.com.br/img/img_prod/813275/oculos_de_sol_dourado_ray_ban_round_metal_rb3447l_7841_1_8a6b385eaf38d1636c3074ce287c9698.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://dazy28phnegyt.cloudfront.net/Custom/Content/Products/66/81/66816_oculos-de-sol-redondo-ray-ban-rb3546l-187-71-com-lentes-degrade-pr-12546-rb3546l-187-71_m2_637679924420629998.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://cdn.awsli.com.br/800x800/596/596553/produto/144686200/b5b59dca83.jpg",
       },
     ],
     description:
@@ -167,13 +167,13 @@ const products: IProducts[] = [
         url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://static3.tcdn.com.br/img/img_prod/813275/oculos_de_sol_dourado_ray_ban_round_metal_rb3447l_7841_1_8a6b385eaf38d1636c3074ce287c9698.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://dazy28phnegyt.cloudfront.net/Custom/Content/Products/66/81/66816_oculos-de-sol-redondo-ray-ban-rb3546l-187-71-com-lentes-degrade-pr-12546-rb3546l-187-71_m2_637679924420629998.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://cdn.awsli.com.br/800x800/596/596553/produto/144686200/b5b59dca83.jpg",
       },
     ],
     description:
@@ -191,13 +191,13 @@ const products: IProducts[] = [
         url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://static3.tcdn.com.br/img/img_prod/813275/oculos_de_sol_dourado_ray_ban_round_metal_rb3447l_7841_1_8a6b385eaf38d1636c3074ce287c9698.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://dazy28phnegyt.cloudfront.net/Custom/Content/Products/66/81/66816_oculos-de-sol-redondo-ray-ban-rb3546l-187-71-com-lentes-degrade-pr-12546-rb3546l-187-71_m2_637679924420629998.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://cdn.awsli.com.br/800x800/596/596553/produto/144686200/b5b59dca83.jpg",
       },
     ],
     description:
@@ -215,13 +215,13 @@ const products: IProducts[] = [
         url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://static3.tcdn.com.br/img/img_prod/813275/oculos_de_sol_dourado_ray_ban_round_metal_rb3447l_7841_1_8a6b385eaf38d1636c3074ce287c9698.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://dazy28phnegyt.cloudfront.net/Custom/Content/Products/66/81/66816_oculos-de-sol-redondo-ray-ban-rb3546l-187-71-com-lentes-degrade-pr-12546-rb3546l-187-71_m2_637679924420629998.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://cdn.awsli.com.br/800x800/596/596553/produto/144686200/b5b59dca83.jpg",
       },
     ],
     description:
@@ -239,13 +239,13 @@ const products: IProducts[] = [
         url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://static3.tcdn.com.br/img/img_prod/813275/oculos_de_sol_dourado_ray_ban_round_metal_rb3447l_7841_1_8a6b385eaf38d1636c3074ce287c9698.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://dazy28phnegyt.cloudfront.net/Custom/Content/Products/66/81/66816_oculos-de-sol-redondo-ray-ban-rb3546l-187-71-com-lentes-degrade-pr-12546-rb3546l-187-71_m2_637679924420629998.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://cdn.awsli.com.br/800x800/596/596553/produto/144686200/b5b59dca83.jpg",
       },
     ],
     description:
@@ -263,13 +263,13 @@ const products: IProducts[] = [
         url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://static3.tcdn.com.br/img/img_prod/813275/oculos_de_sol_dourado_ray_ban_round_metal_rb3447l_7841_1_8a6b385eaf38d1636c3074ce287c9698.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://dazy28phnegyt.cloudfront.net/Custom/Content/Products/66/81/66816_oculos-de-sol-redondo-ray-ban-rb3546l-187-71-com-lentes-degrade-pr-12546-rb3546l-187-71_m2_637679924420629998.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://cdn.awsli.com.br/800x800/596/596553/produto/144686200/b5b59dca83.jpg",
       },
     ],
     description:
@@ -287,13 +287,13 @@ const products: IProducts[] = [
         url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://static3.tcdn.com.br/img/img_prod/813275/oculos_de_sol_dourado_ray_ban_round_metal_rb3447l_7841_1_8a6b385eaf38d1636c3074ce287c9698.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://dazy28phnegyt.cloudfront.net/Custom/Content/Products/66/81/66816_oculos-de-sol-redondo-ray-ban-rb3546l-187-71-com-lentes-degrade-pr-12546-rb3546l-187-71_m2_637679924420629998.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://cdn.awsli.com.br/800x800/596/596553/produto/144686200/b5b59dca83.jpg",
       },
     ],
     description:
@@ -311,13 +311,13 @@ const products: IProducts[] = [
         url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://static3.tcdn.com.br/img/img_prod/813275/oculos_de_sol_dourado_ray_ban_round_metal_rb3447l_7841_1_8a6b385eaf38d1636c3074ce287c9698.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://dazy28phnegyt.cloudfront.net/Custom/Content/Products/66/81/66816_oculos-de-sol-redondo-ray-ban-rb3546l-187-71-com-lentes-degrade-pr-12546-rb3546l-187-71_m2_637679924420629998.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://cdn.awsli.com.br/800x800/596/596553/produto/144686200/b5b59dca83.jpg",
       },
     ],
     description:
@@ -335,13 +335,13 @@ const products: IProducts[] = [
         url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://static3.tcdn.com.br/img/img_prod/813275/oculos_de_sol_dourado_ray_ban_round_metal_rb3447l_7841_1_8a6b385eaf38d1636c3074ce287c9698.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://dazy28phnegyt.cloudfront.net/Custom/Content/Products/66/81/66816_oculos-de-sol-redondo-ray-ban-rb3546l-187-71-com-lentes-degrade-pr-12546-rb3546l-187-71_m2_637679924420629998.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://cdn.awsli.com.br/800x800/596/596553/produto/144686200/b5b59dca83.jpg",
       },
     ],
     description:
@@ -359,13 +359,13 @@ const products: IProducts[] = [
         url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://static3.tcdn.com.br/img/img_prod/813275/oculos_de_sol_dourado_ray_ban_round_metal_rb3447l_7841_1_8a6b385eaf38d1636c3074ce287c9698.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://dazy28phnegyt.cloudfront.net/Custom/Content/Products/66/81/66816_oculos-de-sol-redondo-ray-ban-rb3546l-187-71-com-lentes-degrade-pr-12546-rb3546l-187-71_m2_637679924420629998.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://cdn.awsli.com.br/800x800/596/596553/produto/144686200/b5b59dca83.jpg",
       },
     ],
     description:
@@ -383,13 +383,13 @@ const products: IProducts[] = [
         url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://static3.tcdn.com.br/img/img_prod/813275/oculos_de_sol_dourado_ray_ban_round_metal_rb3447l_7841_1_8a6b385eaf38d1636c3074ce287c9698.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://dazy28phnegyt.cloudfront.net/Custom/Content/Products/66/81/66816_oculos-de-sol-redondo-ray-ban-rb3546l-187-71-com-lentes-degrade-pr-12546-rb3546l-187-71_m2_637679924420629998.jpg",
       },
       {
-        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+        url: "https://cdn.awsli.com.br/800x800/596/596553/produto/144686200/b5b59dca83.jpg",
       },
     ],
     description:
