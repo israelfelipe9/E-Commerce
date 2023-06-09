@@ -1,8 +1,13 @@
+interface URL {
+  url: string;
+}
+
 export interface IProducts {
   _id: number;
   name: string;
-  photo: string;
+  photo: URL[];
   description: string;
+  brand: string;
   price: number;
   qtInStock: number;
   qtSold: number;
@@ -12,8 +17,21 @@ const products: IProducts[] = [
   {
     _id: 1,
     name: "Óculos rounded cube",
-    photo:
-      "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+    brand: "Ray-Ban",
+    photo: [
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+    ],
     description:
       "lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id",
     price: 100.0,
@@ -23,8 +41,21 @@ const products: IProducts[] = [
   {
     _id: 2,
     name: "Óculos rounded cube",
-    photo:
-      "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+    brand: "Ray-Ban",
+    photo: [
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+    ],
     description:
       "lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id",
     price: 100.0,
@@ -34,8 +65,21 @@ const products: IProducts[] = [
   {
     _id: 3,
     name: "Óculos rounded cube",
-    photo:
-      "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+    brand: "Ray-Ban",
+    photo: [
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+    ],
     description:
       "lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id",
     price: 100.0,
@@ -45,8 +89,21 @@ const products: IProducts[] = [
   {
     _id: 4,
     name: "Óculos rounded cube",
-    photo:
-      "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+    brand: "Ray-Ban",
+    photo: [
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+    ],
     description:
       "lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id",
     price: 100.0,
@@ -56,8 +113,21 @@ const products: IProducts[] = [
   {
     _id: 5,
     name: "Óculos rounded cube",
-    photo:
-      "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+    brand: "Ray-Ban",
+    photo: [
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+    ],
     description:
       "lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id",
     price: 100.0,
@@ -67,8 +137,21 @@ const products: IProducts[] = [
   {
     _id: 6,
     name: "Óculos rounded cube",
-    photo:
-      "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+    brand: "Ray-Ban",
+    photo: [
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+    ],
     description:
       "lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id",
     price: 100.0,
@@ -78,8 +161,21 @@ const products: IProducts[] = [
   {
     _id: 7,
     name: "Óculos rounded cube",
-    photo:
-      "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+    brand: "Ray-Ban",
+    photo: [
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+    ],
     description:
       "lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id",
     price: 100.0,
@@ -89,8 +185,21 @@ const products: IProducts[] = [
   {
     _id: 8,
     name: "Óculos rounded cube",
-    photo:
-      "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+    brand: "Ray-Ban",
+    photo: [
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+    ],
     description:
       "lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id",
     price: 100.0,
@@ -100,8 +209,21 @@ const products: IProducts[] = [
   {
     _id: 9,
     name: "Óculos rounded cube",
-    photo:
-      "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+    brand: "Ray-Ban",
+    photo: [
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+    ],
     description:
       "lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id",
     price: 100.0,
@@ -111,8 +233,21 @@ const products: IProducts[] = [
   {
     _id: 10,
     name: "Óculos rounded cube",
-    photo:
-      "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+    brand: "Ray-Ban",
+    photo: [
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+    ],
     description:
       "lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id",
     price: 100.0,
@@ -122,8 +257,21 @@ const products: IProducts[] = [
   {
     _id: 11,
     name: "Óculos rounded cube",
-    photo:
-      "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+    brand: "Ray-Ban",
+    photo: [
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+    ],
     description:
       "lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id",
     price: 100.0,
@@ -133,8 +281,21 @@ const products: IProducts[] = [
   {
     _id: 12,
     name: "Óculos rounded cube",
-    photo:
-      "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+    brand: "Ray-Ban",
+    photo: [
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+    ],
     description:
       "lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id",
     price: 100.0,
@@ -144,8 +305,21 @@ const products: IProducts[] = [
   {
     _id: 13,
     name: "Óculos rounded cube",
-    photo:
-      "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+    brand: "Ray-Ban",
+    photo: [
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+    ],
     description:
       "lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id",
     price: 100.0,
@@ -155,8 +329,21 @@ const products: IProducts[] = [
   {
     _id: 14,
     name: "Óculos rounded cube",
-    photo:
-      "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+    brand: "Ray-Ban",
+    photo: [
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+    ],
     description:
       "lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id",
     price: 100.0,
@@ -166,8 +353,21 @@ const products: IProducts[] = [
   {
     _id: 15,
     name: "Óculos rounded cube",
-    photo:
-      "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+    brand: "Ray-Ban",
+    photo: [
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+    ],
     description:
       "lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id",
     price: 100.0,
@@ -177,8 +377,21 @@ const products: IProducts[] = [
   {
     _id: 16,
     name: "Óculos rounded cube",
-    photo:
-      "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+    brand: "Ray-Ban",
+    photo: [
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+      {
+        url: "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      },
+    ],
     description:
       "lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id",
     price: 100.0,
