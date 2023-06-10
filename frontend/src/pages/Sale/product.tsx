@@ -1,13 +1,24 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { Container } from "../../styles/Container";
+import { Button } from "../../components/common/button";
+import CartAmountToggle from "./cartAmount";
 import MyImage from "./myImage";
 
 import * as services from "../../data/fakeProductService";
 
 export const Product = () => {
   const [data, setData] = useState<services.IProducts | undefined>();
+  const [amount, setAmount] = useState(1);
+
+  const setDecrease = () => {
+    amount > 1 ? setAmount(amount - 1) : setAmount(1);
+  };
+
+  const setIncrease = () => {
+    amount < data.qtInStock ? setAmount(amount + 1) : setAmount(data.qtInStock);
+  };
 
   const { id } = useParams();
 
@@ -53,13 +64,20 @@ export const Product = () => {
                 <p>
                   Brand :<span> {data.brand} </span>
                 </p>
+                <hr />
+                {data.qtInStock > 0 && (
+                  <>
+                    <CartAmountToggle
+                      amount={amount}
+                      setDecrease={setDecrease}
+                      setIncrease={setIncrease}
+                    />
+                    <Link to="/cart" onClick={() => console.log("clicou")}>
+                      <Button className="btn">Add To Cart</Button>
+                    </Link>
+                  </>
+                )}
               </div>
-              <hr />
-              {data.qtInStock > 0 && (
-                <button type="button" className="btn btn-primary">
-                  Add to cart
-                </button>
-              )}
             </div>
           </div>
         </div>
@@ -124,6 +142,27 @@ const Wrapper = styled.section`
     justify-content: center;
     align-items: center;
   }
+
+  .amount-toggle {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.4rem;
+
+    button {
+      border: none;
+      background-color: #e2e2e2;
+      cursor: pointer;
+    }
+
+    .amount-style {
+      font-size: 2rem;
+      color: ${({ theme }) => theme.colors.btn};
+    }
+  }
+
   @media (max-width: 800px) {
     padding: 0 2.4rem;
   }
