@@ -17,7 +17,7 @@ export const Product = () => {
   }, []);
 
   if (!data) {
-    return <div className="page_loading">Loading.....</div>;
+    return <div className="page_loading">Not Found</div>;
   }
 
   return (
@@ -83,35 +83,33 @@ const Wrapper = styled.section`
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    margin-left: 100px; 
+    margin-left: 100px;
     gap: 2rem;
+  }
 
-    }
+  .product-data-price {
+    font-weight: bold;
+  }
+  .product-data-real-price {
+    color: ${({ theme }) => theme.colors.btn};
+  }
+  .product-data-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 1.8rem;
 
-    .product-data-price {
+    span {
       font-weight: bold;
     }
-    .product-data-real-price {
-      color: ${({ theme }) => theme.colors.btn};
-    }
-    .product-data-info {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      font-size: 1.8rem;
+  }
 
-      span {
-        font-weight: bold;
-      }
-    }
-
-    hr {
-      max-width: 100%;
-      width: 90%;
-      /* height: 0.2rem; */
-      border: 0.1rem solid #000;
-      color: red;
-    }
+  hr {
+    max-width: 100%;
+    width: 90%;
+    /* height: 0.2rem; */
+    border: 0.1rem solid #000;
+    color: red;
   }
 
   .product-images {
