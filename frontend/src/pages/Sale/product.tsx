@@ -1,19 +1,21 @@
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import styled from 'styled-components'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Container } from '../../styles/Container'
 import { Button } from '../../components/common/button'
 import CartAmountToggle from './cartAmount'
 import MyImage from './myImage'
 
 import * as services from '../../data/fakeProductService'
+import { CartContext } from '../../contexts/CartContext'
 
 export const Product = () => {
   const [data, setData] = useState<services.IProducts | undefined>()
   const [amount, setAmount] = useState(1)
+  const { addToCart } = useContext(CartContext)
 
   const setDecrease = () => {
-    amount > 1 ? setAmount(amount - 1) : setAmount(1)
+    amount > 1 ? setAmount(data?.amount - 1) : setAmount(1)
   }
 
   const setIncrease = () => {
@@ -72,9 +74,7 @@ export const Product = () => {
                       setDecrease={setDecrease}
                       setIncrease={setIncrease}
                     />
-                    <Link to="/cart" onClick={() => console.log('clicou')}>
-                      <Button className="btn">Add To Cart</Button>
-                    </Link>
+                    <Button className="btn" onClick={() => addToCart(data)}>Add To Cart</Button>
                   </>
                 )}
               </div>

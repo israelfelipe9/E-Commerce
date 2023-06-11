@@ -3,6 +3,7 @@ import { CartContext } from '../../contexts/CartContext'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons'
+import { useNavigate } from 'react-router-dom'
 
 const Container = styled.div`
   display: flex;
@@ -138,16 +139,15 @@ const CloseCartButton = styled.button`
 `
 
 export const CartItems = () => {
-  const { cart, removeFromCart } = useContext(CartContext)
+  const { cart, removeFromCart, totalPrice } = useContext(CartContext)
   const [amount, setAmount] = useState(1)
-  const [totalPrice, setTotalPrice] = useState(0)
+  const navigate = useNavigate()
 
   useEffect(() => {
     if (cart.length > 0) {
-      const total = cart.reduce((acc, item) => {
-        return acc + (item.price * amount)
+      cart.reduce((acc, item) => {
+        return acc + (item.price * item.amount)
       }, 0)
-      setTotalPrice(total)
     }
   }, [amount, cart])
 
@@ -171,7 +171,7 @@ export const CartItems = () => {
             }}>
               <FontAwesomeIcon icon={faMinus} />
             </MinusButton>
-            {amount}
+            {item.amount}
             <PlusButton onClick={() => {
               setAmount(amount + 1)
             }}>
@@ -184,7 +184,7 @@ export const CartItems = () => {
       <TotalPriceContainer>
         <h3>Total:</h3>
         <h3>R${totalPrice},00</h3>
-        <CloseCartButton>Finalizar</CloseCartButton>
+        <CloseCartButton onClick={() => navigate('/payment')} >Finalizar</CloseCartButton>
       </TotalPriceContainer>
     </Container>
   )

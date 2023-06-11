@@ -11,6 +11,7 @@ export interface IProducts {
   price: number;
   qtInStock: number;
   qtSold: number;
+  amount: number;
 }
 
 const products: IProducts[] = [
@@ -37,6 +38,7 @@ const products: IProducts[] = [
     price: 100.0,
     qtInStock: 100,
     qtSold: 25,
+    amount: 0,
   },
   {
     _id: 2,
@@ -61,6 +63,7 @@ const products: IProducts[] = [
     price: 100.0,
     qtInStock: 100,
     qtSold: 25,
+    amount: 0,
   },
   {
     _id: 3,
@@ -85,6 +88,7 @@ const products: IProducts[] = [
     price: 100.0,
     qtInStock: 100,
     qtSold: 25,
+    amount: 0,
   },
   {
     _id: 4,
@@ -109,6 +113,7 @@ const products: IProducts[] = [
     price: 100.0,
     qtInStock: 100,
     qtSold: 25,
+    amount: 0,
   },
   {
     _id: 5,
@@ -133,6 +138,7 @@ const products: IProducts[] = [
     price: 100.0,
     qtInStock: 100,
     qtSold: 25,
+    amount: 0,
   },
   {
     _id: 6,
@@ -157,6 +163,7 @@ const products: IProducts[] = [
     price: 100.0,
     qtInStock: 100,
     qtSold: 25,
+    amount: 0,
   },
   {
     _id: 7,
@@ -181,6 +188,7 @@ const products: IProducts[] = [
     price: 100.0,
     qtInStock: 100,
     qtSold: 25,
+    amount: 0,
   },
   {
     _id: 8,
@@ -205,6 +213,7 @@ const products: IProducts[] = [
     price: 100.0,
     qtInStock: 100,
     qtSold: 25,
+    amount: 0,
   },
   {
     _id: 9,
@@ -229,6 +238,7 @@ const products: IProducts[] = [
     price: 100.0,
     qtInStock: 100,
     qtSold: 25,
+    amount: 0,
   },
   {
     _id: 10,
@@ -253,6 +263,7 @@ const products: IProducts[] = [
     price: 100.0,
     qtInStock: 100,
     qtSold: 25,
+    amount: 0,
   },
   {
     _id: 11,
@@ -277,6 +288,7 @@ const products: IProducts[] = [
     price: 100.0,
     qtInStock: 100,
     qtSold: 25,
+    amount: 0,
   },
   {
     _id: 12,
@@ -301,6 +313,7 @@ const products: IProducts[] = [
     price: 100.0,
     qtInStock: 100,
     qtSold: 25,
+    amount: 0,
   },
   {
     _id: 13,
@@ -325,6 +338,7 @@ const products: IProducts[] = [
     price: 100.0,
     qtInStock: 100,
     qtSold: 25,
+    amount: 0,
   },
   {
     _id: 14,
@@ -349,6 +363,7 @@ const products: IProducts[] = [
     price: 100.0,
     qtInStock: 100,
     qtSold: 25,
+    amount: 0,
   },
   {
     _id: 15,
@@ -373,6 +388,7 @@ const products: IProducts[] = [
     price: 100.0,
     qtInStock: 100,
     qtSold: 25,
+    amount: 0,
   },
   {
     _id: 16,
@@ -397,6 +413,7 @@ const products: IProducts[] = [
     price: 100.0,
     qtInStock: 100,
     qtSold: 25,
+    amount: 0,
   },
 ]
 
@@ -417,6 +434,7 @@ export function saveProduct(product: IProducts) {
   productInDb.price = product.price
   productInDb.qtInStock = product.qtInStock
   productInDb.qtSold = product.qtSold
+  productInDb.amount = product.amount
 
   if (!productInDb._id) {
     productInDb._id = Date.now()

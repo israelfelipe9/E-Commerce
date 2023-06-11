@@ -11,35 +11,41 @@ export interface ProductProps {
   description: string
   qtInStock: number
   qtSold: number
+  amount: number
 }
 
 interface CartContextProps {
   cart: Array<ProductProps>
   addToCart: (product: ProductProps) => void
-  removeFromCart: (product: ProductProps) => void
+  removeFromCart: (product: ProductProps) => void,
+  totalPrice: number
 }
 
 export const CartContext = createContext<CartContextProps>({
   cart: [],
   addToCart: () => null,
-  removeFromCart: () => null
+  removeFromCart: () => null,
+  totalPrice: 0
 })
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState<ProductProps[]>([])
+  const [totalPrice, setTotalPrice] = useState(0)
 
   const addToCart = (product: ProductProps) => {
+    setTotalPrice(totalPrice + product.price)
     setCart([...cart, product])
     alert('Product added to cart!')
   }
 
   const removeFromCart = (product: ProductProps) => {
+    setTotalPrice(totalPrice - product.price)
     setCart(cart.filter((item) => item._id !== product._id))
     alert('Product removed from cart!')
   }
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, totalPrice }}>
       {children}
     </CartContext.Provider>
   )
