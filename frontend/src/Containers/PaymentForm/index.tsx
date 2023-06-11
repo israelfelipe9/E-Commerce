@@ -1,8 +1,8 @@
-import { useForm } from "react-hook-form";
-import { Input } from "../../components/Input";
-import styled from "styled-components";
-import zod from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from 'react-hook-form'
+import { Input } from '../../components/Input'
+import styled from 'styled-components'
+import zod from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
 
 const paymentSchema = zod.object({
   name: zod.string().max(50).nonempty().trim(),
@@ -10,7 +10,7 @@ const paymentSchema = zod.object({
   cardNumber: zod.string().min(13).max(16).nonempty().trim(),
   validity: zod.date(),
   cvv: zod.number().gte(100).lte(999),
-});
+})
 
 type PaymentSchemaType = zod.infer<typeof paymentSchema>;
 
@@ -21,7 +21,7 @@ const Form = styled.form`
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
-`;
+`
 
 export const PaymentForm = () => {
   const {
@@ -30,10 +30,10 @@ export const PaymentForm = () => {
     formState: { errors },
   } = useForm<PaymentSchemaType>({
     resolver: zodResolver(paymentSchema),
-  });
+  })
   const handleSubmitForm = (payload) => {
-    console.log(payload);
-  };
+    console.log(payload)
+  }
 
   return (
     <Form onSubmit={handleSubmit(handleSubmitForm)}>
@@ -42,33 +42,33 @@ export const PaymentForm = () => {
         placeholder="John doe"
         label="Name:"
         error={errors.name?.message}
-        {...register("name")}
+        {...register('name')}
       />
       <Input
         placeholder="9999999999"
         label="CPF:"
         error={errors.cpf?.message}
-        {...register("cpf")}
+        {...register('cpf')}
       />
       <Input
         placeholder="9999999999999"
         label="Card Number:"
         error={errors.cardNumber?.message}
-        {...register("cardNumber")}
+        {...register('cardNumber')}
       />
       <Input
         type="date"
         label="Validity:"
         error={errors.validity?.message}
-        {...register("validity")}
+        {...register('validity')}
       />
       <Input
         placeholder="999"
         label="CVV:"
         error={errors.cvv?.message}
-        {...register("cvv")}
+        {...register('cvv')}
       />
       <button>Enviar</button>
     </Form>
-  );
-};
+  )
+}

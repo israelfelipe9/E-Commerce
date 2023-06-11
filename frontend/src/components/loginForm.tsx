@@ -1,7 +1,7 @@
-import React from "react";
-import Joi from "joi";
-import Input from "./common/input";
-import Select from "./common/select";
+import React from 'react'
+import Joi from 'joi'
+import Input from './common/input'
+import Select from './common/select'
 
 // import auth from "../services/authService";
 // import { redirect } from "react-router-dom";
@@ -17,67 +17,67 @@ type StateType = {
 
 class LoginForm extends React.Component<{}, StateType> {
   state: StateType = {
-    data: { username: "", password: "" },
+    data: { username: '', password: '' },
     errors: {},
-  };
+  }
 
   schema = Joi.object().keys({
-    username: Joi.string().required().label("Username"),
-    password: Joi.string().required().label("Password"),
-  });
+    username: Joi.string().required().label('Username'),
+    password: Joi.string().required().label('Password'),
+  })
 
   validate = () => {
-    const options = { abortEarly: false };
+    const options = { abortEarly: false }
 
-    const { error } = this.schema.validate(this.state.data, options);
+    const { error } = this.schema.validate(this.state.data, options)
 
-    if (!error) return null;
+    if (!error) return null
 
     const errors: {
       [key: string]: string;
-    } = {};
+    } = {}
 
-    for (let item of error.details) errors[item.path[0]] = item.message;
-    return errors;
-  };
+    for (const item of error.details) errors[item.path[0]] = item.message
+    return errors
+  }
 
   validateProperty = ({ name, value }: { name: string; value: string }) => {
-    const schema = this.schema.extract(name);
-    const { error } = schema.validate(value);
-    return error ? error.details[0].message : null;
-  };
+    const schema = this.schema.extract(name)
+    const { error } = schema.validate(value)
+    return error ? error.details[0].message : null
+  }
 
   handleSubmit = (e: React.SyntheticEvent) => {
-    e.preventDefault();
-    const errors = this.validate();
-    this.setState({ errors: errors || {} });
-    if (errors) return;
-    this.doSubmit();
-  };
+    e.preventDefault()
+    const errors = this.validate()
+    this.setState({ errors: errors || {} })
+    if (errors) return
+    this.doSubmit()
+  }
 
   handleChange = (currentTarget: any) => {
-    const { name, value } = currentTarget.target;
+    const { name, value } = currentTarget.target
 
-    const errors = { ...this.state.errors };
-    const errorMessage = this.validateProperty({ name, value });
+    const errors = { ...this.state.errors }
+    const errorMessage = this.validateProperty({ name, value })
 
-    if (errorMessage) errors[name] = errorMessage;
-    else delete errors[name];
-    const data = { ...this.state.data };
-    data[name] = value;
-    this.setState({ data, errors });
-  };
+    if (errorMessage) errors[name] = errorMessage
+    else delete errors[name]
+    const data = { ...this.state.data }
+    data[name] = value
+    this.setState({ data, errors })
+  }
 
   renderButton(label: string) {
     return (
       <button disabled={this.validate() !== null} className="btn btn-primary">
         {label}
       </button>
-    );
+    )
   }
 
   renderSelect(name: string, label: string, options: any) {
-    const { data, errors } = this.state;
+    const { data, errors } = this.state
 
     return (
       <Select
@@ -88,11 +88,11 @@ class LoginForm extends React.Component<{}, StateType> {
         onChange={this.handleChange}
         error={errors[name]}
       />
-    );
+    )
   }
 
-  renderInput(name: string, label: string, type = "text") {
-    const { data, errors } = this.state;
+  renderInput(name: string, label: string, type = 'text') {
+    const { data, errors } = this.state
 
     return (
       <Input
@@ -103,7 +103,7 @@ class LoginForm extends React.Component<{}, StateType> {
         onChange={this.handleChange}
         error={errors[name]}
       />
-    );
+    )
   }
 
   doSubmit = async () => {
@@ -119,7 +119,7 @@ class LoginForm extends React.Component<{}, StateType> {
     //     this.setState({ errors });
     //   }
     // }
-  };
+  }
 
   render() {
     // if (auth.getCurrentUser()) return redirect("/");
@@ -128,13 +128,13 @@ class LoginForm extends React.Component<{}, StateType> {
       <div>
         <h1>Login</h1>
         <form onSubmit={this.handleSubmit}>
-          {this.renderInput("username", "Username")}
-          {this.renderInput("password", "Password", "password")}
-          {this.renderButton("Login")}
+          {this.renderInput('username', 'Username')}
+          {this.renderInput('password', 'Password', 'password')}
+          {this.renderButton('Login')}
         </form>
       </div>
-    );
+    )
   }
 }
 
-export default LoginForm;
+export default LoginForm

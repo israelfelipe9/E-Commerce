@@ -1,8 +1,8 @@
-import { useForm } from "react-hook-form"
-import { Input } from "../../components/Input"
-import styled from "styled-components"
-import zod from "zod"
-import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from 'react-hook-form'
+import { Input } from '../../components/Input'
+import styled from 'styled-components'
+import zod from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
 
 const registerSchema = zod.object({
   name: zod.string().min(3).max(50).nonempty().trim(),

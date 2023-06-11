@@ -21,7 +21,7 @@ const Select = ({ name, label, options, error, ...rest }: SelectProps) => {
       </select>
       {error && <div className="alert alert-danger">{error}</div>}
     </div>
-  );
-};
+  )
+}
 
-export default Select;
+export default Select

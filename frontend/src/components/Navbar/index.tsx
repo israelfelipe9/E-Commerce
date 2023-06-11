@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import logo from '../../assets/logo.svg'
 import { useNavigate, Outlet } from 'react-router-dom'
-import cart from '../../assets/carrinho.png'
 import { Cart } from '../Navbar/Cart'
 
 const Nav = styled.nav`

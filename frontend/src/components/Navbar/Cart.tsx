@@ -1,7 +1,7 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 import cart from '../../assets/carrinho.png'
 import { useState } from 'react'
-import { Button } from "../Button"
+import { Button } from '../Button'
 
 interface ItemProps {
   imageUrl: string
@@ -62,6 +62,7 @@ const CartDetails = styled.div`
   gap: 20px;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
   cursor: default;
+  z-index: 1;
 `
 
 const Item = styled.div`

@@ -11,210 +11,210 @@ export interface IProducts {
 const products: IProducts[] = [
   {
     _id: 1,
-    name: "Óculos rounded cube",
+    name: 'Óculos rounded cube',
     photo:
-      "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      'https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg',
     description:
-      "lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id",
+      'lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id',
     price: 100.0,
     qtInStock: 100,
     qtSold: 25,
   },
   {
     _id: 2,
-    name: "Óculos rounded cube",
+    name: 'Óculos rounded cube',
     photo:
-      "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      'https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg',
     description:
-      "lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id",
+      'lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id',
     price: 100.0,
     qtInStock: 100,
     qtSold: 25,
   },
   {
     _id: 3,
-    name: "Óculos rounded cube",
+    name: 'Óculos rounded cube',
     photo:
-      "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      'https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg',
     description:
-      "lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id",
+      'lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id',
     price: 100.0,
     qtInStock: 100,
     qtSold: 25,
   },
   {
     _id: 4,
-    name: "Óculos rounded cube",
+    name: 'Óculos rounded cube',
     photo:
-      "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      'https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg',
     description:
-      "lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id",
+      'lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id',
     price: 100.0,
     qtInStock: 100,
     qtSold: 25,
   },
   {
     _id: 5,
-    name: "Óculos rounded cube",
+    name: 'Óculos rounded cube',
     photo:
-      "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      'https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg',
     description:
-      "lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id",
+      'lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id',
     price: 100.0,
     qtInStock: 100,
     qtSold: 25,
   },
   {
     _id: 6,
-    name: "Óculos rounded cube",
+    name: 'Óculos rounded cube',
     photo:
-      "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      'https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg',
     description:
-      "lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id",
+      'lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id',
     price: 100.0,
     qtInStock: 100,
     qtSold: 25,
   },
   {
     _id: 7,
-    name: "Óculos rounded cube",
+    name: 'Óculos rounded cube',
     photo:
-      "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      'https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg',
     description:
-      "lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id",
+      'lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id',
     price: 100.0,
     qtInStock: 100,
     qtSold: 25,
   },
   {
     _id: 8,
-    name: "Óculos rounded cube",
+    name: 'Óculos rounded cube',
     photo:
-      "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      'https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg',
     description:
-      "lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id",
+      'lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id',
     price: 100.0,
     qtInStock: 100,
     qtSold: 25,
   },
   {
     _id: 9,
-    name: "Óculos rounded cube",
+    name: 'Óculos rounded cube',
     photo:
-      "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      'https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg',
     description:
-      "lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id",
+      'lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id',
     price: 100.0,
     qtInStock: 100,
     qtSold: 25,
   },
   {
     _id: 10,
-    name: "Óculos rounded cube",
+    name: 'Óculos rounded cube',
     photo:
-      "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      'https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg',
     description:
-      "lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id",
+      'lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id',
     price: 100.0,
     qtInStock: 100,
     qtSold: 25,
   },
   {
     _id: 11,
-    name: "Óculos rounded cube",
+    name: 'Óculos rounded cube',
     photo:
-      "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      'https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg',
     description:
-      "lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id",
+      'lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id',
     price: 100.0,
     qtInStock: 100,
     qtSold: 25,
   },
   {
     _id: 12,
-    name: "Óculos rounded cube",
+    name: 'Óculos rounded cube',
     photo:
-      "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      'https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg',
     description:
-      "lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id",
+      'lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id',
     price: 100.0,
     qtInStock: 100,
     qtSold: 25,
   },
   {
     _id: 13,
-    name: "Óculos rounded cube",
+    name: 'Óculos rounded cube',
     photo:
-      "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      'https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg',
     description:
-      "lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id",
+      'lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id',
     price: 100.0,
     qtInStock: 100,
     qtSold: 25,
   },
   {
     _id: 14,
-    name: "Óculos rounded cube",
+    name: 'Óculos rounded cube',
     photo:
-      "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      'https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg',
     description:
-      "lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id",
+      'lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id',
     price: 100.0,
     qtInStock: 100,
     qtSold: 25,
   },
   {
     _id: 15,
-    name: "Óculos rounded cube",
+    name: 'Óculos rounded cube',
     photo:
-      "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      'https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg',
     description:
-      "lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id",
+      'lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id',
     price: 100.0,
     qtInStock: 100,
     qtSold: 25,
   },
   {
     _id: 16,
-    name: "Óculos rounded cube",
+    name: 'Óculos rounded cube',
     photo:
-      "https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg",
+      'https://cdn-images.farfetch-contents.com/13/34/65/34/13346534_15316438_322.jpg',
     description:
-      "lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id",
+      'lorem ipsum dolor sit amet, consectetur adipis Curabit et sapien sed diam non pro id',
     price: 100.0,
     qtInStock: 100,
     qtSold: 25,
   },
-];
+]
 
 export function getMovies() {
-  return products;
+  return products
 }
 
 export function getMovie(id: number) {
-  return products.find((m) => m._id === id);
+  return products.find((m) => m._id === id)
 }
 
 export function saveProduct(product: IProducts) {
-  let productInDb: IProducts =
-    products.find((m) => m._id === product._id) || {};
-  productInDb.name = product.name;
-  productInDb.photo = product.photo;
-  productInDb.description = product.description;
-  productInDb.price = product.price;
-  productInDb.qtInStock = product.qtInStock;
-  productInDb.qtSold = product.qtSold;
+  const productInDb: IProducts =
+    products.find((m) => m._id === product._id) || {}
+  productInDb.name = product.name
+  productInDb.photo = product.photo
+  productInDb.description = product.description
+  productInDb.price = product.price
+  productInDb.qtInStock = product.qtInStock
+  productInDb.qtSold = product.qtSold
 
   if (!productInDb._id) {
-    productInDb._id = Date.now();
-    products.push(productInDb);
+    productInDb._id = Date.now()
+    products.push(productInDb)
   }
 
-  return productInDb;
+  return productInDb
 }
 
 export function deleteMovie(id: number) {
-  let productInDb: IProducts = products.find((m) => m._id === id);
-  products.splice(products.indexOf(productInDb), 1);
-  return productInDb;
+  const productInDb: IProducts = products.find((m) => m._id === id)
+  products.splice(products.indexOf(productInDb), 1)
+  return productInDb
 }

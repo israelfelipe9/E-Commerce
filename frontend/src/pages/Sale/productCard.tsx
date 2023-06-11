@@ -1,7 +1,7 @@
-import "./productStyle.css";
+import './productStyle.css'
 
-import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBagShopping } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const ProductCard = ({ product }) => {
   return (
@@ -36,7 +36,7 @@ export const ProductCard = ({ product }) => {
           <button
             type="button"
             className="btn btn-warning mt-2 text-white"
-            onClick={() => console.log("clicou")}
+            onClick={() => console.log('clicou')}
           >
             <FontAwesomeIcon icon={faBagShopping} size="xl" fixedWidth />
             Add to cart
@@ -44,5 +44,5 @@ export const ProductCard = ({ product }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
