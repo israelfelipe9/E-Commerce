@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react'
 
-import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const CartAmountToggle = ({ amount, setDecrease, setIncrease }) => {
   return (
@@ -16,7 +16,7 @@ const CartAmountToggle = ({ amount, setDecrease, setIncrease }) => {
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CartAmountToggle;
+export default CartAmountToggle

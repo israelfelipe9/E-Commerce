@@ -1,11 +1,13 @@
 import './productStyle.css'
-
 import { faBagShopping } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { CartContext, type ProductProps } from '../../contexts/CartContext'
+import { Link } from 'react-router-dom'
+import { useContext } from 'react'
 
-import { Link } from "react-router-dom";
+export const ProductCard = ({ product }: {product: ProductProps}) => {
+  const { addToCart } = useContext(CartContext)
 
-export const ProductCard = ({ product }) => {
   return (
     <div className="col-md-3 mt-2">
       <div className="card">
@@ -33,16 +35,14 @@ export const ProductCard = ({ product }) => {
 
           <h3 className="mb-0 font-weight-semibold">R$ {product.price}</h3>
 
-          <Link to={`/sale/${product._id}`}>
-            <button
-              type="button"
-              className="btn btn-warning mt-2 text-white"
-              onClick={() => console.log("clicou")}
-            >
-              <FontAwesomeIcon icon={faBagShopping} size="xl" fixedWidth />
-              Purchase
-            </button>
-          </Link>
+          <button
+            type="button"
+            className="btn btn-warning mt-2 text-white"
+            onClick={() => addToCart(product)}
+          >
+            <FontAwesomeIcon icon={faBagShopping} size="xl" fixedWidth />
+            Purchase
+          </button>
         </div>
       </div>
     </div>

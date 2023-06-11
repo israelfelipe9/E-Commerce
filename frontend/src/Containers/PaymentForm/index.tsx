@@ -43,31 +43,31 @@ export const PaymentForm = () => {
           placeholder="John doe"
           label="Name:"
           error={errors.name?.message}
-          {...register("name")}
+          {...register('name')}
         />
         <Input
           placeholder="9999999999"
           label="CPF:"
           error={errors.cpf?.message}
-          {...register("cpf")}
+          {...register('cpf')}
         />
         <Input
           placeholder="9999999999999"
           label="Card Number:"
           error={errors.cardNumber?.message}
-          {...register("cardNumber")}
+          {...register('cardNumber')}
         />
         <Input
           type="date"
           label="Validity:"
           error={errors.validity?.message}
-          {...register("validity")}
+          {...register('validity')}
         />
         <Input
           placeholder="999"
           label="CVV:"
           error={errors.cvv?.message}
-          {...register("cvv")}
+          {...register('cvv')}
         />
         <button>Enviar</button>
       </Form>
@@ -80,8 +80,8 @@ export const PaymentForm = () => {
         </h6>
       </div>
     </Wrapper>
-  );
-};
+  )
+}
 
 const Wrapper = styled.section`
   .container {
@@ -91,4 +91,4 @@ const Wrapper = styled.section`
     align-items: end;
     flex-direction: column;
   }
-`;
+`

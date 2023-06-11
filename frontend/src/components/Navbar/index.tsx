@@ -9,8 +9,8 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 300px;
-  width: 100%;
+  padding: 10px 25vw;
+  width: 100vw;
   height: auto;
   box-shadow: inset 0px -1px 0px #EFEFEF;
 `
@@ -24,6 +24,7 @@ const ItemsContainer = styled.ul`
   gap: 20px;
   width: 100%;
   margin: 0;
+  padding: 0;
 `
 
 const Item = styled.li`

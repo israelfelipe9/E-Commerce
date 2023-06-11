@@ -1,34 +1,34 @@
-import { useParams, Link } from "react-router-dom";
-import styled from "styled-components";
-import { useEffect, useState } from "react";
-import { Container } from "../../styles/Container";
-import { Button } from "../../components/common/button";
-import CartAmountToggle from "./cartAmount";
-import MyImage from "./myImage";
+import { useParams, Link } from 'react-router-dom'
+import styled from 'styled-components'
+import { useEffect, useState } from 'react'
+import { Container } from '../../styles/Container'
+import { Button } from '../../components/common/button'
+import CartAmountToggle from './cartAmount'
+import MyImage from './myImage'
 
-import * as services from "../../data/fakeProductService";
+import * as services from '../../data/fakeProductService'
 
 export const Product = () => {
-  const [data, setData] = useState<services.IProducts | undefined>();
-  const [amount, setAmount] = useState(1);
+  const [data, setData] = useState<services.IProducts | undefined>()
+  const [amount, setAmount] = useState(1)
 
   const setDecrease = () => {
-    amount > 1 ? setAmount(amount - 1) : setAmount(1);
-  };
+    amount > 1 ? setAmount(amount - 1) : setAmount(1)
+  }
 
   const setIncrease = () => {
-    amount < data.qtInStock ? setAmount(amount + 1) : setAmount(data.qtInStock);
-  };
+    amount < data.qtInStock ? setAmount(amount + 1) : setAmount(data.qtInStock)
+  }
 
-  const { id } = useParams();
+  const { id } = useParams()
 
   useEffect(() => {
     // Put this inside a try catch block when connection is established with backend
-    setData(services.getMovie(Number(id)));
-  }, []);
+    setData(services.getMovie(Number(id)))
+  }, [])
 
   if (!data) {
-    return <div className="page_loading">Not Found</div>;
+    return <div className="page_loading">Not Found</div>
   }
 
   return (
@@ -43,10 +43,10 @@ export const Product = () => {
               <h2>{data.name}</h2>
 
               <p className="product-data-price product-data-real-price">
-                Price:{" "}
-                {Intl.NumberFormat("pt-BR", {
-                  style: "currency",
-                  currency: "BRL",
+                Price:{' '}
+                {Intl.NumberFormat('pt-BR', {
+                  style: 'currency',
+                  currency: 'BRL',
                   maximumFractionDigits: 2,
                 }).format(data.price)}
               </p>
@@ -55,10 +55,10 @@ export const Product = () => {
                 <p>
                   Available:
                   <span>
-                    {" "}
+                    {' '}
                     {data.qtInStock > 0
-                      ? data.qtInStock + " units in stock"
-                      : "Not Available"}
+                      ? data.qtInStock + ' units in stock'
+                      : 'Not Available'}
                   </span>
                 </p>
                 <p>
@@ -72,7 +72,7 @@ export const Product = () => {
                       setDecrease={setDecrease}
                       setIncrease={setIncrease}
                     />
-                    <Link to="/cart" onClick={() => console.log("clicou")}>
+                    <Link to="/cart" onClick={() => console.log('clicou')}>
                       <Button className="btn">Add To Cart</Button>
                     </Link>
                   </>
@@ -83,8 +83,8 @@ export const Product = () => {
         </div>
       </Container>
     </Wrapper>
-  );
-};
+  )
+}
 
 const Wrapper = styled.section`
   .container {
@@ -166,4 +166,4 @@ const Wrapper = styled.section`
   @media (max-width: 800px) {
     padding: 0 2.4rem;
   }
-`;
+`

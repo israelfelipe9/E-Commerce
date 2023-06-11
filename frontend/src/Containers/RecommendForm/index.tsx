@@ -1,12 +1,12 @@
-import { useForm } from "react-hook-form";
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { Input } from "../../components/Input";
-import styled from "styled-components";
-import zod from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from 'react-hook-form'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { Input } from '../../components/Input'
+import styled from 'styled-components'
+import zod from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
 
-import * as services from "../../data/fakeProductService";
+import * as services from '../../data/fakeProductService'
 
 const recommendSchema = zod.object({
   brand: zod.string().min(0).max(50).nonempty().trim(),
@@ -32,14 +32,14 @@ export const RecommendForm = () => {
     formState: { errors },
   } = useForm<RecommendSchemaType>({
     resolver: zodResolver(recommendSchema),
-  });
+  })
 
-  const [data, setData] = useState<services.IProducts>();
+  const [data, setData] = useState<services.IProducts>()
 
   const handleSubmitForm = (payload) => {
-    console.log(payload);
-    setData(services.getMovie(1));
-  };
+    console.log(payload)
+    setData(services.getMovie(1))
+  }
 
   return (
     <Wrapper>
@@ -49,19 +49,19 @@ export const RecommendForm = () => {
           placeholder="Ray-Ban"
           label="Brand:"
           error={errors.brand?.message}
-          {...register("brand")}
+          {...register('brand')}
         />
         <Input
           placeholder="Circular"
           label="Format:"
           error={errors.format?.message}
-          {...register("format")}
+          {...register('format')}
         />
         <Input
           placeholder="Black"
           label="Color:"
           error={errors.color?.message}
-          {...register("color")}
+          {...register('color')}
         />
         <button>Recommend</button>
       </Form>
@@ -78,8 +78,8 @@ export const RecommendForm = () => {
         </div>
       )}
     </Wrapper>
-  );
-};
+  )
+}
 
 const Wrapper = styled.section`
   .container {
@@ -96,4 +96,4 @@ const Wrapper = styled.section`
       background-color: aliceblue;
     }
   }
-`;
+`

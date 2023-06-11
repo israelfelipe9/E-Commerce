@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React, { useState } from 'react'
+import styled from 'styled-components'
 
-const MyImage = ({ imgs = [{ url: "" }] }) => {
-  const [mainImage, setMainImage] = useState(imgs[0]);
+const MyImage = ({ imgs = [{ url: '' }] }) => {
+  const [mainImage, setMainImage] = useState(imgs[0])
 
   return (
     <Wrapper>
@@ -18,7 +18,7 @@ const MyImage = ({ imgs = [{ url: "" }] }) => {
                 onClick={() => setMainImage(curElm)}
               />
             </figure>
-          );
+          )
         })}
       </div>
       {/* 2nd column  */}
@@ -27,8 +27,8 @@ const MyImage = ({ imgs = [{ url: "" }] }) => {
         <img src={mainImage.url} alt="main photo" />
       </div>
     </Wrapper>
-  );
-};
+  )
+}
 
 const Wrapper = styled.section`
   display: grid;
@@ -78,6 +78,6 @@ const Wrapper = styled.section`
       grid-template-columns: repeat(4, 1fr);
     }
   }
-`;
+`
 
-export default MyImage;
+export default MyImage

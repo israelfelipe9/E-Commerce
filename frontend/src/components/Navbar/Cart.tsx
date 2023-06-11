@@ -1,17 +1,8 @@
 import styled from 'styled-components'
-import cart from '../../assets/carrinho.png'
-import { useState } from 'react'
+import cartImg from '../../assets/carrinho.png'
+import { useContext, useEffect, useState } from 'react'
 import { Button } from '../Button'
-
-interface ItemProps {
-  imageUrl: string
-  name: string
-  price: number
-}
-
-interface CartProps {
-  items: ItemProps[]
-}
+import { CartContext } from '../../contexts/CartContext'
 
 const CartContainer = styled.div`
   position: relative;
@@ -104,19 +95,28 @@ const ItemPrice = styled.p`
   margin: 0;
 `
 
-export const Cart = ({ items }: CartProps) => {
+export const Cart = () => {
   const [showItems, setShowItems] = useState(false)
   const [isEmpity, setIsEmpity] = useState(true)
+  const { cart } = useContext(CartContext)
+
+  useEffect(() => {
+    if (cart.length === 0) {
+      setIsEmpity(true)
+    } else {
+      setIsEmpity(false)
+    }
+  }, [cart])
 
   return (
     <CartContainer onMouseEnter={() => setShowItems(true)} onMouseLeave={() => setShowItems(false)}>
       <ItemsNumber>0</ItemsNumber>
-      <Icon src={cart} />
+      <Icon src={cartImg} />
       {showItems && <CartDetails>
         <h3>Cart</h3>
-        {items && items.map(item => (
+        {cart.length !== 0 && cart.map(item => (
           <Item>
-            <ItemImg src={item.imageUrl} alt="image of a glasses" />
+            <ItemImg src={item.photo[0].url} alt="image of a glasses" />
             <ItemDetails>
               <ItemName>{item.name}</ItemName>
               <ItemPrice>R${item.price},00</ItemPrice>
