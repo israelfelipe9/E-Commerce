@@ -33,7 +33,13 @@ export const ProductCard = ({ product }: { product: ProductProps }) => {
             </a>
           </div>
 
-          <h3 className="mb-0 font-weight-semibold">R$ {product.price}</h3>
+          <h3 className="mb-0 font-weight-semibold">
+            {Intl.NumberFormat("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+              maximumFractionDigits: 2,
+            }).format(product.price)}
+          </h3>
 
           <button
             type="button"
