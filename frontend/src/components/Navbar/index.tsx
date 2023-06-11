@@ -1,7 +1,7 @@
-import styled from 'styled-components'
-import logo from '../../assets/logo.svg'
-import { useNavigate, Outlet } from 'react-router-dom'
-import { Cart } from '../Navbar/Cart'
+import styled from "styled-components";
+import logo from "../../assets/logo.svg";
+import { useNavigate, Outlet } from "react-router-dom";
+import { Cart } from "../Navbar/Cart";
 
 const Nav = styled.nav`
   background-color: #fff;
@@ -12,8 +12,8 @@ const Nav = styled.nav`
   padding: 10px 25vw;
   width: 100vw;
   height: auto;
-  box-shadow: inset 0px -1px 0px #EFEFEF;
-`
+  box-shadow: inset 0px -1px 0px #efefef;
+`;
 
 const ItemsContainer = styled.ul`
   display: flex;
@@ -25,40 +25,39 @@ const ItemsContainer = styled.ul`
   width: 100%;
   margin: 0;
   padding: 0;
-`
+`;
 
 const Item = styled.li`
   font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  
+
   &:hover {
     color: #000;
   }
-`
+`;
 
 const LogoImg = styled.img`
   height: 2rem;
-`
-
-
+`;
 
 export const Navbar = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <>
       <Nav>
         <ItemsContainer>
           <LogoImg src={logo} />
-          <Item onClick={() => navigate('/')}>Home</Item>
-          <Item onClick={() => navigate('/sale')}>Sale</Item>
-          <Item onClick={() => navigate('/login')}>Login</Item>
-          <Item onClick={() => navigate('/register')}>Register</Item>
+          <Item onClick={() => navigate("/")}>Home</Item>
+          <Item onClick={() => navigate("/sale")}>Sale</Item>
+          <Item onClick={() => navigate("/login")}>Login</Item>
+          <Item onClick={() => navigate("/register")}>Register</Item>
+          <Item onClick={() => navigate("/recommend")}>Recommendation</Item>
           <Cart />
         </ItemsContainer>
       </Nav>
       <Outlet />
     </>
-  )
-}
+  );
+};
