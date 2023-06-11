@@ -3,6 +3,7 @@ import styled from 'styled-components'
 interface ButtonProps {
   width?: string
   label: string
+  onClick?: () => void
 }
 
 const ButtonContainer = styled.button<ButtonProps>`
@@ -23,11 +24,12 @@ const ButtonContainer = styled.button<ButtonProps>`
   }
 `
 
-export const Button = ({ label, width }: ButtonProps) => {
+export const Button = ({ label, width, onClick }: ButtonProps) => {
   return (
     <ButtonContainer
       type="button"
       width={width}
+      onClick={onClick}
     >
       {label}
     </ButtonContainer>

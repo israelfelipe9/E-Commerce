@@ -13,7 +13,7 @@ interface DefaultProps extends DefaultTheme {
 
 }
 
-export const Default: DefaultTheme = {
+export const Default: DefaultProps = {
   colors: {
     primary: '#000000',
     secondary: '#FFFFFF',
