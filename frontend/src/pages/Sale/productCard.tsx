@@ -4,29 +4,32 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CartContext, type ProductProps } from "../../contexts/CartContext";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
+import { Button } from "../../components/common/button";
 
 export const ProductCard = ({ product }: { product: ProductProps }) => {
   const { addToCart } = useContext(CartContext);
 
   return (
-    <div className="col-md-3 mt-2">
+    <div className="col-md-4 mt-2 mb-2">
       <div className="card border">
         <div className="card-body">
           <div className="card-img-actions">
-            <img
-              src={product.photo[0].url}
-              className="img-fluid"
-              width="150"
-              height="350"
-              alt=""
-            />
+            <Link to={`/sale/${product._id}`}>
+              <img
+                src={product.photo[0].url}
+                className="img-card"
+                width="140"
+                height="150"
+                alt=""
+              />
+            </Link>
           </div>
         </div>
         <div className="card-body bg-light text-center">
           <div className="mb-2">
-            <h6 className="font-weight-semibold mb-2">
+            <h5 className="font-weight-semibold mb-2">
               <Link to={`/sale/${product._id}`}>{product.name}</Link>
-            </h6>
+            </h5>
 
             <a href="#" className="text-muted" data-abc="true">
               Sunglasses
@@ -41,14 +44,14 @@ export const ProductCard = ({ product }: { product: ProductProps }) => {
             }).format(product.price)}
           </h3>
 
-          <button
+          <Button
             type="button"
-            className="btn btn-warning mt-2 text-white"
+            className="btn btn-sm mt-2"
             onClick={() => addToCart(product)}
           >
             <FontAwesomeIcon icon={faCartShopping} fixedWidth />
-            Add to cart
-          </button>
+            Add To Cart
+          </Button>
         </div>
       </div>
     </div>

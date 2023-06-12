@@ -38,7 +38,7 @@ const Item = styled.li`
 `;
 
 const LogoImg = styled.img`
-  height: 2rem;
+  height: 3rem;
 `;
 
 export const Navbar = () => {
