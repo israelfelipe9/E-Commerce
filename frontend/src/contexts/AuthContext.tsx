@@ -12,6 +12,8 @@ interface AuthContextProps {
     id: number
     name: string
     email: string
+    admin?: boolean
+    role?: number
   }
   handleLogin: (payload: { email: string, password: string }) => void
   handleLogout: () => void
@@ -34,7 +36,7 @@ export const AuthContext = createContext<AuthContextProps>({
 export const AuthProvider = ({ children }) => {
   const navigate = useNavigate()
   const [auth, setAuth] = useState(false)
-  const [user, setUser] = useState({
+  const [user, setUser] = useState<AuthContextProps['user']>({
     id: 0,
     name: '',
     email: ''
@@ -49,24 +51,33 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem('Authorization', token)
       api.defaults.headers.Authorization = `Bearer ${token}`
       setAuth(true)
-      setUser({
-        id: data.user._id,
-        name: data.user.name,
-        email: data.user.email
-      })
-      console.log('Login success')
-      console.log(data)
-      navigate('/home')
+      if (data.user.admin) {
+        setUser({
+          admin: data.user.admin,
+          id: data.user._id,
+          name: data.user.name,
+          email: data.user.email,
+          role: data.user.role
+        })
+        navigate('/admin')
+      } else {
+        setUser({
+          id: data.user._id,
+          name: data.user.name,
+          email: data.user.email
+        })
+        navigate('/home')
+      }
     }
   })
 
   useEffect(() => {
     async function getUserData() {
-      const { data } = await api.get('/user')
+      const { data } = await api.get('/getUser')
       setUser({
-        id: data.id,
-        name: data.name,
-        email: data.email
+        id: data.user.id,
+        name: data.user.name,
+        email: data.user.email
       })
     }
     const token = localStorage.getItem('Authorization')
