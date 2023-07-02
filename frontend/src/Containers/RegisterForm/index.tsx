@@ -5,6 +5,7 @@ import zod from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useMutation } from '@tanstack/react-query'
 import { api } from '../../services/api'
+import { Button } from '../../components/Button'
 
 const registerSchema = zod.object({
   name: zod.string().min(3).max(50).nonempty().trim(),
@@ -73,7 +74,7 @@ export const RegisterForm = () => {
         error={errors.termsAndConditions?.message}
         {...register('termsAndConditions')}
       />
-      <button>Enviar</button>
+      <Button type='submit' label="Enviar" />
     </Form>
   )
 }

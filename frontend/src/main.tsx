@@ -9,6 +9,7 @@ import { GlobalStyles } from './GlobalStyles'
 import { Default } from './themes/default'
 import { CartProvider } from './contexts/CartContext'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { AuthProvider } from './contexts/AuthContext'
 
 const queryClient = new QueryClient()
 
@@ -16,12 +17,10 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={Default}>
-        <CartProvider>
-          <GlobalStyles />
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
-        </CartProvider>
+        <GlobalStyles />
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
       </ThemeProvider>
     </QueryClientProvider>
   </React.StrictMode>

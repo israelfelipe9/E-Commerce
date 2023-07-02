@@ -2,6 +2,9 @@ import styled from 'styled-components'
 import logo from '../../assets/logo.svg'
 import { useNavigate, Outlet } from 'react-router-dom'
 import { Cart } from '../Navbar/Cart'
+import { UserData } from './UserData'
+import { useContext } from 'react'
+import { AuthContext } from '../../contexts/AuthContext'
 
 const Nav = styled.nav`
   background-color: #fff;
@@ -29,6 +32,7 @@ const ItemsContainer = styled.ul`
 
 const Item = styled.li`
   font-weight: 700;
+  font-size: 1.2rem;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   
@@ -38,24 +42,78 @@ const Item = styled.li`
 `
 
 const LogoImg = styled.img`
-  height: 2rem;
+  aspect-ratio: 1 / 1;
+  height: 3rem;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+
+  &:hover {
+    transition: 0.2s ease-out;
+    transform: scale(1.1);
+  }
 `
 
+const AuthContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: 0.2s ease-in;
+`
 
+const AuthButton = styled.button`
+  background-color: #EFA602;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+
+  &:hover {
+    transition: 0.2s ease-out;
+    background-color: #ffd571;
+  }
+`
+
+const AuthButtonOutline = styled(AuthButton)`
+  background-color: transparent;
+  color: #EFA602;
+  box-sizing: border-box;
+  border: 1px solid #EFA602;
+  
+  &:hover {
+    transition: 0.2s ease-out;
+    background-color: #d82296;
+    color: #fff;
+    border: 1px solid #d82296;
+  }
+`
 
 export const Navbar = () => {
   const navigate = useNavigate()
+  const { auth } = useContext(AuthContext)
 
   return (
     <>
       <Nav>
         <ItemsContainer>
-          <LogoImg src={logo} />
+          <LogoImg src={logo} onClick={() => navigate('/home')}/>
           <Item onClick={() => navigate('/')}>Home</Item>
           <Item onClick={() => navigate('/sale')}>Sale</Item>
-          <Item onClick={() => navigate('/login')}>Login</Item>
-          <Item onClick={() => navigate('/register')}>Register</Item>
-          <Cart />
+          <Item onClick={() => navigate('/recommend')}>Recomendation</Item>
+          <AuthContainer>
+            <Cart />
+            {auth ? <UserData /> :
+            <>
+              <AuthButton onClick={() => navigate('/login')}>Login</AuthButton>
+              <AuthButtonOutline onClick={() => navigate('/register')}>Register</AuthButtonOutline>
+            </>
+            }
+          </AuthContainer>
         </ItemsContainer>
       </Nav>
       <Outlet />

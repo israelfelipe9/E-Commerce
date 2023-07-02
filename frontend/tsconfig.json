@@ -21,10 +21,7 @@
     "skipLibCheck": true,                     
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
-    "paths": {
-      "@controllers/*": ["./src/controllers/*"],
-      "@repositories/*": ["./src/repositories/*"]
-    }
+    "paths": {},
   },
   "exclude": ["node_modules", "dist", "coverage", "test", "types", "src/vite-env.d.ts"]
 }

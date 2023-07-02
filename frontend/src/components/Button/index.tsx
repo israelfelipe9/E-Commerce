@@ -3,6 +3,7 @@ import styled from 'styled-components'
 interface ButtonProps {
   width?: string
   label: string
+  type: 'button' | 'submit'
   onClick?: () => void
 }
 
@@ -20,14 +21,14 @@ const ButtonContainer = styled.button<ButtonProps>`
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    background-color: #fc7a63;
+    background-color: #ffd571;
   }
 `
 
-export const Button = ({ label, width, onClick }: ButtonProps) => {
+export const Button = ({ label, width, type, onClick }: ButtonProps) => {
   return (
     <ButtonContainer
-      type="button"
+      type={type}
       width={width}
       onClick={onClick}
     >
