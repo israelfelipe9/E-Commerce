@@ -74,11 +74,21 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     async function getUserData() {
       const { data } = await api.get('/getUser')
-      setUser({
-        id: data.user.id,
-        name: data.user.name,
-        email: data.user.email
-      })
+      if (data.user.admin) {
+        setUser({
+          admin: data.user.admin,
+          id: data.user._id,
+          name: data.user.name,
+          email: data.user.email,
+          role: data.user.role
+        })
+      } else {
+        setUser({
+          id: data.user._id,
+          name: data.user.name,
+          email: data.user.email
+        })
+      }
     }
     const token = localStorage.getItem('Authorization')
     if (token) {

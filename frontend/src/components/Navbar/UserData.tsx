@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useContext, useState } from 'react'
 import { AuthContext } from '../../contexts/AuthContext'
 import styled from 'styled-components'
+import { useNavigate } from 'react-router-dom'
 
 const Container = styled.div`
   display: flex;
@@ -67,6 +68,7 @@ const OptionItem = styled.p`
 export const UserData = () => {
   const [showOptions, setShowOptions] = useState(false)
   const { handleLogout, user } = useContext(AuthContext)
+  const navigate = useNavigate()
 
   return (
     <>
@@ -76,8 +78,9 @@ export const UserData = () => {
           <Name>Hello, {user.name.split(' ')[0]}!</Name>
         </UserContainer>
         {showOptions && <Options>
-          <OptionItem>Profile</OptionItem>
-          <OptionItem>Orders</OptionItem>
+          <OptionItem onClick={() => navigate('/profile')}>Profile</OptionItem>
+          <OptionItem onClick={() => navigate('/orders')}>Orders</OptionItem>
+          {user.admin && <OptionItem onClick={() => navigate('/admin')}>Admin</OptionItem>}
           <OptionItem onClick={() => handleLogout()}>Logout</OptionItem>
         </Options>}
       </Container>

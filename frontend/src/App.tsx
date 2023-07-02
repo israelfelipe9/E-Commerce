@@ -1,4 +1,4 @@
-import { Route, Routes, Navigate, BrowserRouter } from 'react-router-dom'
+import { Route, Routes, Navigate } from 'react-router-dom'
 import { RecommendForm } from './Containers/RecommendForm'
 import { PaymentForm } from './Containers/PaymentForm'
 import { Sale } from './pages/Sale'
@@ -12,6 +12,8 @@ import { RegisterPage } from './pages/Register'
 import { LoginPage } from './pages/Login'
 import { AuthProvider } from './contexts/AuthContext'
 import { CartProvider } from './contexts/CartContext'
+import { AdminNavbar } from './components/AdminNavbar'
+import { AdminHomePage } from './pages/AdminHome'
 
 function App() {
   return (
@@ -30,6 +32,9 @@ function App() {
             <Route path='/cart' element={<CartPage />} />
             <Route path="/not-found" element={<NotFound />} />
             <Route path="*" element={<Navigate to="/not-found" />} />
+          </Route>
+          <Route element={<AdminNavbar />}>
+            <Route path="/admin" element={<AdminHomePage />} />
           </Route>
         </Routes>
       </CartProvider>
