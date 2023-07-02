@@ -8,16 +8,21 @@ import { ThemeProvider } from 'styled-components'
 import { GlobalStyles } from './GlobalStyles'
 import { Default } from './themes/default'
 import { CartProvider } from './contexts/CartContext'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
+const queryClient = new QueryClient()
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <ThemeProvider theme={Default}>
-      <CartProvider>
-        <GlobalStyles />
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </CartProvider>
-    </ThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider theme={Default}>
+        <CartProvider>
+          <GlobalStyles />
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </CartProvider>
+      </ThemeProvider>
+    </QueryClientProvider>
   </React.StrictMode>
 )

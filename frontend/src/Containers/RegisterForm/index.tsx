@@ -3,12 +3,17 @@ import { Input } from '../../components/Input'
 import styled from 'styled-components'
 import zod from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useMutation } from '@tanstack/react-query'
+import { api } from '../../services/api'
 
 const registerSchema = zod.object({
   name: zod.string().min(3).max(50).nonempty().trim(),
   email: zod.string().email().min(3).max(50).nonempty().trim(),
   password: zod.string().min(3).max(50).nonempty().trim(),
   confirmPassword: zod.string().min(3).max(50).nonempty().trim(),
+  termsAndConditions: zod.boolean().refine((value) => value === true, {
+    message: 'You must agree with the terms and conditions'
+  })
 })
 
 type RegisterSchemaType = zod.infer<typeof registerSchema>
@@ -26,8 +31,13 @@ export const RegisterForm = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<RegisterSchemaType>({
     resolver: zodResolver(registerSchema)
   })
+  const { mutate } = useMutation({
+    mutationKey: ['register'],
+    mutationFn: async (payload: RegisterSchemaType) => (await api.post('/register', payload)).data
+  })
   const handleSubmitForm = (payload) => {
     console.log(payload)
+    mutate(payload)
   }
 
   return (
@@ -60,6 +70,8 @@ export const RegisterForm = () => {
       <Input
         type="checkbox"
         label="I agree with the terms and conditions"
+        error={errors.termsAndConditions?.message}
+        {...register('termsAndConditions')}
       />
       <button>Enviar</button>
     </Form>

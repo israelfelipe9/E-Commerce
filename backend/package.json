@@ -1,0 +1,45 @@
+{
+  "name": "ocularis-api",
+  "version": "1.0.0",
+  "description": "Simple e-commerce api using express and mongodb.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsup src",
+    "start": "node dist/index.js",
+    "lint": "eslint src/**/*.ts --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/Gabriel-Fachini/ocularis"
+  },
+  "keywords": [
+    "ecommerce"
+  ],
+  "author": "Gabriel Fachini and Israel Felipe",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.3.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.3.3",
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "@typescript-eslint/parser": "^5.60.1",
+    "@typescript-eslint/typescript-estree": "^5.60.1",
+    "eslint": "^8.44.0",
+    "eslint-config-standard-with-typescript": "^36.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "tsup": "^7.1.0",
+    "tsx": "^3.12.7",
+    "typescript": "5.1"
+  }
+}

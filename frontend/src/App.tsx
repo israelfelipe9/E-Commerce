@@ -1,6 +1,5 @@
 import { Route, Routes, Navigate } from 'react-router-dom'
 import { LoginForm } from './Containers/LoginForm'
-import { RegisterForm } from './Containers/RegisterForm'
 import { RecommendForm } from './Containers/RecommendForm'
 import { PaymentForm } from './Containers/PaymentForm'
 import { Sale } from './pages/Sale'
@@ -10,6 +9,7 @@ import { Navbar } from './components/Navbar'
 import NotFound from './components/notFound'
 import './App.css'
 import { CartPage } from './pages/Cart'
+import { RegisterPage } from './pages/Register'
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
       <Route element={<Navbar />}>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<LoginForm />} />
-        <Route path="/register" element={<RegisterForm />} />
+        <Route path="/register" element={<RegisterPage />} />
         <Route path="/recommend" element={<RecommendForm />} />
         <Route path="/payment" element={<PaymentForm />} />
         <Route path="/sale" element={<Sale />} />

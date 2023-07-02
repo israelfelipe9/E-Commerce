@@ -5,7 +5,7 @@ const Container = styled.div`
   flex-direction: column;
   gap: 20px;
   width: 100vw;
-  padding: 20px 25%;
+  padding: 30px 25%;
 `
 
 export const BaseWrapper = ({ children }) => {
