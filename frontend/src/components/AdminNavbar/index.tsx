@@ -1,12 +1,8 @@
 import styled from 'styled-components'
 import logo from '../../assets/logo.svg'
 import { useNavigate, Outlet } from 'react-router-dom'
-import { Cart } from '../Navbar/Cart'
-import { UserData } from './UserData'
 import { useContext } from 'react'
 import { AuthContext } from '../../contexts/AuthContext'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSignOut } from '@fortawesome/free-solid-svg-icons'
 
 const Nav = styled.nav`
   background-color: #fff;
