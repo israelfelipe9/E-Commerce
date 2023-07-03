@@ -15,8 +15,8 @@ const Nav = styled.nav`
   padding: 10px 25vw;
   width: 100vw;
   height: auto;
-  box-shadow: inset 0px -1px 0px #EFEFEF;
-`
+  box-shadow: inset 0px -1px 0px #efefef;
+`;
 
 const ItemsContainer = styled.ul`
   display: flex;
@@ -28,18 +28,18 @@ const ItemsContainer = styled.ul`
   width: 100%;
   margin: 0;
   padding: 0;
-`
+`;
 
 const Item = styled.li`
   font-weight: 700;
   font-size: 1.2rem;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  
+
   &:hover {
     color: #000;
   }
-`
+`;
 
 const LogoImg = styled.img`
   aspect-ratio: 1 / 1;
@@ -118,5 +118,5 @@ export const Navbar = () => {
       </Nav>
       <Outlet />
     </>
-  )
-}
+  );
+};
