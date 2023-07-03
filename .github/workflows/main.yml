@@ -24,8 +24,8 @@ jobs:
   # Single deploy job since we're just deploying
   deploy:
     environment:
-      name: github-pages
-      url: https://gabriel-fachini.github.io/
+      name: ocularis
+      url: https://gabriel-fachini.github.io/home
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
