@@ -14,6 +14,7 @@ import { AuthProvider } from './contexts/AuthContext'
 import { CartProvider } from './contexts/CartContext'
 import { AdminNavbar } from './components/AdminNavbar'
 import { AdminHomePage } from './pages/AdminHome'
+import { Footer } from './components/Footer'
 
 function App() {
   return (
@@ -33,10 +34,14 @@ function App() {
             <Route path="/not-found" element={<NotFound />} />
             <Route path="*" element={<Navigate to="/not-found" />} />
           </Route>
+          
           <Route element={<AdminNavbar />}>
             <Route path="/admin" element={<AdminHomePage />} />
           </Route>
         </Routes>
+
+        <Footer />
+        
       </CartProvider>
     </AuthProvider>
   )

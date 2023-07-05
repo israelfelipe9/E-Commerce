@@ -15,7 +15,7 @@ export const Product = () => {
   const { addToCart } = useContext(CartContext)
 
   const setDecrease = () => {
-    amount > 1 ? setAmount(data?.amount - 1) : setAmount(1)
+    amount > 1 ? setAmount(amount - 1) : setAmount(1)
   }
 
   const setIncrease = () => {

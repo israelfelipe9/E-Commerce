@@ -153,7 +153,7 @@ export const CartItems = () => {
 
   return (
     <Container>
-      {cart.length === 0 && <h3>Carrinho vazio</h3>}
+      {cart.length === 0 && <h3>Empty Cart</h3>}
       {cart.map((item) => (
         <Item>
           <ItemDetailsContainer>
@@ -184,7 +184,7 @@ export const CartItems = () => {
       <TotalPriceContainer>
         <h3>Total:</h3>
         <h3>R${totalPrice},00</h3>
-        <CloseCartButton onClick={() => navigate('/payment')} >Finalizar</CloseCartButton>
+        <CloseCartButton onClick={() => navigate('/payment')} >Finish</CloseCartButton>
       </TotalPriceContainer>
     </Container>
   )

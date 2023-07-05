@@ -10,7 +10,7 @@ export const ProductCard = ({ product }: { product: ProductProps }) => {
   const { addToCart } = useContext(CartContext);
 
   return (
-    <div className="col-md-4 mt-2 mb-2">
+    <div className="col-md-4 mt-3 mb-3">
       <div className="card border">
         <div className="card-body">
           <div className="card-img-actions">
