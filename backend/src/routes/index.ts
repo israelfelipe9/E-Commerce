@@ -4,6 +4,7 @@ import { registerNewUser } from '@controllers/users/register'
 import { loginUser } from '@controllers/users/login'
 import { createNewAdminUser } from '@controllers/admin/createNewAdminUser'
 import { getUser } from '@controllers/users/getUser'
+import { getRecommendation } from '@controllers/recommendation/getRecommendation'
 
 export const router = Router()
 
@@ -26,3 +27,6 @@ router.get('/admin/products')
 router.get('/admin/products/:slug')
 router.post('/admin/products')
 router.post('/registerAdmin', createNewAdminUser)
+
+// Rotas recomendacao
+router.post('/chat', getRecommendation)

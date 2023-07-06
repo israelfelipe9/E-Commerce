@@ -5,6 +5,21 @@ import { api } from '../../services/api'
 export const AdminHomePage = () => {
   const [data, setData] = useState()
 
+  const handleDelete = async (id: int) => {
+    const originalData = data
+
+    const newData = originalData.filter((item) => item.id !== id)
+    setData(newData)
+
+    try {
+      await api.post('/admin/products/' + id.toString())
+    } catch (ex) {
+      if (ex.response && ex.response.status === 404)
+        console.log('This movie has already been deleted')
+      setData(originalData)
+    }
+  }
+
   useEffect(() => {
     async function getUserData() {
       const { data } = await api.get('/products')
@@ -64,7 +79,12 @@ export const AdminHomePage = () => {
                 <td key={item.id.toString() + 'category'}>{item.category}</td>
                 <td key={item.id.toString() + 'image'}>{item.image}</td>
                 <td key={item.id.toString() + 'delete'}>
-                  <button className='btn btn-danger btn-sm'>Delete</button>
+                  <button
+                    className='btn btn-danger btn-sm'
+                    onClick={() => handleDelete(item.id)}
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))}

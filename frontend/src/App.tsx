@@ -16,6 +16,8 @@ import { AdminNavbar } from './components/AdminNavbar'
 import { AdminHomePage } from './pages/AdminHome'
 import { AdminUsersPage } from './pages/AdminUser'
 import { Footer } from './components/Footer'
+import { UserProfile } from './pages/Profile'
+import { UserOrders } from './pages/Orders'
 
 function App() {
   return (
@@ -25,6 +27,10 @@ function App() {
           <Route element={<Navbar />}>
             <Route path='/' element={<Home />} />
             <Route path='/home' element={<Home />} />
+
+            <Route path='/profile' element={<UserProfile />} />
+            <Route path='/orders' element={<UserOrders />} />
+
             <Route path='/login' element={<LoginPage />} />
             <Route path='/register' element={<RegisterPage />} />
             <Route path='/recommend' element={<RecommendForm />} />
