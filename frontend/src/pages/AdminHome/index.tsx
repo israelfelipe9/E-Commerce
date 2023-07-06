@@ -12,10 +12,10 @@ export const AdminHomePage = () => {
     setData(newData)
 
     try {
-      await api.post('/admin/products/' + id.toString())
+      await api.delete('/admin/products/' + id.toString())
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
-        console.log('This movie has already been deleted')
+        console.log('This product has already been deleted')
       setData(originalData)
     }
   }
