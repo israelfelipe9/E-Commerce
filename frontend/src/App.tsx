@@ -28,6 +28,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/home' element={<Home />} />
 
+            {/* need to be autenticated */}
             <Route path='/profile' element={<UserProfile />} />
             <Route path='/orders' element={<UserOrders />} />
 
