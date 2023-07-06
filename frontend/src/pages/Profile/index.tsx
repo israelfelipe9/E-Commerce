@@ -46,6 +46,7 @@ const ErrorMessage = styled.span`
 
 export const UserProfile = () => {
   // const [error, setError] = useState('')
+<<<<<<< HEAD
   //   const {
   //     register,
   //     handleSubmit,
@@ -67,6 +68,29 @@ export const UserProfile = () => {
   //         this.props.history.replace('/not-found')
   //     }
   //   })
+=======
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginSchemaType>({
+    resolver: zodResolver(loginSchema),
+  })
+
+  const { handleLogin, error } = useContext(AuthContext)
+
+  useEffect(() => {
+    try {
+      const userId = params.id
+      if (userId === 'new') return
+      const data = await getMovie(movieId)
+      setData({ data })
+    } catch (ex) {
+      if (ex.response && ex.response.status === 404)
+        this.props.history.replace('/not-found')
+    }
+  })
+>>>>>>> a29c54a67802c67984a8e9bd75385c32ab49a7d1
 
   return (
     <Form onSubmit={handleSubmit(handleLogin)}>
