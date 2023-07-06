@@ -44,17 +44,17 @@ export const Product = () => {
             <div className="product-data">
               <h2>{data.name}</h2>
 
-              <p className="product-data-price product-data-real-price">
+              <h3 className="product-data-price product-data-real-price">
                 Price:{' '}
                 {Intl.NumberFormat('pt-BR', {
                   style: 'currency',
                   currency: 'BRL',
                   maximumFractionDigits: 2,
                 }).format(data.price)}
-              </p>
+              </h3>
               <p>{data.description}</p>
               <div className="product-data-info">
-                <p>
+                <h5>
                   Available:
                   <span>
                     {' '}
@@ -62,10 +62,10 @@ export const Product = () => {
                       ? data.qtInStock + ' units in stock'
                       : 'Not Available'}
                   </span>
-                </p>
-                <p>
+                </h5>
+                <h5>
                   Brand :<span> {data.brand} </span>
-                </p>
+                </h5>
                 <hr />
                 {data.qtInStock > 0 && (
                   <>
@@ -124,10 +124,8 @@ const Wrapper = styled.section`
 
   hr {
     max-width: 100%;
-    width: 90%;
-    /* height: 0.2rem; */
+    width: 100%;
     border: 0.1rem solid #000;
-    color: red;
   }
 
   .product-images {

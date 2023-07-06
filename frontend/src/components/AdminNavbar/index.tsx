@@ -35,7 +35,7 @@ const Item = styled.li`
   font-size: 1.2rem;
   cursor: pointer;
   transition: all 0.1s ease-in;
-  
+
   &:hover {
     color: #000;
     transition: all 0.2s ease-out;
@@ -99,16 +99,12 @@ export const AdminNavbar = () => {
       <Nav>
         <ItemsContainer>
           <LogoImg src={logo} onClick={() => navigate('/home')} />
-          <AuthContainer>
-            Gabriel Fachini
-          </AuthContainer>
+          <AuthContainer>Gabriel Fachini</AuthContainer>
           <Item>Home</Item>
           <Item onClick={() => navigate('/admin/products')}>Products</Item>
           <Item onClick={() => navigate('/admin/users')}>Users</Item>
           <Item onClick={() => navigate('/home')}>Back to store</Item>
-          <LogoutButton>
-            Logout
-          </LogoutButton>
+          <LogoutButton>Logout</LogoutButton>
         </ItemsContainer>
       </Nav>
       <Outlet />

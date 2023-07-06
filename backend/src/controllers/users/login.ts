@@ -1,18 +1,17 @@
-import { type Request, type Response } from "express"
-import { connectDB } from "../../database"
-import UserModel from "src/models/user.model"
-import bcrypt from "bcryptjs"
-import jwt from "jsonwebtoken"
-import AdminModel from "src/models/admin.model"
+import { type Request, type Response } from 'express'
+import { connectDB } from '../../database'
+import UserModel from 'src/models/user.model'
+import bcrypt from 'bcryptjs'
+import jwt from 'jsonwebtoken'
+import AdminModel from 'src/models/admin.model'
 connectDB()
 
 export const loginUser = async (req: Request, res: Response) => {
   try {
     const { email, password }: User = req.body
 
-    if ( !email || !password )
-      return res.status(400).json({ message: 'Please fill all the fields' })
-    
+    if (!email || !password) { return res.status(400).json({ message: 'Please fill all the fields' }) }
+
     // Check if user is admin
     const admin = await AdminModel.findOne({ email })
     if (admin) {

@@ -5,13 +5,11 @@ const Container = styled.div`
   flex-direction: column;
   gap: 20px;
   width: 100vw;
-  padding: 30px 25%;
+  padding: 50px 13%;
+  font-family: sans-serif;
+  text-align: center;
 `
 
 export const BaseWrapper = ({ children }) => {
-  return (
-    <Container>
-      {children}
-    </Container>
-  )
+  return <Container>{children}</Container>
 }

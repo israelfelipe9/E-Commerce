@@ -41,7 +41,9 @@ export const AuthProvider = ({ children }) => {
     name: '',
     email: ''
   })
+  
   const [error, setError] = useState('')
+
   const { mutate } = useMutation({
     mutationKey: ['login'],
     mutationFn: async (payload) => (await api.post('/login', payload)).data,

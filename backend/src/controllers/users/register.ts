@@ -1,7 +1,7 @@
-import { type Request, type Response } from "express"
-import { connectDB } from "../../database"
-import UserModel from "src/models/user.model"
-import bcrypt from "bcryptjs"
+import { type Request, type Response } from 'express'
+import { connectDB } from '../../database'
+import UserModel from 'src/models/user.model'
+import bcrypt from 'bcryptjs'
 connectDB()
 
 interface UserForm extends User {
@@ -13,14 +13,10 @@ export const registerNewUser = async (req: Request, res: Response) => {
   try {
     const { confirmPassword, email, name, password, termsAndConditions }: UserForm = req.body
 
-    if (!confirmPassword || !email || !name || !password || !termsAndConditions)
-      return res.status(400).json({ message: 'Please fill all the fields' })
-    if (password !== confirmPassword)
-      return res.status(400).json({ message: 'Passwords do not match' })
-    if (!termsAndConditions)
-      return res.status(400).json({ message: 'Please accept the terms and conditions' })
-    if (await UserModel.exists({ email }))
-      return res.status(400).json({ message: 'User already exists' })
+    if (!confirmPassword || !email || !name || !password || !termsAndConditions) { return res.status(400).json({ message: 'Please fill all the fields' }) }
+    if (password !== confirmPassword) { return res.status(400).json({ message: 'Passwords do not match' }) }
+    if (!termsAndConditions) { return res.status(400).json({ message: 'Please accept the terms and conditions' }) }
+    if (await UserModel.exists({ email })) { return res.status(400).json({ message: 'User already exists' }) }
 
     bcrypt.genSalt(10, (err, salt) => {
       bcrypt.hash(password, salt, async (err, hash) => {
@@ -40,7 +36,6 @@ export const registerNewUser = async (req: Request, res: Response) => {
         }
       })
     })
-    
   } catch (error) {
     return res.status(500).json({ message: 'Error creating user' })
   }

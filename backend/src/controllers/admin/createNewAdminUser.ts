@@ -1,6 +1,6 @@
-import { type Request, type Response } from "express"
-import bcrypt from "bcryptjs"
-import AdminModel from "../../models/admin.model"
+import { type Request, type Response } from 'express'
+import bcrypt from 'bcryptjs'
+import AdminModel from '../../models/admin.model'
 
 interface Admin {
   name: string
