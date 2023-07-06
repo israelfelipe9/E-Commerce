@@ -5,10 +5,23 @@ import { api } from '../../services/api'
 export const AdminUsersPage = () => {
   const [data, setData] = useState()
 
+  const handleDelete = async (id: number) => {
+    const originalData = data
+    const newData = originalData.filter((item) => item.id !== id)
+    setData(newData)
+    try {
+      await api.delete('/admin/users/' + id.toString())
+    } catch (ex) {
+      if (ex.response && ex.response.status === 404)
+        console.log('This user has already been deleted')
+      setData(originalData)
+    }
+  }
+
   useEffect(() => {
     async function getUserData() {
-      const { data } = await api.get('/getUser')
-      setData(data.user)
+      const { data } = await api.get('/admin/users')
+      setData(data)
     }
     getUserData()
   }, [])
@@ -32,17 +45,28 @@ export const AdminUsersPage = () => {
               <th scope='col' key='role'>
                 Role
               </th>
+              <th scope='col' key='delete'></th>
             </tr>
           </thead>
           <tbody>
-            <tr key={data.id}>
-              <th scope='row' key={data.id.toString() + 'id'}>
-                {data.id}
-              </th>
-              <td key={data.id.toString() + 'name'}>{data.name}</td>
-              <td key={data.id.toString() + 'email'}>{data.email}</td>
-              <td key={data.id.toString() + 'role'}>{data.role}</td>
-            </tr>
+            {data.map((item) => (
+              <tr key={item.id}>
+                <th scope='row' key={item.id.toString() + 'id'}>
+                  {item.id}
+                </th>
+                <td key={item.id.toString() + 'name'}>{item.name}</td>
+                <td key={item.id.toString() + 'email'}>{item.email}</td>
+                <td key={item.id.toString() + 'role'}>{item.role}</td>
+                <td key={item.id.toString() + 'delete'}>
+                  <button
+                    className='btn btn-danger btn-sm'
+                    onClick={() => handleDelete(item.id)}
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       )}

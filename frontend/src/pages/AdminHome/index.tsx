@@ -5,7 +5,7 @@ import { api } from '../../services/api'
 export const AdminHomePage = () => {
   const [data, setData] = useState()
 
-  const handleDelete = async (id: int) => {
+  const handleDelete = async (id: number) => {
     const originalData = data
 
     const newData = originalData.filter((item) => item.id !== id)
@@ -24,7 +24,6 @@ export const AdminHomePage = () => {
     async function getUserData() {
       const { data } = await api.get('/products')
       setData(data)
-      console.log(data)
     }
     getUserData()
   }, [])
