@@ -10,33 +10,33 @@ export const ProductCard = ({ product }: { product: ProductProps }) => {
   const { addToCart } = useContext(CartContext)
 
   return (
-    <div className="col-md-4 mt-3 mb-3">
-      <div className="card border">
-        <div className="card-body">
-          <div className="card-img-actions">
-            <Link to={`/sale/${product._id}`}>
+    <div className='col-md-4 mt-3 mb-3'>
+      <div className='card border'>
+        <div className='card-body'>
+          <div className='card-img-actions'>
+            <Link to={`/sale/${product.id}`}>
               <img
-                src={product.photo[0].url}
-                className="img-card"
-                width="140"
-                height="150"
-                alt=""
+                src={product.photo[0]}
+                className='img-card'
+                width='140'
+                height='150'
+                alt=''
               />
             </Link>
           </div>
         </div>
-        <div className="card-body bg-light text-center">
-          <div className="mb-2">
-            <h5 className="font-weight-semibold mb-2">
-              <Link to={`/sale/${product._id}`}>{product.name}</Link>
+        <div className='card-body bg-light text-center'>
+          <div className='mb-2'>
+            <h5 className='font-weight-semibold mb-2'>
+              <Link to={`/sale/${product.id}`}>{product.name}</Link>
             </h5>
 
-            <a href="#" className="text-muted" data-abc="true">
+            <a href='#' className='text-muted' data-abc='true'>
               Sunglasses
             </a>
           </div>
 
-          <h3 className="mb-0 font-weight-semibold">
+          <h3 className='mb-0 font-weight-semibold'>
             {Intl.NumberFormat('pt-BR', {
               style: 'currency',
               currency: 'BRL',
@@ -45,8 +45,8 @@ export const ProductCard = ({ product }: { product: ProductProps }) => {
           </h3>
 
           <Button
-            type="button"
-            className="btn btn-sm mt-2"
+            type='button'
+            className='btn btn-sm mt-2'
             onClick={() => addToCart(product)}
           >
             <FontAwesomeIcon icon={faCartShopping} fixedWidth />

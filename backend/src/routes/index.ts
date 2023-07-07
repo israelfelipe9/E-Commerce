@@ -11,6 +11,9 @@ import { getUsers } from '@controllers/admin/getUsers'
 import { editHandler } from '@controllers/admin/editController'
 import { deleteHandler } from '@controllers/admin/deleteController'
 import { createHandler } from '@controllers/admin/createController'
+import { getOrders } from '@controllers/orders/getOrders'
+import { newOrder } from '@controllers/orders/userOrder'
+import { getOrder } from '@controllers/orders/getOrderById'
 
 export const router = Router()
 
@@ -22,14 +25,17 @@ router.get('/healthcheck', (_req, res) => {
 // Rotas GET
 router.get('/products', getProducts)
 router.get('/getUser', getUser)
+router.get('/getOrder/:id', getOrder)
 
 // Rotas POST
 router.post('/register', registerNewUser)
 router.post('/login', loginUser)
+router.post('/order', newOrder)
 router.post('/buy')
 
 /* Rotas admin */
 router.get('/admin/users', getUsers)
+router.get('/admin/orders', getOrders)
 router.get('/admin/products')
 router.get('/admin/products/:slug')
 router.post('/admin/products')
@@ -42,3 +48,5 @@ router.put('/admin/edit/:table/:id', editHandler)
 
 // Rotas recomendacao
 router.post('/chat', getRecommendation)
+
+// Rotas order

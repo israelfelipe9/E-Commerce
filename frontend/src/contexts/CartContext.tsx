@@ -1,23 +1,33 @@
 import { createContext, useState } from 'react'
 
 export interface ProductProps {
-  _id: number
+  id: number
   name: string
-  brand: string
-  price: number
-  photo: {
-    url: string
-  }[]
   description: string
-  qtInStock: number
+  price: number
+  qtInStcock: number
   qtSold: number
-  amount: number
+  slug: string
+  photo?: string[]
 }
+// export interface ProductProps {
+//   _id: number
+//   name: string
+//   brand: string
+//   price: number
+//   photo: {
+//     url: string
+//   }[]
+//   description: string
+//   qtInStock: number
+//   qtSold: number
+//   amount: number
+// }
 
 interface CartContextProps {
   cart: Array<ProductProps>
   addToCart: (product: ProductProps) => void
-  removeFromCart: (product: ProductProps) => void,
+  removeFromCart: (product: ProductProps) => void
   totalPrice: number
 }
 
@@ -25,7 +35,7 @@ export const CartContext = createContext<CartContextProps>({
   cart: [],
   addToCart: () => null,
   removeFromCart: () => null,
-  totalPrice: 0
+  totalPrice: 0,
 })
 
 export const CartProvider = ({ children }) => {
@@ -40,12 +50,14 @@ export const CartProvider = ({ children }) => {
 
   const removeFromCart = (product: ProductProps) => {
     setTotalPrice(totalPrice - product.price)
-    setCart(cart.filter((item) => item._id !== product._id))
+    setCart(cart.filter((item) => item.id !== product.id))
     alert('Product removed from cart!')
   }
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, totalPrice }}>
+    <CartContext.Provider
+      value={{ cart, addToCart, removeFromCart, totalPrice }}
+    >
       {children}
     </CartContext.Provider>
   )

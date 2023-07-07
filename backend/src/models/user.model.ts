@@ -4,6 +4,7 @@ interface User extends Document {
   name: string
   email: string
   password: string
+  id: number
   // cpf?: string
   // phone?: string
   // address?: string
@@ -18,7 +19,8 @@ interface User extends Document {
 const UserSchema: Schema = new Schema<User>({
   name: { type: String, required: true },
   email: { type: String, required: true },
-  password: { type: String, required: true }
+  password: { type: String, required: true },
+  id: { type: Number, required: true, index: true },
   // cpf: { type: String },
   // phone: { type: String },
   // address: { type: String },
