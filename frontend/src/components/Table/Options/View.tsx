@@ -22,7 +22,7 @@ const OptionsItem = styled.span`
 export const View = ({ item, columns }: any) => {
   const navigate = useNavigate()
 
-  return <OptionsItem onClick={() => navigate(`/admin/products/view/${item.id}`, {
+  return <OptionsItem onClick={() => navigate(`/ocularis/admin/products/view/${item.id}`, {
     state: {
       data: item,
       columns

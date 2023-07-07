@@ -21,7 +21,6 @@ import { UserOrders } from './pages/Orders'
 import { ProductsPage } from './pages/Products'
 import { ViewPage } from './pages/View'
 import { EditPage } from './pages/Edit'
-import { NewProductContainer } from './Containers/newProductContainer'
 import { NewProductPage } from './pages/newProduct'
 
 function App() {
