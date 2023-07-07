@@ -1,6 +1,6 @@
 import { BaseWrapper } from "@components/BaseWrapper"
 import { useParams } from "react-router-dom"
-import { EditContainer } from "@containers/EditContainer"
+import { EditContainer } from "@Containers/EditContainer"
 
 export const EditPage = () => {
   const { id } = useParams()

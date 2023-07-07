@@ -1,6 +1,6 @@
 import { BaseWrapper } from "@components/BaseWrapper"
 import { useParams } from "react-router-dom"
-import { ViewContainer } from "@containers/ViewContainer"
+import { ViewContainer } from "@Containers/ViewContainer"
 
 export const ViewPage = () => {
   const { id } = useParams()
