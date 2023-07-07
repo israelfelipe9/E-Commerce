@@ -15,7 +15,7 @@ interface AuthContextProps {
     admin?: boolean
     role?: number
   }
-  handleLogin: (payload: { email: string, password: string }) => void
+  handleLogin: (payload: { email: string; password: string }) => void
   handleLogout: () => void
 }
 
@@ -27,10 +27,10 @@ export const AuthContext = createContext<AuthContextProps>({
   user: {
     id: 0,
     name: '',
-    email: ''
+    email: '',
   },
   handleLogin: () => null,
-  handleLogout: () => null
+  handleLogout: () => null,
 })
 
 export const AuthProvider = ({ children }) => {
@@ -39,9 +39,9 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState<AuthContextProps['user']>({
     id: 0,
     name: '',
-    email: ''
+    email: '',
   })
-  
+
   const [error, setError] = useState('')
 
   const { mutate } = useMutation({
@@ -56,21 +56,21 @@ export const AuthProvider = ({ children }) => {
       if (data.user.admin) {
         setUser({
           admin: data.user.admin,
-          id: data.user._id,
+          id: data.user.id,
           name: data.user.name,
           email: data.user.email,
-          role: data.user.role
+          role: data.user.role,
         })
         navigate('/admin')
       } else {
         setUser({
-          id: data.user._id,
+          id: data.user.id,
           name: data.user.name,
-          email: data.user.email
+          email: data.user.email,
         })
         navigate('/home')
       }
-    }
+    },
   })
 
   useEffect(() => {
@@ -79,16 +79,16 @@ export const AuthProvider = ({ children }) => {
       if (data.user.admin) {
         setUser({
           admin: data.user.admin,
-          id: data.user._id,
+          id: data.user.id,
           name: data.user.name,
           email: data.user.email,
-          role: data.user.role
+          role: data.user.role,
         })
       } else {
         setUser({
-          id: data.user._id,
+          id: data.user.id,
           name: data.user.name,
-          email: data.user.email
+          email: data.user.email,
         })
       }
     }
@@ -109,22 +109,23 @@ export const AuthProvider = ({ children }) => {
     setUser({
       id: 0,
       name: '',
-      email: ''
+      email: '',
     })
     navigate('/home')
   }
 
   return (
-    <AuthContext.Provider value={{
-      auth,
-      setAuth,
-      error,
-      user,
-      handleLogin,
-      handleLogout
-    }}>
+    <AuthContext.Provider
+      value={{
+        auth,
+        setAuth,
+        error,
+        user,
+        handleLogin,
+        handleLogout,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   )
 }
-

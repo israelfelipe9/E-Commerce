@@ -30,21 +30,21 @@ export const Product = () => {
   }, [])
 
   if (!data) {
-    return <div className="page_loading">Not Found</div>
+    return <div className='page_loading'>Not Found</div>
   }
 
   return (
     <Wrapper>
-      <Container className="container">
-        <div className="grid grid-two-column">
+      <Container className='container'>
+        <div className='grid grid-two-column'>
           {/* product Images  */}
-          <div className="product_images">
+          <div className='product_images'>
             <MyImage imgs={data.photo} />
             {/* product dAta  */}
-            <div className="product-data">
+            <div className='product-data'>
               <h2>{data.name}</h2>
 
-              <h3 className="product-data-price product-data-real-price">
+              <h3 className='product-data-price product-data-real-price'>
                 Price:{' '}
                 {Intl.NumberFormat('pt-BR', {
                   style: 'currency',
@@ -53,7 +53,7 @@ export const Product = () => {
                 }).format(data.price)}
               </h3>
               <p>{data.description}</p>
-              <div className="product-data-info">
+              <div className='product-data-info'>
                 <h5>
                   Available:
                   <span>
@@ -74,7 +74,9 @@ export const Product = () => {
                       setDecrease={setDecrease}
                       setIncrease={setIncrease}
                     />
-                    <Button className="btn" onClick={() => addToCart(data)}>Add To Cart</Button>
+                    <Button className='btn' onClick={() => addToCart(data)}>
+                      Add To Cart
+                    </Button>
                   </>
                 )}
               </div>
