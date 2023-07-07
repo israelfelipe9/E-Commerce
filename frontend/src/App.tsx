@@ -60,8 +60,6 @@ function App() {
             {/* <Route path='rewards/delete/:id' element={<DeletePage />} /> */}
           </Route>
         </Routes>
-
-        
       </CartProvider>
     </AuthProvider>
   )

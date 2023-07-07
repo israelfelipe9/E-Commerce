@@ -1,19 +1,19 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-const MyImage = ({ imgs = [{ url: '' }] }) => {
+const MyImage = ({ imgs = [] }) => {
   const [mainImage, setMainImage] = useState(imgs[0])
 
   return (
     <Wrapper>
-      <div className="grid grid-four-column">
+      <div className='grid grid-four-column'>
         {imgs.map((curElm, index) => {
           return (
             <figure>
               <img
-                src={curElm.url}
-                alt="Glasses Photo"
-                className="box-image--style"
+                src={curElm}
+                alt='Glasses Photo'
+                className='box-image--style'
                 key={index}
                 onClick={() => setMainImage(curElm)}
               />
@@ -23,8 +23,8 @@ const MyImage = ({ imgs = [{ url: '' }] }) => {
       </div>
       {/* 2nd column  */}
 
-      <div className="main-screen">
-        <img src={mainImage.url} alt="main photo" />
+      <div className='main-screen'>
+        <img src={mainImage} alt='main photo' />
       </div>
     </Wrapper>
   )

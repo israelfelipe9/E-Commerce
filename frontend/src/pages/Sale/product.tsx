@@ -5,6 +5,7 @@ import { Container } from '../../styles/Container'
 import { Button } from '../../components/common/button'
 import CartAmountToggle from './cartAmount'
 import MyImage from './myImage'
+import { api } from '../../services/api'
 
 import * as services from '../../data/fakeProductService'
 import { CartContext } from '../../contexts/CartContext'
@@ -25,8 +26,11 @@ export const Product = () => {
   const { id } = useParams()
 
   useEffect(() => {
-    // Put this inside a try catch block when connection is established with backend
-    setData(services.getMovie(Number(id)))
+    async function getData() {
+      const { data } = await api.get(`/product/${id}`)
+      setData(data)
+    }
+    getData()
   }, [])
 
   if (!data) {

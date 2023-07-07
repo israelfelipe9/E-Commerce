@@ -14,6 +14,7 @@ import { createHandler } from '@controllers/admin/createController'
 import { getOrders } from '@controllers/orders/getOrders'
 import { newOrder } from '@controllers/orders/userOrder'
 import { getOrder } from '@controllers/orders/getOrderById'
+import { getProduct } from '@controllers/products/getProductById'
 
 export const router = Router()
 
@@ -24,6 +25,7 @@ router.get('/healthcheck', (_req, res) => {
 /* Rotas cliente */
 // Rotas GET
 router.get('/products', getProducts)
+router.get('/product/:id', getProduct)
 router.get('/getUser', getUser)
 router.get('/getOrder/:id', getOrder)
 

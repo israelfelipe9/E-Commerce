@@ -9,7 +9,7 @@ export const UserOrders = () => {
 
   useEffect(() => {
     async function getUserData() {
-      const { data } = await api.get('/getOrder/' + user.id)
+      const { data } = await api.get(`/getOrder/${user.id}`)
       setData(data)
     }
     getUserData()
