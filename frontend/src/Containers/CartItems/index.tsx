@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from 'react-router-dom'
+import { api } from 'src/services/api'
 
 const Container = styled.div`
   display: flex;
@@ -151,8 +152,8 @@ export const CartItems = () => {
     }
   }, [amount, cart])
 
-  const handleFinish = () => {
-    // Create an order
+  const handleFinish = async () => {
+    // const res = await api.post('/order', data )
 
     navigate('/payment')
   }
