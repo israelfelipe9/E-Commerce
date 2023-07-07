@@ -18,38 +18,50 @@ import { AdminUsersPage } from './pages/AdminUser'
 import { Footer } from './components/Footer'
 import { UserProfile } from './pages/Profile'
 import { UserOrders } from './pages/Orders'
+import { ProductsPage } from './pages/Products'
+import { ViewPage } from './pages/View'
+import { EditPage } from './pages/Edit'
+import { NewProductContainer } from './Containers/newProductContainer'
+import { NewProductPage } from './pages/newProduct'
 
 function App() {
   return (
     <AuthProvider>
       <CartProvider>
         <Routes>
-          <Route element={<Navbar />}>
-            <Route path='/' element={<Home />} />
-            <Route path='/home' element={<Home />} />
+          <Route path='ocularis' element={<Navbar />}>
+            <Route element={<Footer />}>
+              {/* <Route path='/' element={<Home />} /> */}
+              <Route path='home' element={<Home />} />
 
-            {/* need to be autenticated */}
-            <Route path='/profile' element={<UserProfile />} />
-            <Route path='/orders' element={<UserOrders />} />
+              {/* need to be autenticated */}
+              <Route path='profile' element={<UserProfile />} />
+              <Route path='orders' element={<UserOrders />} />
 
-            <Route path='/login' element={<LoginPage />} />
-            <Route path='/register' element={<RegisterPage />} />
-            <Route path='/recommend' element={<RecommendForm />} />
-            <Route path='/payment' element={<PaymentForm />} />
-            <Route path='/sale' element={<Sale />} />
-            <Route path='/sale/:id' element={<Product />} />
-            <Route path='/cart' element={<CartPage />} />
-            <Route path='/not-found' element={<NotFound />} />
-            <Route path='*' element={<Navigate to='/not-found' />} />
+              <Route path='login' element={<LoginPage />} />
+              <Route path='register' element={<RegisterPage />} />
+              <Route path='recommend' element={<RecommendForm />} />
+              <Route path='payment' element={<PaymentForm />} />
+              <Route path='sale' element={<Sale />} />
+              <Route path='sale/:id' element={<Product />} />
+              <Route path='cart' element={<CartPage />} />
+              <Route path='not-found' element={<NotFound />} />
+              <Route path='*' element={<Navigate to='/ocularis/not-found' />} />
+            </Route>
           </Route>
 
-          <Route element={<AdminNavbar />}>
-            <Route path='/admin' element={<AdminHomePage />} />
-            <Route path='/admin/users' element={<AdminUsersPage />} />
+          <Route path='ocularis' element={<AdminNavbar />}>
+            <Route path='admin' element={<AdminHomePage />} />
+            <Route path='admin/users' element={<AdminUsersPage />} />
+            <Route path='admin/products' element={<ProductsPage />} />
+            <Route path='admin/products/new' element={<NewProductPage />} />
+            <Route path='admin/products/view/:id' element={<ViewPage />} />
+            <Route path='admin/products/edit/:id' element={<EditPage />} />
+            {/* <Route path='rewards/delete/:id' element={<DeletePage />} /> */}
           </Route>
         </Routes>
 
-        <Footer />
+        
       </CartProvider>
     </AuthProvider>
   )

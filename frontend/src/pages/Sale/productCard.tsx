@@ -1,13 +1,13 @@
-import "./productStyle.css";
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { CartContext, type ProductProps } from "../../contexts/CartContext";
-import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { Button } from "../../components/common/button";
+import './productStyle.css'
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { CartContext, type ProductProps } from '../../contexts/CartContext'
+import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import { Button } from '../../components/common/button'
 
 export const ProductCard = ({ product }: { product: ProductProps }) => {
-  const { addToCart } = useContext(CartContext);
+  const { addToCart } = useContext(CartContext)
 
   return (
     <div className="col-md-4 mt-3 mb-3">
@@ -37,9 +37,9 @@ export const ProductCard = ({ product }: { product: ProductProps }) => {
           </div>
 
           <h3 className="mb-0 font-weight-semibold">
-            {Intl.NumberFormat("pt-BR", {
-              style: "currency",
-              currency: "BRL",
+            {Intl.NumberFormat('pt-BR', {
+              style: 'currency',
+              currency: 'BRL',
               maximumFractionDigits: 2,
             }).format(product.price)}
           </h3>
@@ -55,5 +55,5 @@ export const ProductCard = ({ product }: { product: ProductProps }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
