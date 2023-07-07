@@ -8,6 +8,9 @@ import { getRecommendation } from '@controllers/recommendation/getRecommendation
 import { deleteProduct } from '@controllers/admin/deleteProduct'
 import { deleteUser } from '@controllers/admin/deleteUser'
 import { getUsers } from '@controllers/admin/getUsers'
+import { editHandler } from '@controllers/admin/editController'
+import { deleteHandler } from '@controllers/admin/deleteController'
+import { createHandler } from '@controllers/admin/createController'
 import { getOrders } from '@controllers/orders/getOrders'
 import { newOrder } from '@controllers/orders/userOrder'
 import { getOrder } from '@controllers/orders/getOrderById'
@@ -37,8 +40,11 @@ router.get('/admin/products')
 router.get('/admin/products/:slug')
 router.post('/admin/products')
 router.post('/registerAdmin', createNewAdminUser)
-router.delete('/admin/products/:id', deleteProduct)
 router.delete('/admin/users/:id', deleteUser)
+
+router.post('/admin/create/:table', createHandler)
+router.delete('/admin/delete/:table/:id', deleteHandler)
+router.put('/admin/edit/:table/:id', editHandler)
 
 // Rotas recomendacao
 router.post('/chat', getRecommendation)

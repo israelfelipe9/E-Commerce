@@ -10,7 +10,7 @@
     "removeComments": true,                
     "typeRoots": [
       "./node_modules/@types",
-      "./src/@types"
+      "./src/types"
     ],                          
     "esModuleInterop": true,
     "moduleResolution": "node",                 
@@ -21,7 +21,15 @@
     "skipLibCheck": true,                     
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
-    "paths": {},
+    "paths": {
+      "@components/*": ["./src/components/*"],
+      "@containers/*": ["./src/containers/*"],
+      "@services/*": ["./src/services/*"],
+      "@contexts/*": ["./src/contexts/*"],
+      "@images/*": ["./src/images/*"],
+      "@public/*": ["./public/*"],
+      "@themes/*": ["./src/themes/*"],
+    }
   },
   "exclude": ["node_modules", "dist", "coverage", "test", "types", "src/vite-env.d.ts"]
 }

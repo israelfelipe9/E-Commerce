@@ -16,7 +16,7 @@ const Nav = styled.nav`
   width: 100vw;
   height: auto;
   box-shadow: inset 0px -1px 0px #efefef;
-`;
+`
 
 const ItemsContainer = styled.ul`
   display: flex;
@@ -28,7 +28,7 @@ const ItemsContainer = styled.ul`
   width: 100%;
   margin: 0;
   padding: 0;
-`;
+`
 
 const Item = styled.li`
   font-weight: 700;
@@ -39,7 +39,7 @@ const Item = styled.li`
   &:hover {
     color: #000;
   }
-`;
+`
 
 const LogoImg = styled.img`
   aspect-ratio: 1 / 1;
@@ -101,16 +101,16 @@ export const Navbar = () => {
     <>
       <Nav>
         <ItemsContainer>
-          <LogoImg src={logo} onClick={() => navigate('/home')}/>
-          <Item onClick={() => navigate('/')}>Home</Item>
-          <Item onClick={() => navigate('/sale')}>Sale</Item>
-          <Item onClick={() => navigate('/recommend')}>Recomendation</Item>
+          <LogoImg src={logo} onClick={() => navigate('/ocularis/home')}/>
+          <Item onClick={() => navigate('/ocularis/home')}>Home</Item>
+          <Item onClick={() => navigate('/ocularis/sale')}>Sale</Item>
+          <Item onClick={() => navigate('/ocularis/recommend')}>Recomendation</Item>
           <AuthContainer>
             <Cart />
             {auth ? <UserData /> :
             <>
-              <AuthButton onClick={() => navigate('/login')}>Login</AuthButton>
-              <AuthButtonOutline onClick={() => navigate('/register')}>Register</AuthButtonOutline>
+              <AuthButton onClick={() => navigate('/ocularis/login')}>Login</AuthButton>
+              <AuthButtonOutline onClick={() => navigate('/ocularis/register')}>Register</AuthButtonOutline>
             </>
             }
           </AuthContainer>
@@ -118,5 +118,5 @@ export const Navbar = () => {
       </Nav>
       <Outlet />
     </>
-  );
-};
+  )
+}

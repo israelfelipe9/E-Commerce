@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faInstagram, faYoutube, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { Outlet } from 'react-router-dom'
 
 export const Container = styled.div`
   margin-top: 60px;
@@ -58,7 +59,11 @@ export const Title = styled.p`
 `
 
 export const Footer = () => {
-    return (
+
+
+  return (
+    <>
+      <Outlet />
         <Container>
             <Wrapper>
               <Row>
@@ -82,14 +87,15 @@ export const Footer = () => {
                     <Link href="#">Accessibility</Link>
                 </Column>
                 <Column>
-                <Title>Social</Title>
+                    <Title>Social</Title>
                     <Link href="#"><FontAwesomeIcon icon={faFacebook} size="xl"/> Facebook</Link>
                     <Link href="#"><FontAwesomeIcon icon={faInstagram} size="xl"/> Instagram </Link>
                     <Link href="#"><FontAwesomeIcon icon={faYoutube} size="xl"/> Youtube </Link>
                     <Link href="#"><FontAwesomeIcon icon={faTwitter} size="xl"/> Twitter </Link>
                 </Column>
               </Row>
-            </Wrapper>
+          </Wrapper>
         </Container>
+      </>
     )
 }

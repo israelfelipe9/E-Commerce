@@ -78,9 +78,9 @@ export const UserData = () => {
           <Name>Hello, {user.name.split(' ')[0]}!</Name>
         </UserContainer>
         {showOptions && <Options>
-          <OptionItem onClick={() => navigate('/profile')}>Profile</OptionItem>
-          <OptionItem onClick={() => navigate('/orders')}>Orders</OptionItem>
-          {user.admin && <OptionItem onClick={() => navigate('/admin')}>Admin</OptionItem>}
+          <OptionItem onClick={() => navigate('/ocularis/profile')}>Profile</OptionItem>
+          <OptionItem onClick={() => navigate('/ocularis/orders')}>Orders</OptionItem>
+          {user.admin && <OptionItem onClick={() => navigate('/ocularis/admin')}>Admin</OptionItem>}
           <OptionItem onClick={() => handleLogout()}>Logout</OptionItem>
         </Options>}
       </Container>

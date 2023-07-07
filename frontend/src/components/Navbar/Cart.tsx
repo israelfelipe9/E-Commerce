@@ -147,7 +147,7 @@ export const Cart = () => {
             </ItemDetails>
           </Item>
         ))}
-        {isEmpity ? <p>Your cart is empity!</p> : <Button label='Ir para o carrinho' width={'100%'} onClick={() => navigate('/cart')}/>}
+        {isEmpity ? <p>Your cart is empity!</p> : <Button label='Ir para o carrinho' width={'100%'} onClick={() => navigate('/ocularis/cart')}/>}
       </CartDetails>}
     </CartContainer>
   )

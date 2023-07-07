@@ -3,9 +3,10 @@ import mongoose, { Schema, type Document } from 'mongoose'
 interface Product extends Document {
   id: number
   name: string
+  brand: string
   description: string
   price: number
-  qtInStcock: number
+  qtInStock: number
   qtSold: number
   slug: string
   photo?: string[]
@@ -13,10 +14,11 @@ interface Product extends Document {
 
 const ProductSchema: Schema = new Schema<Product>({
   id: { type: Number, required: true, index: true },
+  brand: { type: String, required: true },
   name: { type: String, required: true },
   description: { type: String, required: true },
   price: { type: Number, required: true },
-  qtInStcock: { type: Number, required: true },
+  qtInStock: { type: Number, required: true },
   qtSold: { type: Number, required: true },
   slug: { type: String, required: true },
   photo: { type: Array },
