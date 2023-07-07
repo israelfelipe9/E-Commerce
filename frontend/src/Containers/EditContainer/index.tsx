@@ -47,8 +47,8 @@ export const EditContainer = () => {
   const { mutate, isLoading } = useMutation({
     mutationFn: async (data) => {
       const path = location.pathname.split('/')
-      const table = path[2]
-      const id = path[4]
+      const table = path[3]
+      const id = path[5]
       return (await api.put(`admin/edit/${table}/${id}`, data)).data
     },
     onError: (error: AxiosError<{ message: string }>) => setError(error.response?.data.message ?? 'Erro inesperado'),
