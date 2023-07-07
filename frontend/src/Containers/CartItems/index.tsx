@@ -13,7 +13,7 @@ const Container = styled.div`
   padding: 30px;
   background-color: white;
   border-radius: 12px;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 `
 
 const Item = styled.div`
@@ -146,10 +146,16 @@ export const CartItems = () => {
   useEffect(() => {
     if (cart.length > 0) {
       cart.reduce((acc, item) => {
-        return acc + (item.price * item.amount)
+        return acc + item.price * item.amount
       }, 0)
     }
   }, [amount, cart])
+
+  const handleFinish = () => {
+    // Create an order
+
+    navigate('/payment')
+  }
 
   return (
     <Container>
@@ -164,27 +170,33 @@ export const CartItems = () => {
             </ItemDetails>
           </ItemDetailsContainer>
           <ItemQuantity>
-            <MinusButton onClick={() => {
-              if (amount > 1) {
-                setAmount(amount - 1)
-              }
-            }}>
+            <MinusButton
+              onClick={() => {
+                if (amount > 1) {
+                  setAmount(amount - 1)
+                }
+              }}
+            >
               <FontAwesomeIcon icon={faMinus} />
             </MinusButton>
             {item.amount}
-            <PlusButton onClick={() => {
-              setAmount(amount + 1)
-            }}>
+            <PlusButton
+              onClick={() => {
+                setAmount(amount + 1)
+              }}
+            >
               <FontAwesomeIcon icon={faPlus} />
             </PlusButton>
           </ItemQuantity>
-          <RemoveItemButton onClick={() => removeFromCart(item)}>Remover</RemoveItemButton>
+          <RemoveItemButton onClick={() => removeFromCart(item)}>
+            Remover
+          </RemoveItemButton>
         </Item>
       ))}
       <TotalPriceContainer>
         <h3>Total:</h3>
         <h3>R${totalPrice},00</h3>
-        <CloseCartButton onClick={() => navigate('/payment')} >Finish</CloseCartButton>
+        <CloseCartButton onClick={handleFinish}>Finish</CloseCartButton>
       </TotalPriceContainer>
     </Container>
   )

@@ -47,32 +47,37 @@ const ErrorMessage = styled.span`
 
 export const LoginForm = () => {
   // const [error, setError] = useState('')
-  const { register, handleSubmit, formState: { errors } } = useForm<LoginSchemaType>({
-    resolver: zodResolver(loginSchema)
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginSchemaType>({
+    resolver: zodResolver(loginSchema),
   })
   const { handleLogin, error } = useContext(AuthContext)
 
   return (
     <Form onSubmit={handleSubmit(handleLogin)}>
-      {error &&
-      <Error>
-        <FontAwesomeIcon icon={faWarning} color='white'/>
-        <ErrorMessage>{error}</ErrorMessage>
-      </Error>}
+      {error && (
+        <Error>
+          <FontAwesomeIcon icon={faWarning} color='white' />
+          <ErrorMessage>{error}</ErrorMessage>
+        </Error>
+      )}
       <h1>Login</h1>
       <Input
-        placeholder="john.doe@email.com"
-        label="Email:"
+        placeholder='john.doe@email.com'
+        label='Email:'
         error={errors.email?.message}
         {...register('email')}
       />
       <Input
-        type="password"
-        label="Password:"
+        type='password'
+        label='Password:'
         error={errors.password?.message}
         {...register('password')}
       />
-      <Button type="submit" label='Enviar'/>
+      <Button type='submit' label='Enviar' />
     </Form>
   )
 }
