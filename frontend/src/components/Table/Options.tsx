@@ -23,6 +23,7 @@ const OptionsContainer = styled.span`
   cursor: pointer;
   transition: 100ms ease-in-out;
   position: relative;
+  z-index: 1000;
 
   &:hover {
     transition: 100ms ease-in-out;
@@ -41,26 +42,9 @@ const OptionsItems = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  z-index: 1;
+  z-index: 10;
   overflow: hidden;
 `
-
-const OptionsItem = styled.span`
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  gap: 10px;
-  align-items: center;
-  padding: 15px 20px;
-  cursor: pointer;
-  transition: 100ms ease-in-out;
-
-  &:hover {
-    transition: 100ms ease-in-out;
-    background-color: ${props => props.theme.colors.primaryLightest};
-  }
-`
-
 
 export const Options = ({ item, columns }: OptionsProps) => {
   const [showOptions, setShowOptions] = useState(false)

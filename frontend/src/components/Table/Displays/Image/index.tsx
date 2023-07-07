@@ -7,10 +7,8 @@ const ImageDisplayTag = styled.img`
   border-radius: 12px;
 `
 
-export const ImageDisplay = ({ src }: { src: string }) => {
-  const images = src.split(';')
-  
+export const ImageDisplay = ({ src }: { src: string }) => {  
   return (
-    <ImageDisplayTag src={images[0]} />
+    <ImageDisplayTag src={src} />
   )
 }

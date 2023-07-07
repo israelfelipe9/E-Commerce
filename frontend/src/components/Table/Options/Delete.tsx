@@ -29,7 +29,7 @@ export const Delete = ({ item, columns }: any) => {
   const { mutate } = useMutation({
     mutationFn: async () => {
       const path = location.pathname.split('/')
-      const table = path[2]
+      const table = path[3]
       return (await api.delete(`admin/delete/${table}/${item.id}`)).data
     },
     onError: (error: AxiosError<{ message: string }>) => setError(error.response?.data.message ?? 'Erro inesperado'),

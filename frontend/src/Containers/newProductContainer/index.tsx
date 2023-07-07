@@ -51,13 +51,12 @@ export const NewProductContainer = () => {
   const { mutate } = useMutation({
     mutationFn: async (data) => (await api.post('admin/create/products', data)).data,
     onError: (error: AxiosError<{ message: string }>) => setError(error.response?.data.message ?? 'Erro inesperado'),
-    onSuccess: () => setSuccess(true)
+    onSuccess: () => {
+      setSuccess(true)
+      reset()
+    }
   })
-  const handleEdit = (data) => {
-    mutate(data)
-    reset()
-  }
-  // const handleEdit = (data: any) => console.log(data)
+  const handleEdit = (data) => mutate(data)
 
   return (
     <ViewContainerWrapper>

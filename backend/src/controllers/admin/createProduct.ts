@@ -3,17 +3,16 @@ import ProductModel from "src/models/product.model"
 export const handleCreateProduct = async (payload) => {
   try {
     const { brand, name, description, photo, price, stock, sold, slug } = payload
+
     const product = new ProductModel({
-      id: Math.random().toString(10),
+      id: Math.floor(Math.random()*100),
       brand,
       name,
       description,
       photo,
       price,
-      qtInstock: stock,
+      qtInStock: stock,
       qtSold: sold,
-      quantity: stock,
-      title: name,
       slug
     })
     await product.save()

@@ -27,8 +27,7 @@ const TableTag = styled.table`
   border-collapse: collapse;
   border-spacing: 0;
   border: 1px solid white;
-  border-radius: 0.5rem;
-  overflow: hidden;
+  border-radius: 12px;
 `
 
 const TableHead = styled.thead`
@@ -146,16 +145,6 @@ export const Table = ({ columns, data }: TableProps) => {
   const [globalFilter, setGlobalFilter] = useState('')
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
 
-  const selectColumn = columnHelper.display({
-    id: 'select',
-    cell: ({ row }) => <input
-      type="checkbox"
-      onChange={row.getToggleSelectedHandler()}
-      checked={row.getIsSelected()}
-    />,
-    footer: info => info.column.id
-  })
-
   const visibleColumns = columns.filter(column => column.options?.table === true)
   const columnsDefinedByUser = visibleColumns.map(column => {
     switch (column.type) {
@@ -235,7 +224,7 @@ export const Table = ({ columns, data }: TableProps) => {
     footer: info => info.column.id
   })
 
-  const columnsFinal = [selectColumn, ...columnsDefinedByUser, optionColumn]
+  const columnsFinal = [...columnsDefinedByUser, optionColumn]
 
   const table = useReactTable({
     columns: columnsFinal,
