@@ -1,23 +1,25 @@
 import mongoose, { Schema, type Document } from 'mongoose'
 
 interface Product extends Document {
-  title: string
+  id: number
+  name: string
   description: string
   price: number
-  quantity: number
+  qtInStcock: number
+  qtSold: number
   slug: string
-  category?: string
-  image?: string
+  photo?: string[]
 }
 
 const ProductSchema: Schema = new Schema<Product>({
-  title: { type: String, required: true },
+  id: { type: Number, required: true, index: true },
+  name: { type: String, required: true },
   description: { type: String, required: true },
   price: { type: Number, required: true },
-  quantity: { type: Number, required: true },
+  qtInStcock: { type: Number, required: true },
+  qtSold: { type: Number, required: true },
   slug: { type: String, required: true },
-  category: { type: String },
-  image: { type: String }
+  photo: { type: Array },
 })
 
 const ProductModel = mongoose.model<Product>('Products', ProductSchema)
