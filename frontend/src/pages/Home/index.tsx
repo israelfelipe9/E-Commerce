@@ -107,7 +107,7 @@ export const Home = () => {
             <Button
               type='button'
               className='btn btn-sm mt-2'
-              onClick={() => navigate('/ocularis/sale')}
+              onClick={() => navigate('/sale')}
             >
               Start Shopping
             </Button>

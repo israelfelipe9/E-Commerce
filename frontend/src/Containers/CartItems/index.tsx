@@ -164,10 +164,16 @@ export const CartItems = () => {
       {cart.map((item) => (
         <Item>
           <ItemDetailsContainer>
-            <ItemImg src={item.photo[0].url} />
+            <ItemImg src={item.photo[0]} />
             <ItemDetails>
               <ItemName>{item.name}</ItemName>
-              <ItemPrice>R${item.price},00</ItemPrice>
+              <ItemPrice>
+                {Intl.NumberFormat('pt-BR', {
+                  style: 'currency',
+                  currency: 'BRL',
+                  maximumFractionDigits: 2,
+                }).format(item.price)}
+              </ItemPrice>
             </ItemDetails>
           </ItemDetailsContainer>
           <ItemQuantity>
@@ -196,7 +202,13 @@ export const CartItems = () => {
       ))}
       <TotalPriceContainer>
         <h3>Total:</h3>
-        <h3>R${totalPrice},00</h3>
+        <h3>
+          {Intl.NumberFormat('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
+            maximumFractionDigits: 2,
+          }).format(totalPrice)}
+        </h3>
         <CloseCartButton onClick={handleFinish}>Finish</CloseCartButton>
       </TotalPriceContainer>
     </Container>

@@ -9,17 +9,17 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   gap: 10px;
   cursor: pointer;
-  position: relative;  
+  position: relative;
 `
 
 const UserContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
-  background-color: #EFA602;
+  background-color: #efa602;
   padding: 0.5rem 1rem;
   border-radius: 6px;
   transition: 0.2s ease-in;
@@ -61,7 +61,7 @@ const OptionItem = styled.p`
   &:hover {
     transition: 0.2s ease-out;
     color: #000;
-    background-color: #EFEFEF;
+    background-color: #efefef;
   }
 `
 
@@ -77,12 +77,18 @@ export const UserData = () => {
           <FontAwesomeIcon icon={faUser} color={'white'} />
           <Name>Hello, {user.name.split(' ')[0]}!</Name>
         </UserContainer>
-        {showOptions && <Options>
-          <OptionItem onClick={() => navigate('/ocularis/profile')}>Profile</OptionItem>
-          <OptionItem onClick={() => navigate('/ocularis/orders')}>Orders</OptionItem>
-          {user.admin && <OptionItem onClick={() => navigate('/ocularis/admin')}>Admin</OptionItem>}
-          <OptionItem onClick={() => handleLogout()}>Logout</OptionItem>
-        </Options>}
+        {showOptions && (
+          <Options>
+            <OptionItem onClick={() => navigate('/profile')}>
+              Profile
+            </OptionItem>
+            <OptionItem onClick={() => navigate('/orders')}>Orders</OptionItem>
+            {user.admin && (
+              <OptionItem onClick={() => navigate('/admin')}>Admin</OptionItem>
+            )}
+            <OptionItem onClick={() => handleLogout()}>Logout</OptionItem>
+          </Options>
+        )}
       </Container>
     </>
   )

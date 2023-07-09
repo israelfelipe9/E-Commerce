@@ -9,32 +9,43 @@ export const UserOrders = () => {
 
   useEffect(() => {
     async function getUserData() {
-      const { data } = await api.get(`/getOrder/${user.id}`)
-      setData(data)
+      if (user.admin) {
+        const { data } = await api.get('/admin/orders')
+        setData(data)
+      } else {
+        const { data } = await api.get(`/getOrder/${user.id}`)
+        setData(data)
+      }
     }
     getUserData()
   }, [])
 
+  if (!data || data.length === 0) {
+    return <h1>No Orders!</h1>
+  }
+
   return (
     <BaseWrapper>
-      {!data && <h1>No Orders!</h1>}
       {data && (
         <>
-          <h1>User Orders</h1>
+          {user.admin && <h1>All Users Orders</h1>}
+          {!user.admin && <h1>{user.name} Orders</h1>}
           <table className='table'>
             <thead>
               <tr>
                 {/* <th>Client ID</th>
                 <th>Item ID</th> */}
+                {user.admin && <th>Client ID</th>}
                 <th>Date</th>
                 <th>Total</th>
               </tr>
             </thead>
             <tbody>
               {data.map((order) => (
-                <tr key={order.id}>
+                <tr key={order._id}>
                   {/* <td>{order.IdClient}</td>
                   <td>{order.IdItem}</td> */}
+                  {user.admin && <th>{order.IdClient}</th>}
                   <td>{order.date}</td>
                   <td>
                     {Intl.NumberFormat('pt-BR', {

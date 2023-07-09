@@ -28,9 +28,8 @@ function App() {
     <AuthProvider>
       <CartProvider>
         <Routes>
-          <Route path='ocularis' element={<Navbar />}>
+          <Route element={<Navbar />}>
             <Route element={<Footer />}>
-              {/* <Route path='/' element={<Home />} /> */}
               <Route path='home' element={<Home />} />
 
               {/* need to be autenticated */}
@@ -49,11 +48,11 @@ function App() {
 
               <Route path='cart' element={<CartPage />} />
               <Route path='not-found' element={<NotFound />} />
-              <Route path='*' element={<Navigate to='/ocularis/not-found' />} />
+              <Route path='*' element={<Navigate to='/not-found' />} />
             </Route>
           </Route>
 
-          <Route path='ocularis' element={<AdminNavbar />}>
+          <Route element={<AdminNavbar />}>
             <Route path='admin' element={<AdminHomePage />} />
             <Route path='admin/users' element={<AdminUsersPage />} />
             <Route path='admin/products' element={<ProductsPage />} />

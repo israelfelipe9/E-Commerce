@@ -5,12 +5,12 @@ import { api } from '../../services/api'
 export const AdminUsersPage = () => {
   const [data, setData] = useState()
 
-  const handleDelete = async (id: number) => {
+  const handleDelete = async (id: string) => {
     const originalData = data
-    const newData = originalData.filter((item) => item.id !== id)
+    const newData = originalData.filter((item) => item._id !== id)
     setData(newData)
     try {
-      await api.delete('/admin/users/' + id.toString())
+      await api.delete(`/admin/users/${id}`)
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
         console.log('This user has already been deleted')
@@ -42,25 +42,21 @@ export const AdminUsersPage = () => {
               <th scope='col' key='email'>
                 Email
               </th>
-              <th scope='col' key='role'>
-                Role
-              </th>
               <th scope='col' key='delete'></th>
             </tr>
           </thead>
           <tbody>
             {data.map((item) => (
-              <tr key={item.id}>
-                <th scope='row' key={item.id.toString() + 'id'}>
-                  {item.id}
+              <tr key={item._id}>
+                <th scope='row' key={item._id.toString() + 'id'}>
+                  {item._id}
                 </th>
-                <td key={item.id.toString() + 'name'}>{item.name}</td>
-                <td key={item.id.toString() + 'email'}>{item.email}</td>
-                <td key={item.id.toString() + 'role'}>{item.role}</td>
-                <td key={item.id.toString() + 'delete'}>
+                <td key={item._id.toString() + 'name'}>{item.name}</td>
+                <td key={item._id.toString() + 'email'}>{item.email}</td>
+                <td key={item._id.toString() + 'delete'}>
                   <button
                     className='btn btn-danger btn-sm'
-                    onClick={() => handleDelete(item.id)}
+                    onClick={() => handleDelete(item._id)}
                   >
                     Delete
                   </button>

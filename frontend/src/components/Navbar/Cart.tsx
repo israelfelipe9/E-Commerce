@@ -16,7 +16,7 @@ const CartContainer = styled.div`
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    background-color: #EFA602;
+    background-color: #efa602;
   }
 `
 
@@ -54,7 +54,7 @@ const CartDetails = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
   cursor: default;
   z-index: 1;
 `
@@ -130,25 +130,39 @@ export const Cart = () => {
   }, [cart])
 
   return (
-    <CartContainer onMouseEnter={() => setShowItems(true)} onMouseLeave={() => setShowItems(false)}>
-      <ItemsNumber>{ cart.length }</ItemsNumber>
+    <CartContainer
+      onMouseEnter={() => setShowItems(true)}
+      onMouseLeave={() => setShowItems(false)}
+    >
+      <ItemsNumber>{cart.length}</ItemsNumber>
       <Icon src={cartImg} />
-      {showItems && <CartDetails>
-        <h3>Cart</h3>
-        {cart.length !== 0 && cart.map(item => (
-          <Item>
-            <RemoveItemButton onClick={() => removeFromCart(item)}>
-              <FontAwesomeIcon icon={faCircleXmark} />
-            </RemoveItemButton>
-            <ItemImg src={item.photo[0].url} alt="image of a glasses" />
-            <ItemDetails>
-              <ItemName>{item.name}</ItemName>
-              <ItemPrice>R${item.price},00</ItemPrice>
-            </ItemDetails>
-          </Item>
-        ))}
-        {isEmpity ? <p>Your cart is empity!</p> : <Button label='Ir para o carrinho' width={'100%'} onClick={() => navigate('/ocularis/cart')}/>}
-      </CartDetails>}
+      {showItems && (
+        <CartDetails>
+          <h3>Cart</h3>
+          {cart.length !== 0 &&
+            cart.map((item) => (
+              <Item>
+                <RemoveItemButton onClick={() => removeFromCart(item)}>
+                  <FontAwesomeIcon icon={faCircleXmark} />
+                </RemoveItemButton>
+                <ItemImg src={item.photo[0]} alt='image of a glasses' />
+                <ItemDetails>
+                  <ItemName>{item.name}</ItemName>
+                  <ItemPrice>R${item.price},00</ItemPrice>
+                </ItemDetails>
+              </Item>
+            ))}
+          {isEmpity ? (
+            <p>Your cart is empity!</p>
+          ) : (
+            <Button
+              label='Ir para o carrinho'
+              width={'100%'}
+              onClick={() => navigate('/cart')}
+            />
+          )}
+        </CartDetails>
+      )}
     </CartContainer>
   )
 }

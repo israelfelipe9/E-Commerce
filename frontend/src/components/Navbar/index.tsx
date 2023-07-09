@@ -63,7 +63,7 @@ const AuthContainer = styled.div`
 `
 
 const AuthButton = styled.button`
-  background-color: #EFA602;
+  background-color: #efa602;
   color: #fff;
   font-weight: 700;
   font-size: 1rem;
@@ -81,10 +81,10 @@ const AuthButton = styled.button`
 
 const AuthButtonOutline = styled(AuthButton)`
   background-color: transparent;
-  color: #EFA602;
+  color: #efa602;
   box-sizing: border-box;
-  border: 1px solid #EFA602;
-  
+  border: 1px solid #efa602;
+
   &:hover {
     transition: 0.2s ease-out;
     background-color: #d82296;
@@ -101,18 +101,24 @@ export const Navbar = () => {
     <>
       <Nav>
         <ItemsContainer>
-          <LogoImg src={logo} onClick={() => navigate('/ocularis/home')}/>
-          <Item onClick={() => navigate('/ocularis/home')}>Home</Item>
-          <Item onClick={() => navigate('/ocularis/sale')}>Sale</Item>
-          <Item onClick={() => navigate('/ocularis/recommend')}>Recomendation</Item>
+          <LogoImg src={logo} onClick={() => navigate('/home')} />
+          <Item onClick={() => navigate('/home')}>Home</Item>
+          <Item onClick={() => navigate('/sale')}>Sale</Item>
+          <Item onClick={() => navigate('/recommend')}>Recomendation</Item>
           <AuthContainer>
             <Cart />
-            {auth ? <UserData /> :
-            <>
-              <AuthButton onClick={() => navigate('/ocularis/login')}>Login</AuthButton>
-              <AuthButtonOutline onClick={() => navigate('/ocularis/register')}>Register</AuthButtonOutline>
-            </>
-            }
+            {auth ? (
+              <UserData />
+            ) : (
+              <>
+                <AuthButton onClick={() => navigate('/login')}>
+                  Login
+                </AuthButton>
+                <AuthButtonOutline onClick={() => navigate('/register')}>
+                  Register
+                </AuthButtonOutline>
+              </>
+            )}
           </AuthContainer>
         </ItemsContainer>
       </Nav>

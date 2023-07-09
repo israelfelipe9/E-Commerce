@@ -15,19 +15,25 @@ const OptionsItem = styled.span`
 
   &:hover {
     transition: 100ms ease-in-out;
-    background-color: ${props => props.theme.colors.primaryLightest};
+    background-color: ${(props) => props.theme.colors.primaryLightest};
   }
 `
 
 export const View = ({ item, columns }: any) => {
   const navigate = useNavigate()
 
-  return <OptionsItem onClick={() => navigate(`/ocularis/admin/products/view/${item.id}`, {
-    state: {
-      data: item,
-      columns
-    }
-  })}>
-    <FontAwesomeIcon icon={faEye} /> Visualizar
-  </OptionsItem>
+  return (
+    <OptionsItem
+      onClick={() =>
+        navigate(`/admin/products/view/${item.id}`, {
+          state: {
+            data: item,
+            columns,
+          },
+        })
+      }
+    >
+      <FontAwesomeIcon icon={faEye} /> Visualizar
+    </OptionsItem>
+  )
 }

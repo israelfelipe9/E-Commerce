@@ -61,14 +61,14 @@ export const AuthProvider = ({ children }) => {
           email: data.user.email,
           role: data.user.role,
         })
-        navigate('/ocularis/admin')
+        navigate('/admin')
       } else {
         setUser({
           id: data.user.id,
           name: data.user.name,
           email: data.user.email,
         })
-        navigate('/ocularis/home')
+        navigate('/home')
       }
     },
   })
@@ -111,7 +111,7 @@ export const AuthProvider = ({ children }) => {
       name: '',
       email: '',
     })
-    navigate('/ocularis/home')
+    navigate('/home')
   }
 
   return (

@@ -92,18 +92,17 @@ const LogoutButton = styled.button`
 
 export const AdminNavbar = () => {
   const navigate = useNavigate()
-  const { auth } = useContext(AuthContext)
-
+  const { user, auth } = useContext(AuthContext)
   return (
     <>
       <Nav>
         <ItemsContainer>
-          <LogoImg src={logo} onClick={() => navigate('/ocularis/home')} />
-          <AuthContainer>Gabriel Fachini</AuthContainer>
+          <LogoImg src={logo} onClick={() => navigate('/home')} />
+          <AuthContainer>{user.name}</AuthContainer>
           <Item>Home</Item>
-          <Item onClick={() => navigate('/ocularis/admin/products')}>Products</Item>
-          <Item onClick={() => navigate('/ocularis/admin/users')}>Users</Item>
-          <Item onClick={() => navigate('/ocularis/home')}>Back to store</Item>
+          <Item onClick={() => navigate('/admin/products')}>Products</Item>
+          <Item onClick={() => navigate('/admin/users')}>Users</Item>
+          <Item onClick={() => navigate('/home')}>Back to store</Item>
           <LogoutButton>Logout</LogoutButton>
         </ItemsContainer>
       </Nav>

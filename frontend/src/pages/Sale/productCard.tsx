@@ -14,7 +14,7 @@ export const ProductCard = ({ product }: { product: ProductProps }) => {
       <div className='card border'>
         <div className='card-body'>
           <div className='card-img-actions'>
-            <Link to={`/ocularis/sale/${product._id}`}>
+            <Link to={`/sale/${product._id}`}>
               <img
                 src={product.photo[0]}
                 className='img-card'
@@ -28,7 +28,7 @@ export const ProductCard = ({ product }: { product: ProductProps }) => {
         <div className='card-body bg-light text-center'>
           <div className='mb-2'>
             <h5 className='font-weight-semibold mb-2'>
-              <Link to={`/ocularis/sale/${product._id}`}>{product.name}</Link>
+              <Link to={`/sale/${product._id}`}>{product.name}</Link>
             </h5>
 
             <a href='#' className='text-muted' data-abc='true'>

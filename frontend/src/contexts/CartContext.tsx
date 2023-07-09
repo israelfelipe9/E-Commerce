@@ -10,19 +10,6 @@ export interface ProductProps {
   slug: string
   photo?: string[]
 }
-// export interface ProductProps {
-//   _id: number
-//   name: string
-//   brand: string
-//   price: number
-//   photo: {
-//     url: string
-//   }[]
-//   description: string
-//   qtInStock: number
-//   qtSold: number
-//   amount: number
-// }
 
 interface CartContextProps {
   cart: Array<ProductProps>

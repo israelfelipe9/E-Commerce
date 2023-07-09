@@ -10,7 +10,7 @@ const Title = styled.h1`
   width: fit-content;
   font-size: 2.5rem;
   font-weight: 700;
-  color: ${props => props.theme.textPrimary};
+  color: ${(props) => props.theme.textPrimary};
   margin-bottom: 2.5vh;
 `
 
@@ -30,8 +30,8 @@ const columns: TableProps['columns'] = [
       table: true,
       filter: true,
       view: true,
-      edit: true
-    }
+      edit: true,
+    },
   },
   {
     header: 'Brand',
@@ -41,8 +41,8 @@ const columns: TableProps['columns'] = [
       table: true,
       filter: true,
       view: true,
-      edit: true
-    }
+      edit: true,
+    },
   },
   {
     header: 'Name',
@@ -52,8 +52,8 @@ const columns: TableProps['columns'] = [
       table: true,
       filter: true,
       view: true,
-      edit: true
-    }
+      edit: true,
+    },
   },
   {
     header: 'Photo',
@@ -61,8 +61,8 @@ const columns: TableProps['columns'] = [
     type: 'image',
     options: {
       table: true,
-      view: true
-    }
+      view: true,
+    },
   },
   {
     header: 'Price',
@@ -72,8 +72,8 @@ const columns: TableProps['columns'] = [
       table: true,
       filter: true,
       view: true,
-      edit: true
-    }
+      edit: true,
+    },
   },
   {
     header: 'Stock',
@@ -83,8 +83,8 @@ const columns: TableProps['columns'] = [
       table: true,
       filter: true,
       view: true,
-      edit: true
-    }
+      edit: true,
+    },
   },
   {
     header: 'Sold',
@@ -94,8 +94,8 @@ const columns: TableProps['columns'] = [
       table: true,
       filter: true,
       view: true,
-      edit: true
-    }
+      edit: true,
+    },
   },
   {
     header: 'Slug',
@@ -105,10 +105,10 @@ const columns: TableProps['columns'] = [
       table: true,
       filter: true,
       view: true,
-      edit: true
-    }
-  }
-] 
+      edit: true,
+    },
+  },
+]
 
 export const ProductsPage = () => {
   document.title = 'Ocularis | Products'
@@ -118,7 +118,7 @@ export const ProductsPage = () => {
     queryKey: ['getAllProducts'],
     queryFn: async () => {
       const response = (await api.get('/products')).data
-      return response.map(product => {
+      return response.map((product) => {
         return {
           id: product.id,
           brand: product.brand,
@@ -127,22 +127,24 @@ export const ProductsPage = () => {
           price: product.price,
           qtInStock: product.qtInStock,
           qtSold: product.qtSold,
-          slug: product.slug
+          slug: product.slug,
         }
       })
     },
-    refetchOnWindowFocus: false
+    refetchOnWindowFocus: false,
   })
 
   return (
     <BaseWrapper>
       <Title>Products</Title>
       <PageContainer>
-        <Button type='button' label="New Product" width="fit-content" onClick={() => navigate('/ocularis/admin/products/new')} />
-        <Table
-          columns={columns}
-          data={data ?? []}
+        <Button
+          type='button'
+          label='New Product'
+          width='fit-content'
+          onClick={() => navigate('/admin/products/new')}
         />
+        <Table columns={columns} data={data ?? []} />
       </PageContainer>
     </BaseWrapper>
   )
