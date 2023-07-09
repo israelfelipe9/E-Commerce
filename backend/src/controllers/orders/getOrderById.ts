@@ -5,7 +5,7 @@ connectDB()
 
 export const getOrder = async (req: Request, res: Response) => {
   try {
-    const id = parseInt(req.params.id)
+    const id = req.params.id
     const orders = await OrderModel.find({ IdClient: id })
     return res.status(200).send(orders)
   } catch (error) {

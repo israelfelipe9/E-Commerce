@@ -9,7 +9,7 @@ const MyImage = ({ imgs = [] }) => {
       <div className='grid grid-four-column'>
         {imgs.map((curElm, index) => {
           return (
-            <figure>
+            <figure key={curElm}>
               <img
                 src={curElm}
                 alt='Glasses Photo'

@@ -69,28 +69,29 @@ export const UserProfile = () => {
   //   })
 
   return (
-    <Form onSubmit={handleSubmit(handleLogin)}>
-      {error && (
-        <Error>
-          <FontAwesomeIcon icon={faWarning} color='white' />
-          <ErrorMessage>{error}</ErrorMessage>
-        </Error>
-      )}
-      <h1>Profile</h1>
-      <Input
-        placeholder='john.doe@email.com'
-        label='Email:'
-        error={errors.email?.message}
-        {...register('email')}
-      />
-      <Input
-        type='password'
-        label='Password:'
-        error={errors.password?.message}
-        {...register('password')}
-      />
+    <h1>User Profile</h1>
+    // <Form onSubmit={handleSubmit(handleLogin)}>
+    //   {error && (
+    //     <Error>
+    //       <FontAwesomeIcon icon={faWarning} color='white' />
+    //       <ErrorMessage>{error}</ErrorMessage>
+    //     </Error>
+    //   )}
+    //   <h1>Profile</h1>
+    //   <Input
+    //     placeholder='john.doe@email.com'
+    //     label='Email:'
+    //     error={errors.email?.message}
+    //     {...register('email')}
+    //   />
+    //   <Input
+    //     type='password'
+    //     label='Password:'
+    //     error={errors.password?.message}
+    //     {...register('password')}
+    //   />
 
-      <Button type='submit' label='Enviar' />
-    </Form>
+    //   <Button type='submit' label='Enviar' />
+    // </Form>
   )
 }

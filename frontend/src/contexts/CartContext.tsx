@@ -1,7 +1,7 @@
 import { createContext, useState } from 'react'
 
 export interface ProductProps {
-  id: number
+  _id: string
   name: string
   description: string
   price: number
@@ -50,7 +50,7 @@ export const CartProvider = ({ children }) => {
 
   const removeFromCart = (product: ProductProps) => {
     setTotalPrice(totalPrice - product.price)
-    setCart(cart.filter((item) => item.id !== product.id))
+    setCart(cart.filter((item) => item._id !== product._id))
     alert('Product removed from cart!')
   }
 

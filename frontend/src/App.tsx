@@ -39,10 +39,14 @@ function App() {
 
               <Route path='login' element={<LoginPage />} />
               <Route path='register' element={<RegisterPage />} />
+
               <Route path='recommend' element={<RecommendForm />} />
+
               <Route path='payment' element={<PaymentForm />} />
+
               <Route path='sale' element={<Sale />} />
               <Route path='sale/:id' element={<Product />} />
+
               <Route path='cart' element={<CartPage />} />
               <Route path='not-found' element={<NotFound />} />
               <Route path='*' element={<Navigate to='/ocularis/not-found' />} />

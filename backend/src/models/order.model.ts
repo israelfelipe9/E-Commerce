@@ -6,16 +6,16 @@ import mongoose, { Schema, type Document } from 'mongoose'
 // }
 
 interface Order extends Document {
-  IdClient: number
-  IdItem: number
+  IdClient: string
+  IdItem: string
   date: Date
   total: number
   //   itens: itemOrder[] // List of items id
 }
 
 const OrderSchema: Schema = new Schema<Order>({
-  IdClient: { type: Number, required: true, index: true },
-  IdItem: { type: Number, required: true, index: true },
+  IdClient: { type: String, required: true, index: true },
+  IdItem: { type: String, required: true, index: true },
   date: { type: Date, required: true },
   total: { type: Number, required: true },
   //   itens: { type: Array, required: true },

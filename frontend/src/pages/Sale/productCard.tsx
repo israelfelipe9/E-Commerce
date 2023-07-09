@@ -8,13 +8,13 @@ import { Button } from '../../components/common/button'
 
 export const ProductCard = ({ product }: { product: ProductProps }) => {
   const { addToCart } = useContext(CartContext)
-
+  // console.log(product)
   return (
     <div className='col-md-4 mt-3 mb-3'>
       <div className='card border'>
         <div className='card-body'>
           <div className='card-img-actions'>
-            <Link to={`/ocularis/sale/${product.id}`}>
+            <Link to={`/ocularis/sale/${product._id}`}>
               <img
                 src={product.photo[0]}
                 className='img-card'
@@ -28,7 +28,7 @@ export const ProductCard = ({ product }: { product: ProductProps }) => {
         <div className='card-body bg-light text-center'>
           <div className='mb-2'>
             <h5 className='font-weight-semibold mb-2'>
-              <Link to={`/ocularis/sale/${product.id}`}>{product.name}</Link>
+              <Link to={`/ocularis/sale/${product._id}`}>{product.name}</Link>
             </h5>
 
             <a href='#' className='text-muted' data-abc='true'>

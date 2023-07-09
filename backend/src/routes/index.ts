@@ -5,7 +5,6 @@ import { loginUser } from '@controllers/users/login'
 import { createNewAdminUser } from '@controllers/admin/createNewAdminUser'
 import { getUser } from '@controllers/users/getUser'
 import { getRecommendation } from '@controllers/recommendation/getRecommendation'
-import { deleteProduct } from '@controllers/admin/deleteProduct'
 import { deleteUser } from '@controllers/admin/deleteUser'
 import { getUsers } from '@controllers/admin/getUsers'
 import { editHandler } from '@controllers/admin/editController'
@@ -15,6 +14,7 @@ import { getOrders } from '@controllers/orders/getOrders'
 import { newOrder } from '@controllers/orders/userOrder'
 import { getOrder } from '@controllers/orders/getOrderById'
 import { getProduct } from '@controllers/products/getProductById'
+// import { deleteProduct } from '@controllers/admin/deleteProduct'
 
 export const router = Router()
 

@@ -41,6 +41,7 @@ export const registerNewUser = async (req: Request, res: Response) => {
     }
 
     bcrypt.genSalt(10, (err, salt) => {
+      if (err) throw err
       bcrypt.hash(password, salt, async (err, hash) => {
         if (err) throw err
         try {
@@ -54,7 +55,7 @@ export const registerNewUser = async (req: Request, res: Response) => {
 
           return res.status(201).json({ message: 'User created successfully' })
         } catch (error) {
-          return res.status(500).json({ message: 'Error creating user' })
+          return res.status(500).json({ message: error })
         }
       })
     })

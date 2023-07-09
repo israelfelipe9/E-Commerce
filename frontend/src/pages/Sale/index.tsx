@@ -4,10 +4,8 @@ import { SearchBox } from '../../components/common/searchBox'
 import { BaseWrapper } from '../../components/BaseWrapper'
 import { api } from '../../services/api'
 
-import * as services from '../../data/fakeProductService'
-
 interface IProducts {
-  id: number
+  _id: string
   name: string
   description: string
   price: number
@@ -52,10 +50,10 @@ export const Sale = () => {
         <div className='row'>
           {query.length > 1
             ? filteredProducts.map((product) => (
-                <ProductCard product={product} key={product.id} />
+                <ProductCard product={product} key={product._id} />
               ))
             : products.map((product) => (
-                <ProductCard product={product} key={product.id} />
+                <ProductCard product={product} key={product._id} />
               ))}
         </div>
       </div>

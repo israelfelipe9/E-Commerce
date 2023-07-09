@@ -4,9 +4,9 @@ import ProductModel from 'src/models/product.model'
 connectDB()
 
 export const getProduct = async (req: Request, res: Response) => {
-  const id = parseInt(req.params.id)
+  const id = req.params.id
   try {
-    const product = await ProductModel.findOne({ id: id })
+    const product = await ProductModel.findOne({ _id: id })
     if (!product) {
       return res.status(404).json({ message: 'Product not found' })
     }
