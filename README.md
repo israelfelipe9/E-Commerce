@@ -1,56 +1,80 @@
 # Ocularis
 
-## [Link para o Figma](https://www.figma.com/file/JscsXqK1cnMdkIQfJeisMQ/Web-dev-online-store?type=design&node-id=2%3A5&t=45La1o0rPl0CuJ8D-1) com as mockups.
+## [Link to Figma](https://www.figma.com/file/JscsXqK1cnMdkIQfJeisMQ/Web-dev-online-store?type=design&node-id=2%3A5&t=45La1o0rPl0CuJ8D-1) with all mockups.
 
-## Autores
-#### Grupo 7
-* Israel Felipe da Silva nUSP: 11796531
-* Gabriel Fernando Machado Fachini - 11953481
-* Mateus Israel Silva - 11735042
+## Authors
 
-## Requisitos
-Ocularis é uma ótica online que vende óculos e produtos relacionados. A plataforma tem todas funcionalidades para o cliente ver, selecionar e comprar os produtos. A plataforma também oferece uma funcionalidade extra integrada com o chatGPT para que o cliente selecione algumas especificações de óculos e obtenha uma recomendação de modelo de óculos baseadas nestas especificações.
+#### Group 7
 
-Além dos requisitos definidos na especificação do projeto, o sistema possui os seguintes requisitos:
+- Israel Felipe da Silva - 11796531
+- Gabriel Fernando Machado Fachini - 11953481
 
-* A plataforma vende óculos e outros produtos relacionados
-* O cliente só consegue efetuar uma compra se estiver devidamente logado
-* O cliente consegue obter uma recomendação personalizada de óculos baseado em algumas especificações selecionadas
-* O sistema irá armazenar dados dos itens, contas de usuários e pedidos
+## Requirements
 
-## Descrição do projeto
-### Funcionalidades
-* O usuário consegue ver todos os itens disponibilizados na plataforma e sua disponibilidade em estoque
-* O usuário consegue selecionar determinado item e ver mais especificações sobre este item
-* O usuário consegue logar no sistema ou se registrar caso ainda não tenha feito
-* O usuário consegue solicitar uma recomendação personalizada de óculos baseada em algumas especificações
-* O usuário consegue selecionar um determinado item e quantidade e comprá-lo desde que já tenha logado na página
-* O usuário consegue realizar o pagamento de um pedido em aberto
-* O usuário consegue ver e editar seus dados e seus pedidos em aberto ou já realizados
-* O Admin consegue editar ou adicionar: usuários, pedidos, itens e categorias
+Ocularis is an online optical store that sells glasses and related products. The platform has all the features for customers to view, select, and purchase products. The platform also offers an additional search bar functionality along with an integrated chatGPT feature, allowing customers to select specific eyewear specifications and receive a model recommendation based on those specifications.
 
-### Diagrama de Navegação
+In addition to the requirements defined in the project specification, the system has the following requirements:
+
+- The platform sells glasses and other related products.
+- The customer can only make a purchase if they are properly logged in.
+- The customer can receive a personalized recommendation for eyewear based on selected specifications.
+- The system will store data on items, user accounts, and orders.
+
+## Project Description
+
+### Functionality
+
+- The user can view and search for keywords for all items available on the platform and their availability in stock.
+- The user can select a specific item and view more specifications about it.
+- The user can log in to the system or register if they haven't done so already.
+- The user can request a personalized eyewear recommendation based on certain specifications.
+- The user can select a specific item and quantity and purchase it, provided they are already logged in to the page.
+- The user can view and edit their data and see their completed orders.
+- The Admin can view, edit, remove, and add products.
+- The Admin can view and remove user accounts.
+- The Admin can view all completed orders, items, user accounts, and orders.
+
+### Navigation Diagram
+
 <img src='diagrama2.png' />
 
-### Conexão com o Servidor
-O sistema terá conexão com um servidor para operar com os dados que serão utilizados na plataforma. As informações que serão salvas no servidor, são relacionadas a itens que a plataforma oferta, dados de contas e pedidos realizados.
+### Server Connection
 
-* Itens: Nome, Id, Foto, Descrição, preço, quantidade em estoque, quantidades vendidas
-* Conta Admin: Nome, Id, Telefone, Email, Senha, Endereço, RG, CPF, Data de Nascimento
-* Conta Cliente: Nome, Id, Telefone, Email, Senha, Endereço, RG, CPF, Data de Nascimento
-* Pedidos: Id_Cliente, Id_Item, quantidade, Endereço, Data, Forma de Pagamento
+The system will have a connection to a server to operate with the data that will be used on the platform. The information that will be saved on the server is related to the items offered by the platform, account data, and completed orders.
 
-Todas as requisições com o servidor seguirão as operações do tipo CRUD, utilizando o protocolo HTTP para conexão com a API.
+- Items: Name, ID, Photos, Description, Price, Brand, Slug, Quantity in Stock, Quantities Sold
+- Admin Account: Name, ID, Email, Password
+- Customer Account: Name, ID, Phone Number, Email, Password, Address, ID Card (RG), Tax ID Number (CPF), Date of Birth
+- Orders: ID, Customer ID, Item ID, Total Amount, Date
 
-## Comentários sobre o código
-Ainda não iniciamos o desenvolvimento do código.
+All requests to the server will follow CRUD operations, using the HTTP protocol to connect to the API.
 
-## Plano de Testes
-Planejamos escrever testes unitários para os componentes da aplicação assim como testes de integração entre eles. Não iremos implementar uma forma de pagamento real, então não iremos testar essa parte também.
-## Resultados dos Testes
-Ainda não executamos os testes.
+# Tech Stack
 
-## Procedimentos de construção e execução
+![MERN stack](https://res.cloudinary.com/silenceiv/image/upload/c_fill,h_205,w_512/v1617484581/mern_sakbwj.png)
+
+- MERN (MongoDB, Express.js, React, and Node.js) Solution stack;
+- Responsive Design;
+- UX & UI;
+- Validation and error handling.
+
+## Comments about the code
+
+During the development of this project, the group used several good practices in the code, with good modularity in the front-end and back-end, dividing all the codes into folders, making it cleaner and easier to understand the purpose of each code. The code doesn't have specific comments, but we've made sure that all the folder, file, function, and variable names are informative and self-documented, to help anyone understand what each line is about.
+
+## Test Plan
+
+We have tested our backend by making requests to the endpoints with insomnia. After integrating the backend and frontend we tested the same functionalities, but now seeing the results in the interface.
+
+The test procedures were mostly made manually, for example: We created a post request to create a new product by changing the fields in the body observing the status of the response, forcing some requests to return errors or success, after that we confirmed the result by seing the updates made in our database. The same Idea was made with our frontend.
+
+These procudures were done with all routes,that is, we tested all CRUD operations with products, user and orders.
+
+## Test Results
+
+From the test plan discussed above, we ensure the correct functioning of our backend and frontend. All functionality has been tested with many combinations of all possible response statuses.
+
+## Construction and execution procedures
 
 Use the package manager [npm](https://docs.npmjs.com/) to install.
 
@@ -58,14 +82,28 @@ Use the package manager [npm](https://docs.npmjs.com/) to install.
 cd frontend
 npm install
 npm run dev
+```
 
+The app will run on http://localhost:3000/
+
+```bash
 cd backend
 npm install
 npm run dev
 ```
 
-## Problemas
-Não iniciamos o desenvolvimento do código da aplicação ainda, que é onde acreditamos enfrentar mais problemas. O desenvolvimento da interface de usuário até o momento foi fluído e não enfrentamos problemas.
+The server will run on http://localhost:4000/
 
-## Comentários
-A equipe planeja desenvolver o sistema utilizando da biblioteca React.JS na parte do Front-End, juntamente com a framework Node Express para o desenvolvimento backend e um software de banco de dados em SQL.
+## Problems
+
+During the development of this project, as we expected, we faced some implementation problems, but we managed to overcome them by learning good practices and tools that help us to solve these problems
+
+Also, another issue faced was related to extra functionality about getting recommendations with GPT chat, due to rate limit of the free key, getting error status 429 from API. From that, we've decided to implement a new feature which is the search bar to search for products based on keywords.
+
+## Comments
+
+The use of typescript, eslint and zod (form validator) helped us to avoid some bugs and unexpected behavior.
+
+Also, using vite instead of CRA gave us a faster and more robust way to run our react app.
+
+This project gave us the perspective of a real world project, making us learn all the necessary features and technologies to build our web-ecommerce from scratch.
