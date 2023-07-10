@@ -43,8 +43,6 @@ export const RecommendForm = () => {
   const [data, setData] = useState('')
 
   const handleSubmitForm = async (payload) => {
-    console.log(payload)
-
     const recommendation = (await api.post('/chat', payload)).data
     console.log(recommendation)
     setData(recommendation)

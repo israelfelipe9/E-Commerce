@@ -54,7 +54,6 @@ export const RegisterForm = () => {
   })
 
   const handleSubmitForm = (payload) => {
-    console.log(payload)
     mutate(payload)
   }
 

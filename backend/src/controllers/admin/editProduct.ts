@@ -1,10 +1,11 @@
-import ProductModel from "src/models/product.model"
+import ProductModel from 'src/models/product.model'
 
-export const handleEditProduct = async (id: number, payload) => {
+export const handleEditProduct = async (id: string, payload) => {
+  console.log(payload)
   try {
-    await ProductModel.updateOne({ id }, payload)
+    await ProductModel.updateOne({ _id: id }, payload)
     return true
   } catch (error) {
-    return error    
+    return error
   }
 }

@@ -23,17 +23,6 @@ const PageContainer = styled.div`
 
 const columns: TableProps['columns'] = [
   {
-    header: 'ID',
-    accessor: 'id',
-    type: 'number',
-    options: {
-      table: true,
-      filter: true,
-      view: true,
-      edit: true,
-    },
-  },
-  {
     header: 'Brand',
     accessor: 'brand',
     type: 'string',
@@ -120,7 +109,7 @@ export const ProductsPage = () => {
       const response = (await api.get('/products')).data
       return response.map((product) => {
         return {
-          id: product.id,
+          id: product._id,
           brand: product.brand,
           name: product.name,
           photo: product.photo[0],

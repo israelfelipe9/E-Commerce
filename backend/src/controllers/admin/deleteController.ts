@@ -1,26 +1,14 @@
 import { type Request, type Response } from 'express'
-import { handleEditProduct } from './editProduct';
-import { handleDeleteProduct } from './deleteProduct';
+import { handleDeleteProduct } from './deleteProduct'
 
 export const deleteHandler = async (req: Request, res: Response) => {
-  const { table, id } = req.params
-  
-  try {
-    switch (table) {
-      case 'products':
-        if (await handleDeleteProduct(Number(id))) {
-          return res.status(200).send({ message: 'Produto deletado com sucesso!' })
-        }
-        return res.status(400).send({ message: 'Erro ao deletar produto!' })
+  const { id } = req.params
 
-      case 'users':
-        // handler
-        break;
-    
-      default:
-        break;
+  try {
+    if (await handleDeleteProduct(id)) {
+      return res.status(200).send({ message: 'Produto deletado com sucesso!' })
     }
   } catch (error) {
-    
+    return res.status(400).send({ message: 'Erro ao deletar produto!' })
   }
 }

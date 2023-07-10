@@ -1,11 +1,11 @@
-import ProductModel from "src/models/product.model"
+import ProductModel from 'src/models/product.model'
 
 export const handleCreateProduct = async (payload) => {
   try {
-    const { brand, name, description, photo, price, stock, sold, slug } = payload
+    const { brand, name, description, photo, price, stock, sold, slug } =
+      payload
 
     const product = new ProductModel({
-      id: Math.floor(Math.random()*100),
       brand,
       name,
       description,
@@ -13,7 +13,7 @@ export const handleCreateProduct = async (payload) => {
       price,
       qtInStock: stock,
       qtSold: sold,
-      slug
+      slug,
     })
     await product.save()
     return true

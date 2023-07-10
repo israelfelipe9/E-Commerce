@@ -8,7 +8,6 @@ import { Button } from '../../components/common/button'
 
 export const ProductCard = ({ product }: { product: ProductProps }) => {
   const { addToCart } = useContext(CartContext)
-  // console.log(product)
   return (
     <div className='col-md-4 mt-3 mb-3'>
       <div className='card border'>

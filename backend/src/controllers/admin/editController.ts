@@ -1,25 +1,13 @@
 import { type Request, type Response } from 'express'
-import { handleEditProduct } from './editProduct';
+import { handleEditProduct } from './editProduct'
 
 export const editHandler = async (req: Request, res: Response) => {
-  const { table, id } = req.params
-
+  const { id } = req.params
   try {
-    switch (table) {
-      case 'products':
-        if (await handleEditProduct(Number(id), req.body)) {
-          res.status(200).send({ message: 'Produto editado com sucesso!' })
-        }
-        return res.status(400).send({ message: 'Erro ao editar produto!' })
-      
-      case 'users':
-        // handler
-        break;
-    
-      default:
-        break;
+    if (await handleEditProduct(id, req.body)) {
+      return res.status(200).send({ message: 'Produto editado com sucesso!' })
     }
   } catch (error) {
-    
+    return res.status(400).send({ message: 'Erro ao editar produto!' })
   }
 }
