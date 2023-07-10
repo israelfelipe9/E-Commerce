@@ -92,7 +92,7 @@ const LogoutButton = styled.button`
 
 export const AdminNavbar = () => {
   const navigate = useNavigate()
-  const { user, auth } = useContext(AuthContext)
+  const { user, auth, handleLogout } = useContext(AuthContext)
   return (
     <>
       <Nav>
@@ -103,7 +103,7 @@ export const AdminNavbar = () => {
           <Item onClick={() => navigate('/admin/products')}>Products</Item>
           <Item onClick={() => navigate('/admin/users')}>Users</Item>
           <Item onClick={() => navigate('/home')}>Back to store</Item>
-          <LogoutButton>Logout</LogoutButton>
+          <LogoutButton onClick={() => handleLogout()}>Logout</LogoutButton>
         </ItemsContainer>
       </Nav>
       <Outlet />
