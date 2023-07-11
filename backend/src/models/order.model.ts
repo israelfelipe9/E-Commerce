@@ -11,6 +11,7 @@ interface Order extends Document {
   products: {
     productId: string
     quantity: number
+    name: string
   }[]
   totalPrice: number
 }
@@ -27,6 +28,10 @@ const OrderSchema: Schema = new Schema<Order>({
       type: Number,
       required: true,
     },
+    name: {
+      type: String,
+      required: true,
+    }
   }],
   totalPrice: { type: Number, required: true },
 })

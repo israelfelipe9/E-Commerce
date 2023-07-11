@@ -27,21 +27,19 @@ router.get('/healthcheck', (_req, res) => {
 // Rotas GET
 router.get('/products', getProducts)
 router.get('/product/:id', getProduct)
-router.get('/getUser', getUser)
+router.get('/getUser', checkAuth, getUser)
 router.get('/getOrder/:id', getOrder)
 
 // Rotas POST
 router.post('/register', registerNewUser)
 router.post('/login', loginUser)
+router.get('/order', checkAuth, getOrders)
 router.post('/order', checkAuth, newOrder)
 router.post('/buy')
 
 /* Rotas admin */
 router.get('/admin/users', getUsers)
 router.get('/admin/orders', getOrders)
-router.get('/admin/products')
-router.get('/admin/products/:slug')
-router.post('/admin/products')
 router.post('/registerAdmin', createNewAdminUser)
 router.delete('/admin/users/:id', deleteUser)
 

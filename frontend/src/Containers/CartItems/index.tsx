@@ -210,6 +210,7 @@ export const CartItems = () => {
           return {
             productId: item._id,
             quantity: item.qtdCart,
+            name: item.name
           }
         })
         const res = await api.post('/order', {

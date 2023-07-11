@@ -312,14 +312,14 @@ export const Table = ({ columns, data }: TableProps) => {
         <Button
           type='button'
           label='Anterior'
-          onClickFunction={() => table.previousPage()}
+          onClick={() => table.previousPage()}
           width='300px'
           disabled={!table.getCanPreviousPage()}
         />
         <Button
           type='button'
           label='Próximo'
-          onClickFunction={() => table.nextPage()}
+          onClick={() => table.nextPage()}
           width='300px'
           disabled={!table.getCanNextPage()}
         />

@@ -4,21 +4,22 @@ import OrderModel from 'src/models/order.model'
 connectDB()
 
 interface Order {
-  id: string
+  userId: string
   date: Date
   products: {
     productId: string
     quantity: number
+    name: string
   }[]
   totalPrice: number
 }
 
 export const newOrder = async (req: Request, res: Response) => {
   try {
-    const { id, products, totalPrice }: Order = req.body
+    const { userId, products, totalPrice }: Order = req.body
 
     const newOrder = new OrderModel({
-      userId: id,
+      userId,
       date: new Date(),
       products,
       totalPrice

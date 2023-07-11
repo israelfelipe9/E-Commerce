@@ -5,6 +5,7 @@ interface ButtonProps {
   label: string
   type: 'button' | 'submit'
   onClick?: () => void
+  disabled?: boolean
 }
 
 const ButtonContainer = styled.button<ButtonProps>`
@@ -25,12 +26,13 @@ const ButtonContainer = styled.button<ButtonProps>`
   }
 `
 
-export const Button = ({ label, width, type, onClick }: ButtonProps) => {
+export const Button = ({ label, width, type, onClick, disabled }: ButtonProps) => {
   return (
     <ButtonContainer
       type={type}
       width={width}
       onClick={onClick}
+      disabled={disabled}
     >
       {label}
     </ButtonContainer>

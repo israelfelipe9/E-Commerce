@@ -120,7 +120,7 @@ export const ProductsPage = () => {
         }
       })
     },
-    refetchOnWindowFocus: false,
+    refetchOnWindowFocus: true,
   })
 
   return (

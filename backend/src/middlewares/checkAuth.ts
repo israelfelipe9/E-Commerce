@@ -21,7 +21,7 @@ export const checkAuth = (req: Request, res: Response, next: NextFunction) => {
       return res.status(401).send(err)
     } else {
       const { id, email, name, role, admin } = decoded as DecodedJWT
-      req.body = { ...req.body, id, email, name, role, admin }
+      req.body = { ...req.body, userId: id, email, name, role, admin }
       res.status(200)
       next()
     }

@@ -7,6 +7,7 @@ export const createHandler = async (req: Request, res: Response) => {
       return res.status(200).send({ message: 'Produto criado com sucesso!' })
     }
   } catch (error) {
-    return res.status(400).send({ message: 'Erro ao criar o produto!' })
+    console.log(error)
+    return res.status(400).send({ message: 'Erro ao criar o produto!', error })
   }
 }

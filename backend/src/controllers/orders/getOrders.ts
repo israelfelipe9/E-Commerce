@@ -5,7 +5,10 @@ connectDB()
 
 export const getOrders = async (_req: Request, res: Response) => {
   try {
-    const orders = await OrderModel.find()
+    const { userId } = _req.body
+    const orders = await OrderModel.find({
+      userId,
+    })
     return res.status(200).send(orders)
   } catch (error) {
     console.log(error)
