@@ -46,7 +46,7 @@ export const Sale = () => {
   return (
     <BaseWrapper>
       <SearchBox value={query} onChange={handleSearch} />
-      <div className='container d-flex justify-content-center mt-50 mb-50'>
+      <div className='container justify-content-center mt-50 mb-50'>
         <div className='row'>
           {query.length > 1
             ? filteredProducts.map((product) => (
