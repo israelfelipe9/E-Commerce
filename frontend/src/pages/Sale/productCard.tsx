@@ -46,7 +46,7 @@ export const ProductCard = ({ product }: { product: ProductProps }) => {
           <Button
             type='button'
             className='btn btn-sm mt-2'
-            onClick={() => addToCart(product)}
+            onClick={() => addToCart({...product, qtdCart: 1})}
           >
             <FontAwesomeIcon icon={faCartShopping} fixedWidth />
             Add To Cart

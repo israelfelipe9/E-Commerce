@@ -22,6 +22,7 @@ import { ProductsPage } from './pages/Products'
 import { ViewPage } from './pages/View'
 import { EditPage } from './pages/Edit'
 import { NewProductPage } from './pages/newProduct'
+import { PrivateRoute } from '@components/PrivateRoute'
 
 function App() {
   return (
@@ -52,14 +53,16 @@ function App() {
             </Route>
           </Route>
 
-          <Route element={<AdminNavbar />}>
-            <Route path='admin' element={<AdminHomePage />} />
-            <Route path='admin/users' element={<AdminUsersPage />} />
-            <Route path='admin/products' element={<ProductsPage />} />
-            <Route path='admin/products/new' element={<NewProductPage />} />
-            <Route path='admin/products/view/:id' element={<ViewPage />} />
-            <Route path='admin/products/edit/:id' element={<EditPage />} />
-            {/* <Route path='rewards/delete/:id' element={<DeletePage />} /> */}
+          <Route element={<PrivateRoute />} >
+            <Route element={<AdminNavbar />}>
+              <Route path='admin' element={<AdminHomePage />} />
+              <Route path='admin/users' element={<AdminUsersPage />} />
+              <Route path='admin/products' element={<ProductsPage />} />
+              <Route path='admin/products/new' element={<NewProductPage />} />
+              <Route path='admin/products/view/:id' element={<ViewPage />} />
+              <Route path='admin/products/edit/:id' element={<EditPage />} />
+              {/* <Route path='rewards/delete/:id' element={<DeletePage />} /> */}
+            </Route>
           </Route>
         </Routes>
       </CartProvider>

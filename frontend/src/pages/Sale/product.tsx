@@ -6,14 +6,22 @@ import { Button } from '../../components/common/button'
 import CartAmountToggle from './cartAmount'
 import MyImage from './myImage'
 import { api } from '../../services/api'
-
-import * as services from '../../data/fakeProductService'
-import { CartContext } from '../../contexts/CartContext'
+import { CartContext, ProductProps } from '../../contexts/CartContext'
 
 export const Product = () => {
-  const [data, setData] = useState<services.IProducts | undefined>()
+  const [data, setData] = useState<ProductProps>()
   const [amount, setAmount] = useState(1)
   const { addToCart } = useContext(CartContext)
+
+  const { id } = useParams()
+
+  useEffect(() => {
+    async function getData() {
+      const response = await api.get(`/product/${id}`)
+      setData(response.data)
+    }
+    getData()
+  }, [])
 
   const setDecrease = () => {
     amount > 1 ? setAmount(amount - 1) : setAmount(1)
@@ -23,15 +31,9 @@ export const Product = () => {
     amount < data.qtInStock ? setAmount(amount + 1) : setAmount(data.qtInStock)
   }
 
-  const { id } = useParams()
-
-  useEffect(() => {
-    async function getData() {
-      const { data } = await api.get(`/product/${id}`)
-      setData(data)
-    }
-    getData()
-  }, [])
+  const handleAddToCart = () => {
+    addToCart({ ...data, qtdCart: amount })
+  }
 
   if (!data) {
     return <div className='page_loading'>Not Found</div>
@@ -78,7 +80,7 @@ export const Product = () => {
                       setDecrease={setDecrease}
                       setIncrease={setIncrease}
                     />
-                    <Button className='btn' onClick={() => addToCart(data)}>
+                    <Button className='btn' onClick={() => handleAddToCart()}>
                       Add To Cart
                     </Button>
                   </>

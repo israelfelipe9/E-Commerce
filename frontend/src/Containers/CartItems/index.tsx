@@ -1,10 +1,11 @@
-import { useContext, useEffect, useState } from 'react'
-import { CartContext } from '../../contexts/CartContext'
+import { useContext, useEffect, useRef, useState } from 'react'
+import { CartContext, ProductProps } from '../../contexts/CartContext'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from 'react-router-dom'
 import { api } from 'src/services/api'
+import { set } from 'react-hook-form'
 
 const Container = styled.div`
   display: flex;
@@ -47,6 +48,7 @@ const ItemImg = styled.img`
 `
 
 const ItemDetails = styled.div`
+  width: 400px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -58,6 +60,8 @@ const ItemName = styled.p`
   font-weight: 700;
   margin: 0;
   color: #292929;
+  text-transform: capitalize;
+  text-align: left;
 `
 
 const ItemPrice = styled.p`
@@ -78,8 +82,9 @@ const RemoveItemButton = styled.button`
   border: none;
   background-color: #f74a2c;
   color: white;
-  padding: 10px 20px;
-  border-radius: 12px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
 
   &:hover {
     transition: all 0.2s ease-in-out;
@@ -130,7 +135,8 @@ const CloseCartButton = styled.button`
   background-color: #ffbc20;
   color: white;
   padding: 10px 20px;
-  border-radius: 12px;
+  border-radius: 6px;
+  font-weight: 600;
 
   &:hover {
     transition: all 0.2s ease-in-out;
@@ -139,67 +145,88 @@ const CloseCartButton = styled.button`
   }
 `
 
-export const CartItems = () => {
-  const { cart, removeFromCart, totalPrice } = useContext(CartContext)
-  const [amount, setAmount] = useState(1)
-  const navigate = useNavigate()
+const CartItem = ({ item, updateTotalPrice }: { item: ProductProps, updateTotalPrice: () => void }) => {
+  const [amount, setAmount] = useState(item.qtdCart)
 
   useEffect(() => {
-    if (cart.length > 0) {
-      cart.reduce((acc, item) => {
-        return acc + item.price * item.amount
-      }, 0)
-    }
-  }, [amount, cart])
+    updateTotalPrice()
+  }, [amount])
+  
+  return (
+    <Item>
+      <ItemDetailsContainer>
+        <ItemImg src={item.photo[0]} />
+        <ItemDetails>
+          <ItemName>{item.name}</ItemName>
+          <ItemPrice>
+            {Intl.NumberFormat('pt-BR', {
+              style: 'currency',
+              currency: 'BRL',
+              maximumFractionDigits: 2,
+            }).format(item.price)}
+          </ItemPrice>
+        </ItemDetails>
+      </ItemDetailsContainer>
+      <ItemQuantity>
+        <MinusButton
+          onClick={() => {
+            if (amount > 1) {
+              item.qtdCart = item.qtdCart - 1
+              setAmount(item.qtdCart)
+            }
+          }}
+        >
+          <FontAwesomeIcon icon={faMinus} />
+        </MinusButton>
+        {item.qtdCart}
+        <PlusButton
+          onClick={() => {
+            item.qtdCart = item.qtdCart + 1
+            setAmount(item.qtdCart)
+          }}
+        >
+          <FontAwesomeIcon icon={faPlus} />
+        </PlusButton>
+      </ItemQuantity>
+      <RemoveItemButton onClick={() => removeFromCart(item)}>
+        Remover
+      </RemoveItemButton>
+    </Item>
+  )
+}
+
+export const CartItems = () => {
+  const { cart, removeFromCart } = useContext(CartContext)
+  const [amount, setAmount] = useState(2)
+  const [totalPrice, setTotalPrice] = useState(0)
+  const navigate = useNavigate()
 
   const handleFinish = async () => {
     // const res = await api.post('/order', data )
+    console.log(cart, totalPrice)
+    // navigate('/payment')
+  }
 
-    navigate('/payment')
+  useEffect(() => {
+    let total = 0
+    cart.forEach((item) => {
+      total += item.price * item.qtdCart
+    })
+    setTotalPrice(total)
+  }, [cart, amount])
+
+  const updateTotalPrice = () => {
+    let total = 0
+    cart.forEach((item) => {
+      total += item.price * item.qtdCart
+    })
+    setTotalPrice(total)
   }
 
   return (
     <Container>
       {cart.length === 0 && <h3>Empty Cart</h3>}
-      {cart.map((item) => (
-        <Item>
-          <ItemDetailsContainer>
-            <ItemImg src={item.photo[0]} />
-            <ItemDetails>
-              <ItemName>{item.name}</ItemName>
-              <ItemPrice>
-                {Intl.NumberFormat('pt-BR', {
-                  style: 'currency',
-                  currency: 'BRL',
-                  maximumFractionDigits: 2,
-                }).format(item.price)}
-              </ItemPrice>
-            </ItemDetails>
-          </ItemDetailsContainer>
-          <ItemQuantity>
-            <MinusButton
-              onClick={() => {
-                if (amount > 1) {
-                  setAmount(amount - 1)
-                }
-              }}
-            >
-              <FontAwesomeIcon icon={faMinus} />
-            </MinusButton>
-            {item.amount}
-            <PlusButton
-              onClick={() => {
-                setAmount(amount + 1)
-              }}
-            >
-              <FontAwesomeIcon icon={faPlus} />
-            </PlusButton>
-          </ItemQuantity>
-          <RemoveItemButton onClick={() => removeFromCart(item)}>
-            Remover
-          </RemoveItemButton>
-        </Item>
-      ))}
+      {cart.map((item) => <CartItem item={item} updateTotalPrice={updateTotalPrice} key={item.name} />)}
       <TotalPriceContainer>
         <h3>Total:</h3>
         <h3>
