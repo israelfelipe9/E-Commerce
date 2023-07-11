@@ -37,8 +37,6 @@ function App() {
               <Route path='home' element={<Home />} />
               <Route path='/' element={<Navigate to={'/home'} />} />
 
-              {/* need to be autenticated */}
-              
               <Route path='login' element={<LoginPage />} />
               <Route path='register' element={<RegisterPage />} />
               <Route path='recommend' element={<RecommendForm />} />
@@ -48,18 +46,16 @@ function App() {
               <Route path='cart' element={<CartPage />} />
               <Route path='not-found' element={<NotFound />} />
               <Route path='*' element={<Navigate to='/not-found' />} />
-              
-              {/* Rotas protegidas */}
-              <Route element={<PrivateRoute />} >
+
+              <Route element={<PrivateRoute />}>
                 <Route path='profile' element={<UserProfilePage />} />
                 <Route path='orders' element={<UserOrders />} />
                 <Route path='payment' element={<PaymentPage />} />
               </Route>
-
             </Route>
           </Route>
 
-          <Route element={<PrivateRoute />} >
+          <Route element={<PrivateRoute />}>
             <Route element={<AdminNavbar />}>
               <Route path='admin' element={<AdminHomePage />} />
               {/* <Route path='admin/users' element={<AdminUsersPage />} /> */}
