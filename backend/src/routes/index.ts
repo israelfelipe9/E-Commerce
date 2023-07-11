@@ -15,6 +15,7 @@ import { newOrder } from '@controllers/orders/userOrder'
 import { getOrder } from '@controllers/orders/getOrderById'
 import { getProduct } from '@controllers/products/getProductById'
 import { checkAuth } from 'src/middlewares/checkAuth'
+import { getOrdersAdmin } from '@controllers/orders/getOrdersAdmin'
 // import { deleteProduct } from '@controllers/admin/deleteProduct'
 
 export const router = Router()
@@ -38,8 +39,8 @@ router.post('/order', checkAuth, newOrder)
 router.post('/buy')
 
 /* Rotas admin */
-router.get('/admin/users', getUsers)
-router.get('/admin/orders', getOrders)
+router.get('/admin/users', checkAuth, getUsers)
+router.get('/admin/orders', checkAuth, getOrdersAdmin)
 router.post('/registerAdmin', createNewAdminUser)
 router.delete('/admin/users/:id', deleteUser)
 

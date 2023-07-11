@@ -101,6 +101,7 @@ export const AdminNavbar = () => {
           <AuthContainer>{user.name}</AuthContainer>
           <Item>Home</Item>
           <Item onClick={() => navigate('/admin/products')}>Products</Item>
+          <Item onClick={() => navigate('/admin/orders')}>Orders</Item>
           <Item onClick={() => navigate('/admin/users')}>Users</Item>
           <Item onClick={() => navigate('/home')}>Back to store</Item>
           <LogoutButton onClick={() => handleLogout()}>Logout</LogoutButton>

@@ -182,8 +182,10 @@ const CartItem = ({ item, updateTotalPrice, removeFromCart }: { item: ProductPro
         {item.qtdCart}
         <PlusButton
           onClick={() => {
-            item.qtdCart = item.qtdCart + 1
-            setAmount(item.qtdCart)
+            if (amount <= item.qtInStock) {
+              item.qtdCart = item.qtdCart + 1
+              setAmount(item.qtdCart)
+            }
           }}
         >
           <FontAwesomeIcon icon={faPlus} />

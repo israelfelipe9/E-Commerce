@@ -24,6 +24,8 @@ import { NewProductPage } from './pages/newProduct'
 import { PrivateRoute } from '@components/PrivateRoute'
 import { PaymentPage } from './pages/Payment'
 import { UserProfilePage } from './pages/Profile'
+import { OrdersAdminPage } from './pages/OrdersAdmin'
+import { UsersAdminPage } from './pages/UsersAdmin'
 
 function App() {
   return (
@@ -33,6 +35,7 @@ function App() {
           <Route element={<Navbar />}>
             <Route element={<Footer />}>
               <Route path='home' element={<Home />} />
+              <Route path='/' element={<Navigate to={'/home'} />} />
 
               {/* need to be autenticated */}
               
@@ -59,7 +62,9 @@ function App() {
           <Route element={<PrivateRoute />} >
             <Route element={<AdminNavbar />}>
               <Route path='admin' element={<AdminHomePage />} />
-              <Route path='admin/users' element={<AdminUsersPage />} />
+              {/* <Route path='admin/users' element={<AdminUsersPage />} /> */}
+              <Route path='admin/users' element={<UsersAdminPage />} />
+              <Route path='admin/orders' element={<OrdersAdminPage />} />
               <Route path='admin/products' element={<ProductsPage />} />
               <Route path='admin/products/new' element={<NewProductPage />} />
               <Route path='admin/products/view/:id' element={<ViewPage />} />
