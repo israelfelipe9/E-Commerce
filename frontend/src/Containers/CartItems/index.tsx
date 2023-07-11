@@ -6,6 +6,7 @@ import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from 'react-router-dom'
 import { api } from 'src/services/api'
 import { set } from 'react-hook-form'
+import { AuthContext } from '@contexts/AuthContext'
 
 const Container = styled.div`
   display: flex;
@@ -145,7 +146,7 @@ const CloseCartButton = styled.button`
   }
 `
 
-const CartItem = ({ item, updateTotalPrice }: { item: ProductProps, updateTotalPrice: () => void }) => {
+const CartItem = ({ item, updateTotalPrice, removeFromCart }: { item: ProductProps, updateTotalPrice: () => void, removeFromCart: (item: ProductProps) => void }) => {
   const [amount, setAmount] = useState(item.qtdCart)
 
   useEffect(() => {
@@ -196,24 +197,36 @@ const CartItem = ({ item, updateTotalPrice }: { item: ProductProps, updateTotalP
 }
 
 export const CartItems = () => {
-  const { cart, removeFromCart } = useContext(CartContext)
-  const [amount, setAmount] = useState(2)
+  const { cart, removeFromCart, setCart } = useContext(CartContext)
+  const { auth } = useContext(AuthContext)
   const [totalPrice, setTotalPrice] = useState(0)
   const navigate = useNavigate()
 
   const handleFinish = async () => {
-    // const res = await api.post('/order', data )
     console.log(cart, totalPrice)
-    // navigate('/payment')
+    if (auth) {
+      try {
+        const data = cart.map((item) => {
+          return {
+            productId: item._id,
+            quantity: item.qtdCart,
+          }
+        })
+        const res = await api.post('/order', {
+          products: data,
+          totalPrice,
+        })
+        console.log(res)
+      } catch (error) {
+        console.log(error)
+      }
+      
+      setCart([])
+      navigate('/payment')
+    } else {
+      navigate('/login')
+    }
   }
-
-  useEffect(() => {
-    let total = 0
-    cart.forEach((item) => {
-      total += item.price * item.qtdCart
-    })
-    setTotalPrice(total)
-  }, [cart, amount])
 
   const updateTotalPrice = () => {
     let total = 0
@@ -226,7 +239,7 @@ export const CartItems = () => {
   return (
     <Container>
       {cart.length === 0 && <h3>Empty Cart</h3>}
-      {cart.map((item) => <CartItem item={item} updateTotalPrice={updateTotalPrice} key={item.name} />)}
+      {cart.map((item) => <CartItem item={item} updateTotalPrice={updateTotalPrice} removeFromCart={() => removeFromCart(item)} key={item.name} />)}
       <TotalPriceContainer>
         <h3>Total:</h3>
         <h3>

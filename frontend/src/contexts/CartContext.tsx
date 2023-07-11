@@ -14,12 +14,14 @@ export interface ProductProps {
 
 interface CartContextProps {
   cart: Array<ProductProps>
+  setCart: (cart: ProductProps[]) => void
   addToCart: (product: ProductProps) => void
   removeFromCart: (product: ProductProps) => void
 }
 
 export const CartContext = createContext<CartContextProps>({
   cart: [],
+  setCart: () => null,
   addToCart: () => null,
   removeFromCart: () => null,
 })
@@ -50,7 +52,7 @@ export const CartProvider = ({ children }) => {
 
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, removeFromCart }}
+      value={{ cart, setCart, addToCart, removeFromCart }}
     >
       {children}
     </CartContext.Provider>

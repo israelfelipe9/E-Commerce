@@ -1,6 +1,5 @@
 import { Route, Routes, Navigate } from 'react-router-dom'
 import { RecommendForm } from './Containers/RecommendForm'
-import { PaymentForm } from './Containers/PaymentForm'
 import { Sale } from './pages/Sale'
 import { Product } from './pages/Sale/product'
 import { Home } from './pages/Home'
@@ -23,6 +22,7 @@ import { ViewPage } from './pages/View'
 import { EditPage } from './pages/Edit'
 import { NewProductPage } from './pages/newProduct'
 import { PrivateRoute } from '@components/PrivateRoute'
+import { PaymentPage } from './pages/Payment'
 
 function App() {
   return (
@@ -36,20 +36,21 @@ function App() {
               {/* need to be autenticated */}
               <Route path='profile' element={<UserProfile />} />
               <Route path='orders' element={<UserOrders />} />
-
               <Route path='login' element={<LoginPage />} />
               <Route path='register' element={<RegisterPage />} />
-
               <Route path='recommend' element={<RecommendForm />} />
-
-              <Route path='payment' element={<PaymentForm />} />
-
               <Route path='sale' element={<Sale />} />
               <Route path='sale/:id' element={<Product />} />
 
               <Route path='cart' element={<CartPage />} />
               <Route path='not-found' element={<NotFound />} />
               <Route path='*' element={<Navigate to='/not-found' />} />
+              
+              {/* Rotas protegidas */}
+              <Route element={<PrivateRoute />} >
+                <Route path='payment' element={<PaymentPage />} />
+              </Route>
+
             </Route>
           </Route>
 

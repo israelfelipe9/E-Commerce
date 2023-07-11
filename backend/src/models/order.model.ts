@@ -6,19 +6,29 @@ import mongoose, { Schema, type Document } from 'mongoose'
 // }
 
 interface Order extends Document {
-  IdClient: string
-  IdItem: string
+  userId: string
   date: Date
-  total: number
-  //   itens: itemOrder[] // List of items id
+  products: {
+    productId: string
+    quantity: number
+  }[]
+  totalPrice: number
 }
 
 const OrderSchema: Schema = new Schema<Order>({
-  IdClient: { type: String, required: true, index: true },
-  IdItem: { type: String, required: true, index: true },
+  userId: { type: String, required: true },
   date: { type: Date, required: true },
-  total: { type: Number, required: true },
-  //   itens: { type: Array, required: true },
+  products: [{
+    productId: {
+      type: String,
+      required: true,
+    },
+    quantity: {
+      type: Number,
+      required: true,
+    },
+  }],
+  totalPrice: { type: Number, required: true },
 })
 
 const OrderModel = mongoose.model<Order>('Orders', OrderSchema)
